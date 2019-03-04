@@ -121,7 +121,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -159,12 +159,12 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(332, 12);
+            this.groupBox3.Location = new System.Drawing.Point(332, 19);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(308, 275);
+            this.groupBox3.Size = new System.Drawing.Size(308, 268);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Customer Information";
+            this.groupBox3.Text = "Customer Information:";
             // 
             // button1
             // 
@@ -372,7 +372,7 @@
             // 
             this.button4.Location = new System.Drawing.Point(138, 159);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 47);
+            this.button4.Size = new System.Drawing.Size(115, 47);
             this.button4.TabIndex = 14;
             this.button4.Text = "Choose Room";
             this.button4.UseVisualStyleBackColor = true;
