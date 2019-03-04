@@ -1,6 +1,6 @@
 ﻿namespace ProjectKS
 {
-    partial class Form1
+    partial class CustomerList
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -101,6 +101,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Information";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button5
             // 
@@ -138,6 +139,15 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "Change";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(32, 192);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Choose";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -257,15 +267,6 @@
             this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id ";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(32, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Choose";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

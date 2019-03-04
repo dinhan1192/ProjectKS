@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ProjectKS
 {
-    public partial class Form4 : Form
+    public partial class TypeRoom : Form
     {
-        public Form4()
+        public TypeRoom()
         {
             InitializeComponent();
+        }
+
+        private void TypeRoom_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

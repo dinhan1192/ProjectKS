@@ -1,6 +1,6 @@
 ﻿namespace ProjectKS
 {
-    partial class Form2
+    partial class Booking
     {
         /// <summary>
         /// Required designer variable.

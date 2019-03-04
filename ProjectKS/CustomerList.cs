@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectKS
 {
-    public partial class Form1 : Form
+    public partial class CustomerList : Form
     {
-        public Form1()
+        public CustomerList()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace ProjectKS
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
