@@ -1,6 +1,6 @@
 ﻿namespace ProjectKS
 {
-    partial class Bill
+    partial class frmBill
     {
         /// <summary>
         /// Required designer variable.
