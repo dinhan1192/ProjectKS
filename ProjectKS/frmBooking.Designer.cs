@@ -1,6 +1,6 @@
 ﻿namespace ProjectKS
 {
-    partial class Booking
+    partial class frmBooking
     {
         /// <summary>
         /// Required designer variable.

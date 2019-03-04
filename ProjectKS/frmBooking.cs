@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectKS
 {
-    public partial class Booking : Form
+    public partial class frmBooking : Form
     {
-        public Booking()
+        public frmBooking()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace ProjectKS
 {
-    partial class LishRoom
+    partial class frmListRoom
     {
         /// <summary>
         /// Required designer variable.
