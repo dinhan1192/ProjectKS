@@ -9,3 +9,16 @@ C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csproj.Gener
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.exe
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.pdb
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\bin\Debug\ProjectKS.exe.config
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\bin\Debug\ProjectKS.exe
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\bin\Debug\ProjectKS.pdb
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csprojAssemblyReference.cache
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Bill.resources
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Form1.resources
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Form2.resources
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Form3.resources
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Properties.Resources.resources
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csproj.GenerateResource.cache
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csproj.CoreCompileInputs.cache
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.exe
+C:\Users\xuanvinh\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.pdb
