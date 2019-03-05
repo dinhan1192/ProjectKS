@@ -21,5 +21,18 @@ namespace ProjectKS
         {
 
         }
+
+        public bool Validate()
+        {
+            bool output = true;
+            int id
+            if ()
+            {
+
+            }
+
+
+            return output;
+        }
     }
 }

@@ -38,14 +38,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.phoneValue = new System.Windows.Forms.TextBox();
+            this.emailValue = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameValue = new System.Windows.Forms.TextBox();
+            this.passportValue = new System.Windows.Forms.TextBox();
+            this.idValue = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,14 +83,14 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.phoneValue);
+            this.groupBox2.Controls.Add(this.emailValue);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.nameValue);
+            this.groupBox2.Controls.Add(this.passportValue);
+            this.groupBox2.Controls.Add(this.idValue);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -139,6 +139,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "Change";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -148,6 +149,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Choose";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox2
             // 
@@ -169,19 +171,19 @@
             this.checkBox1.Text = "Male";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // phoneValue
             // 
-            this.textBox6.Location = new System.Drawing.Point(466, 96);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(217, 20);
-            this.textBox6.TabIndex = 12;
+            this.phoneValue.Location = new System.Drawing.Point(466, 96);
+            this.phoneValue.Name = "phoneValue";
+            this.phoneValue.Size = new System.Drawing.Size(217, 20);
+            this.phoneValue.TabIndex = 12;
             // 
-            // textBox5
+            // emailValue
             // 
-            this.textBox5.Location = new System.Drawing.Point(467, 65);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(217, 20);
-            this.textBox5.TabIndex = 11;
+            this.emailValue.Location = new System.Drawing.Point(467, 65);
+            this.emailValue.Name = "emailValue";
+            this.emailValue.Size = new System.Drawing.Size(217, 20);
+            this.emailValue.TabIndex = 11;
             // 
             // label7
             // 
@@ -211,26 +213,26 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Email";
             // 
-            // textBox4
+            // nameValue
             // 
-            this.textBox4.Location = new System.Drawing.Point(111, 65);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(217, 20);
-            this.textBox4.TabIndex = 7;
+            this.nameValue.Location = new System.Drawing.Point(111, 65);
+            this.nameValue.Name = "nameValue";
+            this.nameValue.Size = new System.Drawing.Size(217, 20);
+            this.nameValue.TabIndex = 7;
             // 
-            // textBox3
+            // passportValue
             // 
-            this.textBox3.Location = new System.Drawing.Point(111, 96);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(217, 20);
-            this.textBox3.TabIndex = 6;
+            this.passportValue.Location = new System.Drawing.Point(111, 96);
+            this.passportValue.Name = "passportValue";
+            this.passportValue.Size = new System.Drawing.Size(217, 20);
+            this.passportValue.TabIndex = 6;
             // 
-            // textBox1
+            // idValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(111, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 20);
-            this.textBox1.TabIndex = 4;
+            this.idValue.Location = new System.Drawing.Point(111, 33);
+            this.idValue.Name = "idValue";
+            this.idValue.Size = new System.Drawing.Size(217, 20);
+            this.idValue.TabIndex = 4;
             // 
             // label4
             // 
@@ -268,14 +270,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Id ";
             // 
-            // Form1
+            // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "frmCustomer";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -292,9 +294,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameValue;
+        private System.Windows.Forms.TextBox passportValue;
+        private System.Windows.Forms.TextBox idValue;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -304,8 +306,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox phoneValue;
+        private System.Windows.Forms.TextBox emailValue;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;

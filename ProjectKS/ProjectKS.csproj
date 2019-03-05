@@ -129,6 +129,9 @@
     <EmbeddedResource Include="frmListRoom.resx">
       <DependentUpon>frmListRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListService.resx">
+      <DependentUpon>frmListService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TypeRoom.resx">
       <DependentUpon>TypeRoom.cs</DependentUpon>
     </EmbeddedResource>
