@@ -38,11 +38,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.maxValue = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.floorValue = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idRoomValue = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -111,11 +111,11 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.maxValue);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.floorValue);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.idRoomValue);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.groupBox1.Location = new System.Drawing.Point(853, 164);
@@ -153,12 +153,12 @@
             this.comboBox1.Size = new System.Drawing.Size(141, 21);
             this.comboBox1.TabIndex = 31;
             // 
-            // textBox3
+            // maxValue
             // 
-            this.textBox3.Location = new System.Drawing.Point(185, 263);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 20);
-            this.textBox3.TabIndex = 29;
+            this.maxValue.Location = new System.Drawing.Point(185, 263);
+            this.maxValue.Name = "maxValue";
+            this.maxValue.Size = new System.Drawing.Size(141, 20);
+            this.maxValue.TabIndex = 29;
             // 
             // label5
             // 
@@ -170,12 +170,12 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Max People";
             // 
-            // textBox2
+            // floorValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(185, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 27;
+            this.floorValue.Location = new System.Drawing.Point(185, 124);
+            this.floorValue.Name = "floorValue";
+            this.floorValue.Size = new System.Drawing.Size(141, 20);
+            this.floorValue.TabIndex = 27;
             // 
             // label8
             // 
@@ -187,12 +187,12 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Floor";
             // 
-            // textBox1
+            // idRoomValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 25;
+            this.idRoomValue.Location = new System.Drawing.Point(185, 61);
+            this.idRoomValue.Name = "idRoomValue";
+            this.idRoomValue.Size = new System.Drawing.Size(141, 20);
+            this.idRoomValue.TabIndex = 25;
             // 
             // button1
             // 
@@ -245,7 +245,7 @@
             this.label9.TabIndex = 40;
             this.label9.Text = "List Room";
             // 
-            // LishRoom
+            // frmListRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -261,7 +261,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Name = "LishRoom";
+            this.Name = "frmListRoom";
             this.Text = "LishRoom";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -281,11 +281,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox maxValue;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox floorValue;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idRoomValue;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
