@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectKS
 {
-    public partial class Employee11 : Form
+    public partial class frmListService : Form
     {
-        public Employee11()
+        public frmListService()
         {
             InitializeComponent();
         }

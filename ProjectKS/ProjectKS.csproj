@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee11.cs">
+    <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee11.Designer.cs">
-      <DependentUpon>Employee11.cs</DependentUpon>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeePosition.cs">
       <SubType>Form</SubType>
@@ -58,23 +58,47 @@
     <Compile Include="EmployeePosition.Designer.cs">
       <DependentUpon>EmployeePosition.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerList.cs">
+    <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerList.Designer.cs">
-      <DependentUpon>CustomerList.cs</DependentUpon>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking.cs">
+    <Compile Include="frmBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Booking.Designer.cs">
-      <DependentUpon>Booking.cs</DependentUpon>
+    <Compile Include="frmBooking.Designer.cs">
+      <DependentUpon>frmBooking.cs</DependentUpon>
     </Compile>
-    <Compile Include="LishRoom.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LishRoom.Designer.cs">
-      <DependentUpon>LishRoom.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBill.Designer.cs">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListRoom.Designer.cs">
+      <DependentUpon>frmListRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListService.Designer.cs">
+      <DependentUpon>frmListService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderService.Designer.cs">
+      <DependentUpon>frmOrderService.cs</DependentUpon>
     </Compile>
     <Compile Include="TypeRoom.cs">
       <SubType>Form</SubType>
@@ -84,20 +108,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Employee11.resx">
-      <DependentUpon>Employee11.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeePosition.resx">
       <DependentUpon>EmployeePosition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerList.resx">
-      <DependentUpon>CustomerList.cs</DependentUpon>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Booking.resx">
-      <DependentUpon>Booking.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LishRoom.resx">
-      <DependentUpon>LishRoom.cs</DependentUpon>
+    <EmbeddedResource Include="frmBooking.resx">
+      <DependentUpon>frmBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBill.resx">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListRoom.resx">
+      <DependentUpon>frmListRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TypeRoom.resx">
       <DependentUpon>TypeRoom.cs</DependentUpon>

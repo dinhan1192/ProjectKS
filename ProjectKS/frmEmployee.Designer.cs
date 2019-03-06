@@ -1,6 +1,6 @@
 ﻿namespace ProjectKS
 {
-    partial class Employee11
+    partial class frmEmployee
     {
         /// <summary>
         /// Required designer variable.

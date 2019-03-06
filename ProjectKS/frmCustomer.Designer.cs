@@ -1,6 +1,6 @@
 ﻿namespace ProjectKS
 {
-    partial class CustomerList
+    partial class frmCustomer
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectKS
 {
-    public partial class CustomerList : Form
+    public partial class frmCustomer : Form
     {
-        public CustomerList()
+        public frmCustomer()
         {
             InitializeComponent();
         }

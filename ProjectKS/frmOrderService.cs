@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectKS
 {
-    public partial class LishRoom : Form
+    public partial class frmOrderService : Form
     {
-        public LishRoom()
+        public frmOrderService()
         {
             InitializeComponent();
         }
