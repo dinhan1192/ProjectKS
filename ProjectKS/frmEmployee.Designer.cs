@@ -148,6 +148,7 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+         
             // 
             // Passport_text
             // 
@@ -225,7 +226,7 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Name";
             // 
-            // Employee11
+            // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,7 +244,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Employee11";
+            this.Name = "frmEmployee";
             this.Text = "Employee11";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
