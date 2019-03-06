@@ -29,35 +29,36 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCustomerList = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.phoneValue = new System.Windows.Forms.TextBox();
-            this.emailValue = new System.Windows.Forms.TextBox();
+            this.cbCustomerGender = new System.Windows.Forms.ComboBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.tbCustomerPhoneNumber = new System.Windows.Forms.TextBox();
+            this.tbCustomerEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.nameValue = new System.Windows.Forms.TextBox();
-            this.passportValue = new System.Windows.Forms.TextBox();
-            this.idValue = new System.Windows.Forms.TextBox();
+            this.tbCustomerName = new System.Windows.Forms.TextBox();
+            this.tbCustomerPassport = new System.Windows.Forms.TextBox();
+            this.tbCustomerId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbFindName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvCustomerList);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.groupBox1.Location = new System.Drawing.Point(1, 250);
             this.groupBox1.Name = "groupBox1";
@@ -66,31 +67,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer List";
             // 
-            // dataGridView1
+            // dgvCustomerList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(799, 217);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvCustomerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomerList.Location = new System.Drawing.Point(0, 31);
+            this.dgvCustomerList.Name = "dgvCustomerList";
+            this.dgvCustomerList.Size = new System.Drawing.Size(799, 217);
+            this.dgvCustomerList.TabIndex = 0;
+            this.dgvCustomerList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerList_CellContentClick);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.phoneValue);
-            this.groupBox2.Controls.Add(this.emailValue);
+            this.groupBox2.Controls.Add(this.tbFindName);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.btnReset);
+            this.groupBox2.Controls.Add(this.cbCustomerGender);
+            this.groupBox2.Controls.Add(this.btnClose);
+            this.groupBox2.Controls.Add(this.btnFind);
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.Controls.Add(this.btnChange);
+            this.groupBox2.Controls.Add(this.tbCustomerPhoneNumber);
+            this.groupBox2.Controls.Add(this.tbCustomerEmail);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.nameValue);
-            this.groupBox2.Controls.Add(this.passportValue);
-            this.groupBox2.Controls.Add(this.idValue);
+            this.groupBox2.Controls.Add(this.tbCustomerName);
+            this.groupBox2.Controls.Add(this.tbCustomerPassport);
+            this.groupBox2.Controls.Add(this.tbCustomerId);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -103,87 +106,70 @@
             this.groupBox2.Text = "Customer Information";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // button5
+            // cbCustomerGender
             // 
-            this.button5.Location = new System.Drawing.Point(451, 192);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Close";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.cbCustomerGender.FormattingEnabled = true;
+            this.cbCustomerGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbCustomerGender.Location = new System.Drawing.Point(467, 33);
+            this.cbCustomerGender.Name = "cbCustomerGender";
+            this.cbCustomerGender.Size = new System.Drawing.Size(64, 21);
+            this.cbCustomerGender.TabIndex = 20;
             // 
-            // button4
+            // btnClose
             // 
-            this.button4.Location = new System.Drawing.Point(341, 192);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Find";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(363, 192);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 19;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button3
+            // btnFind
             // 
-            this.button3.Location = new System.Drawing.Point(234, 192);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnFind.Location = new System.Drawing.Point(712, 192);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 23);
+            this.btnFind.TabIndex = 18;
+            this.btnFind.Text = "Find";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(132, 192);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Change";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnDelete.Location = new System.Drawing.Point(144, 192);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 17;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button1
+            // btnChange
             // 
-            this.button1.Location = new System.Drawing.Point(32, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Choose";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnChange.Location = new System.Drawing.Point(32, 192);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(75, 23);
+            this.btnChange.TabIndex = 16;
+            this.btnChange.Text = "Change";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox2
+            // tbCustomerPhoneNumber
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(533, 32);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(60, 17);
-            this.checkBox2.TabIndex = 14;
-            this.checkBox2.Text = "Female";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.tbCustomerPhoneNumber.Location = new System.Drawing.Point(466, 96);
+            this.tbCustomerPhoneNumber.Name = "tbCustomerPhoneNumber";
+            this.tbCustomerPhoneNumber.Size = new System.Drawing.Size(217, 20);
+            this.tbCustomerPhoneNumber.TabIndex = 12;
             // 
-            // checkBox1
+            // tbCustomerEmail
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(467, 32);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(49, 17);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "Male";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // phoneValue
-            // 
-            this.phoneValue.Location = new System.Drawing.Point(466, 96);
-            this.phoneValue.Name = "phoneValue";
-            this.phoneValue.Size = new System.Drawing.Size(217, 20);
-            this.phoneValue.TabIndex = 12;
-            // 
-            // emailValue
-            // 
-            this.emailValue.Location = new System.Drawing.Point(467, 65);
-            this.emailValue.Name = "emailValue";
-            this.emailValue.Size = new System.Drawing.Size(217, 20);
-            this.emailValue.TabIndex = 11;
+            this.tbCustomerEmail.Location = new System.Drawing.Point(467, 65);
+            this.tbCustomerEmail.Name = "tbCustomerEmail";
+            this.tbCustomerEmail.Size = new System.Drawing.Size(216, 20);
+            this.tbCustomerEmail.TabIndex = 11;
             // 
             // label7
             // 
@@ -213,26 +199,26 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Email";
             // 
-            // nameValue
+            // tbCustomerName
             // 
-            this.nameValue.Location = new System.Drawing.Point(111, 65);
-            this.nameValue.Name = "nameValue";
-            this.nameValue.Size = new System.Drawing.Size(217, 20);
-            this.nameValue.TabIndex = 7;
+            this.tbCustomerName.Location = new System.Drawing.Point(111, 65);
+            this.tbCustomerName.Name = "tbCustomerName";
+            this.tbCustomerName.Size = new System.Drawing.Size(217, 20);
+            this.tbCustomerName.TabIndex = 7;
             // 
-            // passportValue
+            // tbCustomerPassport
             // 
-            this.passportValue.Location = new System.Drawing.Point(111, 96);
-            this.passportValue.Name = "passportValue";
-            this.passportValue.Size = new System.Drawing.Size(217, 20);
-            this.passportValue.TabIndex = 6;
+            this.tbCustomerPassport.Location = new System.Drawing.Point(111, 96);
+            this.tbCustomerPassport.Name = "tbCustomerPassport";
+            this.tbCustomerPassport.Size = new System.Drawing.Size(217, 20);
+            this.tbCustomerPassport.TabIndex = 6;
             // 
-            // idValue
+            // tbCustomerId
             // 
-            this.idValue.Location = new System.Drawing.Point(111, 33);
-            this.idValue.Name = "idValue";
-            this.idValue.Size = new System.Drawing.Size(217, 20);
-            this.idValue.TabIndex = 4;
+            this.tbCustomerId.Location = new System.Drawing.Point(111, 33);
+            this.tbCustomerId.Name = "tbCustomerId";
+            this.tbCustomerId.Size = new System.Drawing.Size(217, 20);
+            this.tbCustomerId.TabIndex = 4;
             // 
             // label4
             // 
@@ -270,6 +256,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Id ";
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(253, 192);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 21;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(495, 165);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Enter Name to Find";
+            // 
+            // tbFindName
+            // 
+            this.tbFindName.Location = new System.Drawing.Point(498, 192);
+            this.tbFindName.Name = "tbFindName";
+            this.tbFindName.Size = new System.Drawing.Size(185, 20);
+            this.tbFindName.TabIndex = 23;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,8 +291,9 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCustomer";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmCustomer_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -290,27 +303,28 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCustomerList;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox nameValue;
-        private System.Windows.Forms.TextBox passportValue;
-        private System.Windows.Forms.TextBox idValue;
+        private System.Windows.Forms.TextBox tbCustomerName;
+        private System.Windows.Forms.TextBox tbCustomerPassport;
+        private System.Windows.Forms.TextBox tbCustomerId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox phoneValue;
-        private System.Windows.Forms.TextBox emailValue;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.TextBox tbCustomerPhoneNumber;
+        private System.Windows.Forms.TextBox tbCustomerEmail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ComboBox cbCustomerGender;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.TextBox tbFindName;
+        private System.Windows.Forms.Label label8;
     }
 }
 
