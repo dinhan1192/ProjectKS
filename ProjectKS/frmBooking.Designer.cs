@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbEmployeeName = new System.Windows.Forms.TextBox();
-            this.tbBookingDay = new System.Windows.Forms.ComboBox();
-            this.tbExPaidDay = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtExPaidDay = new System.Windows.Forms.DateTimePicker();
+            this.dtBookingDay = new System.Windows.Forms.DateTimePicker();
             this.dgvRoomChoose = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -59,6 +59,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tbCustomerPassport = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbEmployeePassport = new System.Windows.Forms.TextBox();
+            this.tbDeleteRoomChoose = new System.Windows.Forms.TextBox();
+            this.btnDeleteRoomChoose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomChoose)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -69,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(343, 274);
+            this.label1.Location = new System.Drawing.Point(335, 352);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
@@ -79,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(343, 352);
+            this.label3.Location = new System.Drawing.Point(462, 352);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 2;
@@ -88,38 +92,25 @@
             // 
             // tbEmployeeName
             // 
-            this.tbEmployeeName.Location = new System.Drawing.Point(346, 307);
+            this.tbEmployeeName.Location = new System.Drawing.Point(338, 388);
             this.tbEmployeeName.Name = "tbEmployeeName";
-            this.tbEmployeeName.Size = new System.Drawing.Size(173, 20);
+            this.tbEmployeeName.Size = new System.Drawing.Size(103, 20);
             this.tbEmployeeName.TabIndex = 3;
             this.tbEmployeeName.TextChanged += new System.EventHandler(this.tbEmployeeName_TextChanged);
-            // 
-            // tbBookingDay
-            // 
-            this.tbBookingDay.FormattingEnabled = true;
-            this.tbBookingDay.Location = new System.Drawing.Point(346, 392);
-            this.tbBookingDay.Name = "tbBookingDay";
-            this.tbBookingDay.Size = new System.Drawing.Size(173, 21);
-            this.tbBookingDay.TabIndex = 5;
-            // 
-            // tbExPaidDay
-            // 
-            this.tbExPaidDay.FormattingEnabled = true;
-            this.tbExPaidDay.Location = new System.Drawing.Point(346, 487);
-            this.tbExPaidDay.Name = "tbExPaidDay";
-            this.tbExPaidDay.Size = new System.Drawing.Size(173, 21);
-            this.tbExPaidDay.TabIndex = 6;
-            this.tbExPaidDay.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.btnDeleteRoomChoose);
+            this.groupBox1.Controls.Add(this.tbDeleteRoomChoose);
+            this.groupBox1.Controls.Add(this.tbEmployeePassport);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.dtExPaidDay);
+            this.groupBox1.Controls.Add(this.dtBookingDay);
             this.groupBox1.Controls.Add(this.dgvRoomChoose);
-            this.groupBox1.Controls.Add(this.tbExPaidDay);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.tbBookingDay);
             this.groupBox1.Controls.Add(this.tbEmployeeName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
@@ -134,6 +125,22 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking room";
+            // 
+            // dtExPaidDay
+            // 
+            this.dtExPaidDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtExPaidDay.Location = new System.Drawing.Point(465, 488);
+            this.dtExPaidDay.Name = "dtExPaidDay";
+            this.dtExPaidDay.Size = new System.Drawing.Size(92, 20);
+            this.dtExPaidDay.TabIndex = 17;
+            // 
+            // dtBookingDay
+            // 
+            this.dtBookingDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtBookingDay.Location = new System.Drawing.Point(465, 385);
+            this.dtBookingDay.Name = "dtBookingDay";
+            this.dtBookingDay.Size = new System.Drawing.Size(92, 20);
+            this.dtBookingDay.TabIndex = 16;
             // 
             // dgvRoomChoose
             // 
@@ -155,11 +162,12 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(343, 442);
+            this.label12.Location = new System.Drawing.Point(462, 441);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(95, 13);
             this.label12.TabIndex = 11;
             this.label12.Text = "Expected paid day";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // groupBox2
             // 
@@ -380,6 +388,39 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Passport";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(335, 441);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 13);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Employee Passport";
+            // 
+            // tbEmployeePassport
+            // 
+            this.tbEmployeePassport.Location = new System.Drawing.Point(338, 488);
+            this.tbEmployeePassport.Name = "tbEmployeePassport";
+            this.tbEmployeePassport.Size = new System.Drawing.Size(103, 20);
+            this.tbEmployeePassport.TabIndex = 19;
+            // 
+            // tbDeleteRoomChoose
+            // 
+            this.tbDeleteRoomChoose.Location = new System.Drawing.Point(338, 307);
+            this.tbDeleteRoomChoose.Name = "tbDeleteRoomChoose";
+            this.tbDeleteRoomChoose.Size = new System.Drawing.Size(72, 20);
+            this.tbDeleteRoomChoose.TabIndex = 21;
+            // 
+            // btnDeleteRoomChoose
+            // 
+            this.btnDeleteRoomChoose.Location = new System.Drawing.Point(338, 274);
+            this.btnDeleteRoomChoose.Name = "btnDeleteRoomChoose";
+            this.btnDeleteRoomChoose.Size = new System.Drawing.Size(150, 23);
+            this.btnDeleteRoomChoose.TabIndex = 22;
+            this.btnDeleteRoomChoose.Text = "Delete Room Choose";
+            this.btnDeleteRoomChoose.UseVisualStyleBackColor = true;
+            this.btnDeleteRoomChoose.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,8 +447,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbEmployeeName;
-        private System.Windows.Forms.ComboBox tbBookingDay;
-        private System.Windows.Forms.ComboBox tbExPaidDay;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvRoomList;
@@ -434,5 +473,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvRoomChoose;
+        private System.Windows.Forms.DateTimePicker dtExPaidDay;
+        private System.Windows.Forms.DateTimePicker dtBookingDay;
+        private System.Windows.Forms.TextBox tbEmployeePassport;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbDeleteRoomChoose;
+        private System.Windows.Forms.Button btnDeleteRoomChoose;
     }
 }

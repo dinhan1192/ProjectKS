@@ -30,6 +30,16 @@ namespace ProjectKS
             dgvCustomerList.DataSource = table;
         }
 
+        void resetTB()
+        {
+            tbCustomerId.Text = "";
+            tbCustomerName.Text = "";
+            tbCustomerPassport.Text = "";
+            cbCustomerGender.Text = "Male";
+            tbCustomerPhoneNumber.Text = "";
+            tbCustomerEmail.Text = "";
+        }
+
         public frmCustomer()
         {
             InitializeComponent();
@@ -134,19 +144,30 @@ namespace ProjectKS
         private void btnDelete_Click(object sender, EventArgs e)
         {
             command = conn.CreateCommand();
-            command.CommandText = "DELETE from Customer where IdCustomer = '"+tbCustomerId.Text+"'";
+            string str = "DELETE FROM Customer WHERE IdCustomer = '"+tbCustomerId.Text+"'";
+            string str1 = "DELETE FROM Booking WHERE IdCustomer = '"+tbCustomerId.Text+"'";
+            string str2 = "DELETE FROM ListRoomBooking WHERE IdBooking = (SELECT IdBooking FROM Booking WHERE IdCustomer = '" + tbCustomerId.Text + "')";
+            string str3 = "DELETE FROM Bill WHERE IdBooking = (SELECT IdBooking FROM Booking WHERE IdCustomer = '" + tbCustomerId.Text + "')";
+            string str4 = "DELETE FROM OrderService WHERE IdBooking = (SELECT IdBooking FROM Booking WHERE IdCustomer = '" + tbCustomerId.Text + "')";
+            
+            command.CommandText = "BEGIN " + str + str1 + str2 + str3 + str4 + " END";
             command.ExecuteNonQuery();
             loaddata();
+            resetTB();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            tbCustomerId.Text = "";
-            tbCustomerName.Text = "";
-            tbCustomerPassport.Text = "";
-            cbCustomerGender.Text = "Male";
-            tbCustomerPhoneNumber.Text = "";
-            tbCustomerEmail.Text = "";
+            resetTB();
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            command = conn.CreateCommand();
+            command.CommandText = "Begin DELETE FROM Customer DELETE FROM Booking END";
+            command.ExecuteNonQuery();
+
+            loaddata();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
