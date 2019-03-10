@@ -31,6 +31,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvCustomerList = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbFindName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.cbCustomerGender = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
@@ -48,9 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbFindName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -105,6 +105,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Information";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // tbFindName
+            // 
+            this.tbFindName.Location = new System.Drawing.Point(498, 192);
+            this.tbFindName.Name = "tbFindName";
+            this.tbFindName.Size = new System.Drawing.Size(185, 20);
+            this.tbFindName.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(495, 165);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Enter Name to Find";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(253, 192);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 21;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // cbCustomerGender
             // 
@@ -255,32 +281,6 @@
             this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id ";
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(253, 192);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 21;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(495, 165);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Enter Name to Find";
-            // 
-            // tbFindName
-            // 
-            this.tbFindName.Location = new System.Drawing.Point(498, 192);
-            this.tbFindName.Name = "tbFindName";
-            this.tbFindName.Size = new System.Drawing.Size(185, 20);
-            this.tbFindName.TabIndex = 23;
             // 
             // frmCustomer
             // 

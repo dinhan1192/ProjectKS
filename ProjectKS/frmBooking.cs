@@ -4,17 +4,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ProjectKS
 {
     public partial class frmBooking : Form
     {
         SqlConnection conn;
-        SqlCommand commandCustomer, commandRoom, commandRoomChoose;
+        SqlCommand commandBooking, commandCustomer, commandRoom, commandRoomChoose, commandListRoomBooking;
         string str = @"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True";
         // co / thi phai co @
         SqlDataAdapter adapter = new SqlDataAdapter();
@@ -42,7 +44,7 @@ namespace ProjectKS
             dgvRoomChoose.DataSource = tableRoomChoose;
         }
 
-        void deletedata()
+        void deletedatafromListRoomChoose()
         {
             commandRoomChoose = conn.CreateCommand();
             commandRoomChoose.CommandText = "DELETE FROM ListRoomChoose";
@@ -60,8 +62,9 @@ namespace ProjectKS
             tbCustomerEmail.Text = "";
             cbCustomerGender.Text = "Male";
             tbEmployeeName.Text = "";
-            tbBookingDay.Text = "";
-            tbExPaidDay.Text = "";
+            tbEmployeePassport.Text = "";
+            dtBookingDay.Text = "";
+            dtExPaidDay.Text = "";
         }
         public frmBooking()
         {
@@ -70,23 +73,62 @@ namespace ProjectKS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Validate())
+            try
             {
-                commandCustomer = conn.CreateCommand();
-                commandCustomer.CommandText = "INSERT INTO Customer(PassportCustomer, FullNameCustomer, PhoneNumberCustomer, GenderCustomer, EmailCustomer) VALUES('"+tbCustomerPassport.Text+"', '"+tbCustomerName.Text+"', '"+tbCustomerPhoneNumber.Text+"', '"+cbCustomerGender.Text+"', '"+tbCustomerEmail.Text+"')";
-                commandCustomer.ExecuteNonQuery();
-
-                foreach(DataGridViewRow row in dgvRoomChoose.Rows)
+                if (Validate())
                 {
-                    commandRoom = conn.CreateCommand();
-                    commandRoom.CommandText = "UPDATE ListRoom SET Status = 'booked' WHERE RoomName = '" + row.Cells[0].Value + "'";
-                    commandRoom.ExecuteNonQuery();
+                    string AddCustomer;
+                    AddCustomer = "INSERT INTO Customer(PassportCustomer, FullNameCustomer, PhoneNumberCustomer, GenderCustomer, EmailCustomer) VALUES('" + tbCustomerPassport.Text.ToString() + "', '" + tbCustomerName.Text.ToString() + "', '" + tbCustomerPhoneNumber.Text.ToString() + "', '" + cbCustomerGender.Text.ToString() + "', '" + tbCustomerEmail.Text.ToString() + "')"; ;
+                    //tbDeleteRoomChoose.Text = "IF NOT EXISTS (SELECT * FROM Customer WHERE PassportCustomer = '" + tbCustomerPassport.Text.ToString() + "') BEGIN " + AddCustomer + " END";
+                    //return;
+                    commandCustomer = conn.CreateCommand();
+                    commandCustomer.CommandText = "IF NOT EXISTS (SELECT * FROM Customer WHERE PassportCustomer = '"+ tbCustomerPassport.Text.ToString() +"') BEGIN " + AddCustomer + " END";
+                    commandCustomer.ExecuteNonQuery();
+                    
+                    CultureInfo provider = CultureInfo.InvariantCulture;
+                    DateTime bookingDay = DateTime.ParseExact(dtBookingDay.Text, new string[] { "dd/MM/yyyy" }, provider, DateTimeStyles.None);
+                    DateTime exPaidDay = DateTime.ParseExact(dtExPaidDay.Text, new string[] { "dd/MM/yyyy" }, provider, DateTimeStyles.None);
+                    string BookingDay = bookingDay.ToString("yyyy-MM-dd");
+                    string ExPaidDay = exPaidDay.ToString("yyyy-MM-dd");
+
+                    commandBooking = conn.CreateCommand();
+                    commandBooking.CommandText = @"INSERT INTO Booking VALUES" + "((SELECT IdCustomer FROM Customer WHERE PassportCustomer = '" + tbCustomerPassport.Text.ToString() + "'), (SELECT IdEmployee FROM Employees WHERE NameEmployee = '" + tbEmployeeName.Text.ToString() + "' AND PassportEmployee = '" + tbEmployeePassport.Text.ToString() + "'), '" + BookingDay + "', '" + ExPaidDay + "')";
+                    commandBooking.ExecuteNonQuery();
+                    //tbEmployeeName.Text = dtBookingDay.Text;
+                    //return;
+
+                    //tbDeleteRoomChoose.Text = @"INSERT INTO Booking VALUES" + "((SELECT IdCustomer FROM Customer WHERE FullNameCustomer = '" + tbCustomerName.Text.ToString() + "' AND PassportCustomer = '" + tbCustomerPassport.Text.ToString() + "'), (SELECT IdEmployee FROM Employees WHERE NameEmployee = '" + tbEmployeeName.Text.ToString() + "' AND PassportEmployee = '" + tbEmployeePassport.Text.ToString() + "'), '" + BookingDay + "', '" + ExPaidDay + "')";
+
+                    foreach (DataGridViewRow row in dgvRoomChoose.Rows)
+                    {
+                        string valueRoomName = Convert.ToString(row.Cells[0].Value);
+                        commandRoom = conn.CreateCommand();
+                        commandRoom.CommandText = "UPDATE ListRoom SET Status = 'booked' WHERE RoomName = @RoomName";
+                        commandRoom.Parameters.Add("@RoomName", SqlDbType.NVarChar).Value = valueRoomName;
+                        commandRoom.ExecuteNonQuery();
+                        //tbEmployeeName.Text = @"INSERT INTO ListRoomBOOKING VALUES" + "((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text + "') AND CheckIn = '" + bookingDay + "'), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + row.Cells[0].Value + "'), (SELECT SUM(PriceRoom) FROM ListRoomChoose))";
+                        // tbDeleteRoomChoose.Text = "INSERT INTO ListRoomBOOKING VALUES ((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text.ToString() + "')), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + row.Cells[0].Value.ToString() + "'), (SELECT SUM(PriceRoom) FROM ListRoomChoose))";
+                        //return;
+                    }
+
+                    for (int i = 0; i < (dgvRoomChoose.Rows.Count - 1); i++)
+                    {
+                        string valueRoomName = Convert.ToString(dgvRoomChoose.Rows[i].Cells[0].Value);
+                        //tbEmployeeName.Text = @"INSERT INTO ListRoomBOOKING VALUES" + "((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text + "') AND CheckIn = '" + bookingDay + "'), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + row.Cells[0].Value + "'), (SELECT SUM(PriceRoom) FROM ListRoomChoose))";
+                        //tbDeleteRoomChoose.Text = @"INSERT INTO ListRoomBOOKING " + "VALUES ((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text + "')), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + valueRoomName1 + "'), (SELECT SUM(PriceRoom) FROM ListRoomChoose))";
+                        //return;
+                        commandListRoomBooking = conn.CreateCommand();
+                        commandListRoomBooking.CommandText = @"INSERT INTO ListRoomBOOKING(IdBooking, IdRoom, RoomBookingFee) VALUES" + "((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text.ToString() + "') AND CheckIn = '"+BookingDay+"'), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + valueRoomName + "'), (SELECT SUM(PriceRoom) FROM ListRoomChoose))";
+                        commandListRoomBooking.ExecuteNonQuery();
+                    }
+
+
+                    reset();
+                    deletedatafromListRoomChoose();
+                    loaddata();
                 }
-                reset();
-                deletedata();
-                loaddata();
-            }
-            else
+            } 
+            catch (Exception ex)
             {
                 MessageBox.Show("This form has invalid information. Please check it and try again");
             }
@@ -181,11 +223,27 @@ namespace ProjectKS
             i = dgvRoomList.CurrentRow.Index;
             commandRoomChoose = conn.CreateCommand();
 
-            //commandRoomChoose.CommandText = "UPDATE ListRoomChoose SET IdRoomChoose = '"+ dgvRoomList.Rows[i].Cells[0].Value.ToString() + "', IdTypeRoom = '"+ dgvRoomList.Rows[i].Cells[1].Value.ToString() + "', RoomName = '"+ dgvRoomList.Rows[i].Cells[2].Value.ToString()+"', TypeRoom = '"+ dgvRoomList.Rows[i].Cells[3].Value.ToString() + "', Floor = '"+ dgvRoomList.Rows[i].Cells[4].Value.ToString() + "', Status = '"+ dgvRoomList.Rows[i].Cells[5].Value.ToString() + "', MaxPeople = '"+ dgvRoomList.Rows[i].Cells[6].Value.ToString() + "'";
-            commandRoomChoose.CommandText = "INSERT INTO ListRoomChoose  VALUES ('" + dgvRoomList.Rows[i].Cells[2].Value.ToString() + "') ";
+            commandRoomChoose.CommandText = "IF NOT EXISTS(SELECT * FROM ListRoomChoose WHERE RoomName = '"+ dgvRoomList.Rows[i].Cells[2].Value.ToString() + "') BEGIN INSERT INTO ListRoomChoose  VALUES ('" + dgvRoomList.Rows[i].Cells[2].Value.ToString() + "', (SELECT PriceRoom FROM TypeRoom WHERE TypeNameRoom = '"+ dgvRoomList.Rows[i].Cells[3].Value.ToString() + "')) END ";
             commandRoomChoose.ExecuteNonQuery();
             loaddataChoose();
-            
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            commandRoomChoose = conn.CreateCommand();
+            commandRoomChoose.CommandText = "DELETE FROM ListRoomChoose WHERE RoomName = '" + tbDeleteRoomChoose.Text + "'";
+            commandRoomChoose.ExecuteNonQuery();
+            loaddataChoose();
         }
 
         private void tbEmployeeName_TextChanged(object sender, EventArgs e)
@@ -197,7 +255,6 @@ namespace ProjectKS
         {
             commandRoom = conn.CreateCommand();
             commandRoom.CommandText = "SELECT * FROM ListRoom WHERE Status = 'not booked' AND MaxPeople = '"+cbMaxPeople.Text+"' AND TypeRoom = '"+cbRoomType.Text+"'";
-            //commandRoom.CommandText = "SELECT * FROM ListRoom WHERE Status = 'not booked'";
             adapter.SelectCommand = commandRoom;
             tableRoomList.Clear();
             adapter.Fill(tableRoomList);
@@ -214,7 +271,7 @@ namespace ProjectKS
             conn.Open();
             loaddata();
             loaddataChoose();
-            deletedata();
+            deletedatafromListRoomChoose();
         }
     }
 }
