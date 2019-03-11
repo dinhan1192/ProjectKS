@@ -32,6 +32,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbEmployeeName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDeleteRoomChoose = new System.Windows.Forms.Button();
+            this.tbDeleteRoomChoose = new System.Windows.Forms.TextBox();
+            this.tbEmployeePassport = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.dtExPaidDay = new System.Windows.Forms.DateTimePicker();
             this.dtBookingDay = new System.Windows.Forms.DateTimePicker();
             this.dgvRoomChoose = new System.Windows.Forms.DataGridView();
@@ -59,10 +63,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tbCustomerPassport = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tbEmployeePassport = new System.Windows.Forms.TextBox();
-            this.tbDeleteRoomChoose = new System.Windows.Forms.TextBox();
-            this.btnDeleteRoomChoose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomChoose)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -78,7 +78,6 @@
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Employee";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -88,7 +87,6 @@
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Booking day";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tbEmployeeName
             // 
@@ -96,7 +94,6 @@
             this.tbEmployeeName.Name = "tbEmployeeName";
             this.tbEmployeeName.Size = new System.Drawing.Size(103, 20);
             this.tbEmployeeName.TabIndex = 3;
-            this.tbEmployeeName.TextChanged += new System.EventHandler(this.tbEmployeeName_TextChanged);
             // 
             // groupBox1
             // 
@@ -125,6 +122,40 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking room";
+            // 
+            // btnDeleteRoomChoose
+            // 
+            this.btnDeleteRoomChoose.Location = new System.Drawing.Point(338, 274);
+            this.btnDeleteRoomChoose.Name = "btnDeleteRoomChoose";
+            this.btnDeleteRoomChoose.Size = new System.Drawing.Size(150, 23);
+            this.btnDeleteRoomChoose.TabIndex = 22;
+            this.btnDeleteRoomChoose.Text = "Delete Room Choose";
+            this.btnDeleteRoomChoose.UseVisualStyleBackColor = true;
+            this.btnDeleteRoomChoose.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // tbDeleteRoomChoose
+            // 
+            this.tbDeleteRoomChoose.Location = new System.Drawing.Point(338, 307);
+            this.tbDeleteRoomChoose.Name = "tbDeleteRoomChoose";
+            this.tbDeleteRoomChoose.Size = new System.Drawing.Size(72, 20);
+            this.tbDeleteRoomChoose.TabIndex = 21;
+            this.tbDeleteRoomChoose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDeleteRoomChoose_KeyPress);
+            // 
+            // tbEmployeePassport
+            // 
+            this.tbEmployeePassport.Location = new System.Drawing.Point(338, 488);
+            this.tbEmployeePassport.Name = "tbEmployeePassport";
+            this.tbEmployeePassport.Size = new System.Drawing.Size(103, 20);
+            this.tbEmployeePassport.TabIndex = 19;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(335, 441);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 13);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Employee Passport";
             // 
             // dtExPaidDay
             // 
@@ -167,7 +198,6 @@
             this.label12.Size = new System.Drawing.Size(95, 13);
             this.label12.TabIndex = 11;
             this.label12.Text = "Expected paid day";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // groupBox2
             // 
@@ -262,7 +292,6 @@
             this.btnClose.TabIndex = 12;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnCancel
             // 
@@ -319,6 +348,7 @@
             this.tbCustomerPhoneNumber.Name = "tbCustomerPhoneNumber";
             this.tbCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
             this.tbCustomerPhoneNumber.TabIndex = 24;
+            this.tbCustomerPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPhoneNumber_KeyPress);
             // 
             // tbCustomerEmail
             // 
@@ -344,7 +374,6 @@
             this.label9.Size = new System.Drawing.Size(42, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Gender";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -361,6 +390,7 @@
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.Size = new System.Drawing.Size(100, 20);
             this.tbCustomerName.TabIndex = 17;
+            this.tbCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerName_KeyPress);
             // 
             // label7
             // 
@@ -377,7 +407,7 @@
             this.tbCustomerPassport.Name = "tbCustomerPassport";
             this.tbCustomerPassport.Size = new System.Drawing.Size(100, 20);
             this.tbCustomerPassport.TabIndex = 15;
-            this.tbCustomerPassport.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.tbCustomerPassport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPassport_KeyPress);
             // 
             // label6
             // 
@@ -387,39 +417,6 @@
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Passport";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(335, 441);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 13);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Employee Passport";
-            // 
-            // tbEmployeePassport
-            // 
-            this.tbEmployeePassport.Location = new System.Drawing.Point(338, 488);
-            this.tbEmployeePassport.Name = "tbEmployeePassport";
-            this.tbEmployeePassport.Size = new System.Drawing.Size(103, 20);
-            this.tbEmployeePassport.TabIndex = 19;
-            // 
-            // tbDeleteRoomChoose
-            // 
-            this.tbDeleteRoomChoose.Location = new System.Drawing.Point(338, 307);
-            this.tbDeleteRoomChoose.Name = "tbDeleteRoomChoose";
-            this.tbDeleteRoomChoose.Size = new System.Drawing.Size(72, 20);
-            this.tbDeleteRoomChoose.TabIndex = 21;
-            // 
-            // btnDeleteRoomChoose
-            // 
-            this.btnDeleteRoomChoose.Location = new System.Drawing.Point(338, 274);
-            this.btnDeleteRoomChoose.Name = "btnDeleteRoomChoose";
-            this.btnDeleteRoomChoose.Size = new System.Drawing.Size(150, 23);
-            this.btnDeleteRoomChoose.TabIndex = 22;
-            this.btnDeleteRoomChoose.Text = "Delete Room Choose";
-            this.btnDeleteRoomChoose.UseVisualStyleBackColor = true;
-            this.btnDeleteRoomChoose.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // frmBooking
             // 

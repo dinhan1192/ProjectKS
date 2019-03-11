@@ -73,9 +73,7 @@ namespace ProjectKS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (Validate())
+                if (ValidateForm() && ValidateEmail() && ValidatePassport())
                 {
                     string AddCustomer;
                     AddCustomer = "INSERT INTO Customer(PassportCustomer, FullNameCustomer, PhoneNumberCustomer, GenderCustomer, EmailCustomer) VALUES('" + tbCustomerPassport.Text.ToString() + "', '" + tbCustomerName.Text.ToString() + "', '" + tbCustomerPhoneNumber.Text.ToString() + "', '" + cbCustomerGender.Text.ToString() + "', '" + tbCustomerEmail.Text.ToString() + "')"; ;
@@ -127,12 +125,50 @@ namespace ProjectKS
                     deletedatafromListRoomChoose();
                     loaddata();
                 }
-            } 
-            catch (Exception ex)
-            {
-                MessageBox.Show("This form has invalid information. Please check it and try again");
-            }
         }
+
+        private bool ValidateEmail()
+        {
+            bool output = true;
+            System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$");
+            // phai co a-z nua, Neu ko A-Z thi chi la viet hoa moi dc
+            if (tbCustomerEmail.Text.Length > 0)
+            {
+                if (!rEmail.IsMatch(tbCustomerEmail.Text))
+                {
+                    output = false;
+                    MessageBox.Show("invalid email address", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+
+            return output;
+        }
+
+        private bool ValidateForm()
+        {
+            bool output = true;
+            if (tbCustomerName.Text.Length == 0 || tbCustomerPassport.Text.Length == 0 || tbCustomerPhoneNumber.Text.Length == 0 || tbCustomerEmail.Text.Length == 0 || cbCustomerGender.Text.Length == 0)
+            {
+                output = false;
+                MessageBox.Show("This form can not have empty values");
+            }
+
+
+            return output;
+        }
+
+        private bool ValidatePassport()
+        {
+            bool output = true;
+            if(tbCustomerPassport.Text.Length > 8)
+            {
+                output = false;
+                MessageBox.Show("Passport has more than 8 numbers");
+            }
+            return output;
+        }
+
 
         /*private bool ValidateForm()
         {
@@ -170,53 +206,6 @@ namespace ProjectKS
             return output;
         } */
 
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void emailValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvRoomList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
@@ -228,41 +217,77 @@ namespace ProjectKS
             loaddataChoose();
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void tbCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            char ch = e.KeyChar;
+            if (!Char.IsLetter(ch) && ch != 8 && ch != 46 && ch != 32)
+            {
+                e.Handled = true;
+                // Handled: go duoc
+            }
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void tbCustomerPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void tbCustomerPassport_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbDeleteRoomChoose_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if(!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            commandRoomChoose = conn.CreateCommand();
-            commandRoomChoose.CommandText = "DELETE FROM ListRoomChoose WHERE RoomName = '" + tbDeleteRoomChoose.Text + "'";
-            commandRoomChoose.ExecuteNonQuery();
-            loaddataChoose();
-        }
-
-        private void tbEmployeeName_TextChanged(object sender, EventArgs e)
-        {
-
+                commandRoomChoose = conn.CreateCommand();
+                commandRoomChoose.CommandText = "DELETE FROM ListRoomChoose WHERE RoomName = '" + tbDeleteRoomChoose.Text + "'";
+                commandRoomChoose.ExecuteNonQuery();
+                loaddataChoose();
         }
 
         private void btnChooseRoom_Click(object sender, EventArgs e)
         {
             commandRoom = conn.CreateCommand();
-            commandRoom.CommandText = "SELECT * FROM ListRoom WHERE Status = 'not booked' AND MaxPeople = '"+cbMaxPeople.Text+"' AND TypeRoom = '"+cbRoomType.Text+"'";
+            if (cbMaxPeople.Text.Length > 0 && cbRoomType.Text.Length == 0)
+            {
+                commandRoom.CommandText = "SELECT * FROM ListRoom WHERE Status = 'not booked' AND MaxPeople = '"+cbMaxPeople.Text+"'";
+            }
+            else if (cbMaxPeople.Text.Length == 0 && cbRoomType.Text.Length > 0)
+                {
+                    commandRoom.CommandText = "SELECT * FROM ListRoom WHERE Status = 'not booked' AND TypeRoom = '"+cbRoomType.Text+"'";
+                }
+         
+            else if (cbMaxPeople.Text.Length > 0 && cbRoomType.Text.Length > 0)
+            {
+                    commandRoom.CommandText = "SELECT * FROM ListRoom WHERE Status = 'not booked' AND MaxPeople = '"+cbMaxPeople.Text+"' AND TypeRoom = '"+cbRoomType.Text+"'";
+            }
+            else if (cbMaxPeople.Text.Length == 0 && cbRoomType.Text.Length == 0)
+            {
+                commandRoom.CommandText = "SELECT * FROM ListRoom WHERE Status = 'not booked'";
+                MessageBox.Show("Please enter information to search");
+            }
+
+
             adapter.SelectCommand = commandRoom;
             tableRoomList.Clear();
             adapter.Fill(tableRoomList);
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void frmBooking_Load(object sender, EventArgs e)
