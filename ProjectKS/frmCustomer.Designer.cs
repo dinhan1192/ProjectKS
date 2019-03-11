@@ -104,7 +104,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Information";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // tbFindName
             // 
@@ -112,6 +111,7 @@
             this.tbFindName.Name = "tbFindName";
             this.tbFindName.Size = new System.Drawing.Size(185, 20);
             this.tbFindName.TabIndex = 23;
+            this.tbFindName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFindName_KeyPress);
             // 
             // label8
             // 
@@ -151,7 +151,6 @@
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnFind
             // 
@@ -189,6 +188,7 @@
             this.tbCustomerPhoneNumber.Name = "tbCustomerPhoneNumber";
             this.tbCustomerPhoneNumber.Size = new System.Drawing.Size(217, 20);
             this.tbCustomerPhoneNumber.TabIndex = 12;
+            this.tbCustomerPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPhoneNumber_KeyPress);
             // 
             // tbCustomerEmail
             // 
@@ -214,7 +214,6 @@
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Passport ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -231,6 +230,7 @@
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.Size = new System.Drawing.Size(217, 20);
             this.tbCustomerName.TabIndex = 7;
+            this.tbCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerName_KeyPress);
             // 
             // tbCustomerPassport
             // 
@@ -238,6 +238,7 @@
             this.tbCustomerPassport.Name = "tbCustomerPassport";
             this.tbCustomerPassport.Size = new System.Drawing.Size(217, 20);
             this.tbCustomerPassport.TabIndex = 6;
+            this.tbCustomerPassport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPassport_KeyPress);
             // 
             // tbCustomerId
             // 

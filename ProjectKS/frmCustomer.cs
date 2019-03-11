@@ -45,13 +45,21 @@ namespace ProjectKS
             InitializeComponent();
         }
 
-        private bool ValidateForm()
+        /*private bool ValidateForm()
         {
             bool output = true;
-            if (tbCustomerName.Text.Length == 0 || tbCustomerId.Text.Length == 0 || tbCustomerPassport.Text.Length == 0 || tbCustomerPhoneNumber.Text.Length == 0)
+            if (tbCustomerName.Text.Length == 0 || tbCustomerId.Text.Length == 0 || tbCustomerPassport.Text.Length == 0 || tbCustomerPhoneNumber.Text.Length == 0 || tbCustomerEmail.Text.Length == 0 || cbCustomerGender.Text.Length == 0)
             {
                 output = false;
-            }   
+                MessageBox.Show("This form can not have empty values");
+            }
+
+            if (tbCustomerId.Text.Length == 0 || tbCustomerName.Text.Length == 0 || tbCustomerPassport.Text.Length == 0 || tbCustomerPhoneNumber.Text.Length == 0 || tbCustomerEmail.Text.Length == 0 || cbCustomerGender.Text.Length == 0)
+            {
+                output = false;
+                MessageBox.Show("This form can not have empty values");
+            }
+
 
             int idCustomer = 0;
             bool idCustomerValid = int.TryParse(tbCustomerId.Text, out idCustomer);
@@ -79,43 +87,48 @@ namespace ProjectKS
             }
             
             return output;
-        }
-        
-
-        private void button5_Click(object sender, EventArgs e)
+        }*/
+ 
+           private bool ValidateForm()
         {
-            
-        }
+            bool output = true;
+            if (tbCustomerId.Text.Length == 0 || tbCustomerName.Text.Length == 0 || tbCustomerPassport.Text.Length == 0 || tbCustomerPhoneNumber.Text.Length == 0 || tbCustomerEmail.Text.Length == 0 || cbCustomerGender.Text.Length == 0)
+            {
+                output = false;
+                MessageBox.Show("This form can not have empty values");
+            }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            return output;
         }
 
 
-
-        private void label6_Click(object sender, EventArgs e)
+        private bool ValidateEmail()
         {
+            bool output = true;
+            System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$");
+            // phai co a-z nua, Neu ko A-Z thi chi la viet hoa moi dc
+            if (tbCustomerEmail.Text.Length > 0)
+            {
+                if (!rEmail.IsMatch(tbCustomerEmail.Text))
+                {
+                    output = false;
+                    MessageBox.Show("invalid email address", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
+            }
+
+            return output;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Validate())
+
+            if (ValidateForm() && ValidateEmail())
             {
                 command = conn.CreateCommand();
-                command.CommandText = "UPDATE Customer SET PassportCustomer = '"+tbCustomerPassport.Text+"', FullNameCustomer = '"+tbCustomerName.Text+"', PhoneNumberCustomer = '"+tbCustomerPhoneNumber.Text+"', GenderCustomer = '"+cbCustomerGender.Text+"', EmailCustomer = '"+tbCustomerEmail.Text+"' where IdCustomer = '"+tbCustomerId.Text+"'";
+                command.CommandText = "UPDATE Customer SET PassportCustomer = '" + tbCustomerPassport.Text + "', FullNameCustomer = '" + tbCustomerName.Text + "', PhoneNumberCustomer = '" + tbCustomerPhoneNumber.Text + "', GenderCustomer = '" + cbCustomerGender.Text + "', EmailCustomer = '" + tbCustomerEmail.Text + "' where IdCustomer = '" + tbCustomerId.Text + "'";
                 command.ExecuteNonQuery();
                 loaddata();
-            }
-            else
-            {
-                MessageBox.Show("This form has invalid information. Please check it and try again");
             }
             
         }
@@ -125,11 +138,22 @@ namespace ProjectKS
             conn = new SqlConnection(str);
             conn.Open();
             loaddata();
+            tbCustomerId.Enabled = false;
+            tbCustomerName.Enabled = false;
+            tbCustomerPassport.Enabled = false;
+            tbCustomerPhoneNumber.Enabled = false;
+            tbCustomerEmail.Enabled = false;
+            cbCustomerGender.Enabled = false;
         }
 
         private void dgvCustomerList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             tbCustomerId.ReadOnly = true;
+            tbCustomerName.Enabled = true;
+            tbCustomerPassport.Enabled = true;
+            tbCustomerPhoneNumber.Enabled = true;
+            tbCustomerEmail.Enabled = true;
+            cbCustomerGender.Enabled = true;
             int i;
             i = dgvCustomerList.CurrentRow.Index;
             tbCustomerId.Text = dgvCustomerList.Rows[i].Cells[0].Value.ToString();
@@ -138,7 +162,7 @@ namespace ProjectKS
             tbCustomerPhoneNumber.Text = dgvCustomerList.Rows[i].Cells[3].Value.ToString();
             cbCustomerGender.Text = dgvCustomerList.Rows[i].Cells[4].Value.ToString();
             tbCustomerEmail.Text = dgvCustomerList.Rows[i].Cells[5].Value.ToString();
-
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -179,6 +203,44 @@ namespace ProjectKS
             table.Clear();
             adapter.Fill(table);
             dgvCustomerList.DataSource = table;
+        }
+
+        private void tbCustomerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsLetter(ch) && ch != 8 && ch != 46 && ch != 32)
+            {
+                e.Handled = true;
+                // Handled: go duoc
+            }
+        }
+
+        private void tbCustomerPassport_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCustomerPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbFindName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsLetter(ch) && ch != 8 && ch != 46 && ch != 32)
+            {
+                e.Handled = true;
+                // Handled: go duoc
+            }
         }
     }
 }
