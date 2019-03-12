@@ -18,7 +18,7 @@ namespace ProjectKS
        public int index;
         public List<object> testL;
         
-        SqlConnection conn = new SqlConnection("Data Source=ADMINPC;Initial Catalog=QuanlyKS;Integrated Security=true");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
       
         public void createTable()
         {
