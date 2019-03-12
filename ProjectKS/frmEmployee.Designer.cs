@@ -30,11 +30,11 @@
         {
             this.click = new System.Windows.Forms.LinkLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Passport = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genders = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PositionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PassportEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenderEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPositonEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdPosition = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,6 +46,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,63 +64,66 @@
             this.click.TabIndex = 27;
             this.click.TabStop = true;
             this.click.Text = "Click here to add position";
+            this.click.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.click_LinkClicked);
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.EmployName,
-            this.Passport,
-            this.genders,
-            this.PositionID});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 236);
+            this.IdEmployee,
+            this.NameEmployee,
+            this.PassportEmployee,
+            this.GenderEmployee,
+            this.IdPositonEmployee});
+            this.dataGridView1.Location = new System.Drawing.Point(-5, 256);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(771, 182);
+            this.dataGridView1.Size = new System.Drawing.Size(808, 182);
             this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // ID
+            // IdEmployee
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "IDEmployee";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
+            this.IdEmployee.DataPropertyName = "IdEmployee";
+            this.IdEmployee.HeaderText = "IDEmployee";
+            this.IdEmployee.Name = "IdEmployee";
+            this.IdEmployee.Visible = false;
+            this.IdEmployee.Width = 70;
             // 
-            // EmployName
+            // NameEmployee
             // 
-            this.EmployName.DataPropertyName = "EmployName";
-            this.EmployName.HeaderText = "EmployeeName";
-            this.EmployName.Name = "EmployName";
-            this.EmployName.Width = 300;
+            this.NameEmployee.DataPropertyName = "NameEmployee";
+            this.NameEmployee.HeaderText = "EmployeeName";
+            this.NameEmployee.Name = "NameEmployee";
+            this.NameEmployee.Width = 400;
             // 
-            // Passport
+            // PassportEmployee
             // 
-            this.Passport.DataPropertyName = "Passport";
-            this.Passport.HeaderText = "EmployeePassport";
-            this.Passport.Name = "Passport";
-            this.Passport.Width = 200;
+            this.PassportEmployee.DataPropertyName = "PassportEmployee";
+            this.PassportEmployee.HeaderText = "EmployeePassport";
+            this.PassportEmployee.Name = "PassportEmployee";
+            this.PassportEmployee.Width = 200;
             // 
-            // genders
+            // GenderEmployee
             // 
-            this.genders.DataPropertyName = "genders";
-            this.genders.HeaderText = "Gender";
-            this.genders.Name = "genders";
-            this.genders.Width = 80;
+            this.GenderEmployee.DataPropertyName = "GenderEmployee";
+            this.GenderEmployee.HeaderText = "Gender";
+            this.GenderEmployee.Name = "GenderEmployee";
             // 
-            // PositionID
+            // IdPositonEmployee
             // 
-            this.PositionID.DataPropertyName = "idEmPosition";
-            this.PositionID.HeaderText = "IdPosition";
-            this.PositionID.Name = "PositionID";
-            this.PositionID.Width = 200;
+            this.IdPositonEmployee.DataPropertyName = "IdPositonEmployee";
+            this.IdPositonEmployee.HeaderText = "IdPosition";
+            this.IdPositonEmployee.Name = "IdPositonEmployee";
             // 
             // IdPosition
             // 
             this.IdPosition.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.IdPosition.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.IdPosition.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.IdPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.IdPosition.FormattingEnabled = true;
+            this.IdPosition.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.IdPosition.Location = new System.Drawing.Point(498, 81);
             this.IdPosition.Name = "IdPosition";
             this.IdPosition.Size = new System.Drawing.Size(121, 21);
@@ -124,21 +131,23 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(498, 130);
+            this.button3.Location = new System.Drawing.Point(233, 130);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 24;
-            this.button3.Text = "button3";
+            this.button3.Text = "Change";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(242, 130);
+            this.button2.Location = new System.Drawing.Point(340, 130);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 23;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -148,7 +157,7 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
-         
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Passport_text
             // 
@@ -226,11 +235,54 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Name";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(139, 193);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(180, 20);
+            this.textBox1.TabIndex = 28;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(16, 195);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 16);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Input passport";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(340, 191);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 30;
+            this.button4.Text = "Search";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(437, 191);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 31;
+            this.button5.Text = "Cancel";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.click);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.IdPosition);
@@ -245,7 +297,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmEmployee";
-            this.Text = "Employee11";
+            this.Text = "frmEmployee";
+            this.Load += new System.EventHandler(this.frmEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,12 +309,6 @@
 
         private System.Windows.Forms.LinkLabel click;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Passport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genders;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PositionID;
-        private System.Windows.Forms.ComboBox IdPosition;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -272,5 +319,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PassportEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GenderEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPositonEmployee;
+        private System.Windows.Forms.ComboBox IdPosition;
     }
 }

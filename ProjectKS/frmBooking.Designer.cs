@@ -29,175 +29,263 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.employeeValue = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tbEmployeeName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.tbTotalExCost = new System.Windows.Forms.TextBox();
+            this.btnTotalExCost = new System.Windows.Forms.Button();
+            this.btnDeleteRoomChoose = new System.Windows.Forms.Button();
+            this.tbDeleteRoomChoose = new System.Windows.Forms.TextBox();
+            this.tbEmployeePassport = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dtExPaidDay = new System.Windows.Forms.DateTimePicker();
+            this.dtBookingDay = new System.Windows.Forms.DateTimePicker();
+            this.dgvRoomChoose = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.idBookingValue = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbMaxPeople = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnChooseRoom = new System.Windows.Forms.Button();
+            this.cbRoomType = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvRoomList = new System.Windows.Forms.DataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnBooking = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbCustomerGender = new System.Windows.Forms.ComboBox();
+            this.tbCustomerPhoneNumber = new System.Windows.Forms.TextBox();
+            this.tbCustomerEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.emailValue = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.phoneValue = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.nameValue = new System.Windows.Forms.TextBox();
+            this.tbCustomerName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.passportValue = new System.Windows.Forms.TextBox();
+            this.tbCustomerPassport = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.idValue = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomChoose)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomList)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Location = new System.Drawing.Point(335, 352);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Employee:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(129, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Booking ID:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label1.Text = "Employee";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 92);
+            this.label3.Location = new System.Drawing.Point(462, 352);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Booking day:";
+            this.label3.Text = "Booking day";
             // 
-            // employeeValue
+            // tbEmployeeName
             // 
-            this.employeeValue.Location = new System.Drawing.Point(9, 50);
-            this.employeeValue.Name = "employeeValue";
-            this.employeeValue.Size = new System.Drawing.Size(100, 20);
-            this.employeeValue.TabIndex = 3;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 123);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(8, 184);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(101, 21);
-            this.comboBox2.TabIndex = 6;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.tbEmployeeName.Location = new System.Drawing.Point(338, 388);
+            this.tbEmployeeName.Name = "tbEmployeeName";
+            this.tbEmployeeName.Size = new System.Drawing.Size(103, 20);
+            this.tbEmployeeName.TabIndex = 3;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.tbTotalExCost);
+            this.groupBox1.Controls.Add(this.btnTotalExCost);
+            this.groupBox1.Controls.Add(this.btnDeleteRoomChoose);
+            this.groupBox1.Controls.Add(this.tbDeleteRoomChoose);
+            this.groupBox1.Controls.Add(this.tbEmployeePassport);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.dtExPaidDay);
+            this.groupBox1.Controls.Add(this.dtBookingDay);
+            this.groupBox1.Controls.Add(this.dgvRoomChoose);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.tbEmployeeName);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.btnBooking);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(644, 451);
+            this.groupBox1.Size = new System.Drawing.Size(925, 556);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking room";
             // 
-            // groupBox2
+            // tbTotalExCost
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.idBookingValue);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.employeeValue);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Location = new System.Drawing.Point(15, 19);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(311, 220);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Choosing Room:";
+            this.tbTotalExCost.Location = new System.Drawing.Point(465, 306);
+            this.tbTotalExCost.Name = "tbTotalExCost";
+            this.tbTotalExCost.Size = new System.Drawing.Size(92, 20);
+            this.tbTotalExCost.TabIndex = 24;
             // 
-            // button4
+            // btnTotalExCost
             // 
-            this.button4.Location = new System.Drawing.Point(138, 159);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 47);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Choose Room";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnTotalExCost.Location = new System.Drawing.Point(465, 258);
+            this.btnTotalExCost.Name = "btnTotalExCost";
+            this.btnTotalExCost.Size = new System.Drawing.Size(92, 39);
+            this.btnTotalExCost.TabIndex = 23;
+            this.btnTotalExCost.Text = "Total Expected Cost";
+            this.btnTotalExCost.UseVisualStyleBackColor = true;
+            this.btnTotalExCost.Click += new System.EventHandler(this.btnTotalExCost_Click);
+            // 
+            // btnDeleteRoomChoose
+            // 
+            this.btnDeleteRoomChoose.Location = new System.Drawing.Point(338, 258);
+            this.btnDeleteRoomChoose.Name = "btnDeleteRoomChoose";
+            this.btnDeleteRoomChoose.Size = new System.Drawing.Size(103, 39);
+            this.btnDeleteRoomChoose.TabIndex = 22;
+            this.btnDeleteRoomChoose.Text = "Delete Room Choose";
+            this.btnDeleteRoomChoose.UseVisualStyleBackColor = true;
+            this.btnDeleteRoomChoose.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // tbDeleteRoomChoose
+            // 
+            this.tbDeleteRoomChoose.Location = new System.Drawing.Point(338, 307);
+            this.tbDeleteRoomChoose.Name = "tbDeleteRoomChoose";
+            this.tbDeleteRoomChoose.Size = new System.Drawing.Size(103, 20);
+            this.tbDeleteRoomChoose.TabIndex = 21;
+            this.tbDeleteRoomChoose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDeleteRoomChoose_KeyPress);
+            // 
+            // tbEmployeePassport
+            // 
+            this.tbEmployeePassport.Location = new System.Drawing.Point(338, 488);
+            this.tbEmployeePassport.Name = "tbEmployeePassport";
+            this.tbEmployeePassport.Size = new System.Drawing.Size(103, 20);
+            this.tbEmployeePassport.TabIndex = 19;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(335, 441);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 13);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Employee Passport";
+            // 
+            // dtExPaidDay
+            // 
+            this.dtExPaidDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtExPaidDay.Location = new System.Drawing.Point(465, 488);
+            this.dtExPaidDay.Name = "dtExPaidDay";
+            this.dtExPaidDay.Size = new System.Drawing.Size(92, 20);
+            this.dtExPaidDay.TabIndex = 17;
+            // 
+            // dtBookingDay
+            // 
+            this.dtBookingDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtBookingDay.Location = new System.Drawing.Point(465, 385);
+            this.dtBookingDay.Name = "dtBookingDay";
+            this.dtBookingDay.Size = new System.Drawing.Size(92, 20);
+            this.dtBookingDay.TabIndex = 16;
+            // 
+            // dgvRoomChoose
+            // 
+            this.dgvRoomChoose.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoomChoose.Location = new System.Drawing.Point(18, 307);
+            this.dgvRoomChoose.Name = "dgvRoomChoose";
+            this.dgvRoomChoose.Size = new System.Drawing.Size(302, 201);
+            this.dgvRoomChoose.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 274);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "List of Room Choosed";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 159);
+            this.label12.Location = new System.Drawing.Point(462, 441);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(98, 13);
+            this.label12.Size = new System.Drawing.Size(95, 13);
             this.label12.TabIndex = 11;
-            this.label12.Text = "Expected paid day:";
+            this.label12.Text = "Expected paid day";
             // 
-            // idBookingValue
+            // groupBox2
             // 
-            this.idBookingValue.Location = new System.Drawing.Point(132, 50);
-            this.idBookingValue.Name = "idBookingValue";
-            this.idBookingValue.Size = new System.Drawing.Size(121, 20);
-            this.idBookingValue.TabIndex = 10;
+            this.groupBox2.Controls.Add(this.cbMaxPeople);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.btnChooseRoom);
+            this.groupBox2.Controls.Add(this.cbRoomType);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.dgvRoomList);
+            this.groupBox2.Location = new System.Drawing.Point(15, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(586, 233);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Choosing Room:";
+      
             // 
-            // comboBox3
+            // cbMaxPeople
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(138, 123);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(115, 21);
-            this.comboBox3.TabIndex = 9;
+            this.cbMaxPeople.FormattingEnabled = true;
+            this.cbMaxPeople.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbMaxPeople.Location = new System.Drawing.Point(118, 50);
+            this.cbMaxPeople.Name = "cbMaxPeople";
+            this.cbMaxPeople.Size = new System.Drawing.Size(77, 21);
+            this.cbMaxPeople.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(115, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "People Number";
+            // 
+            // btnChooseRoom
+            // 
+            this.btnChooseRoom.Location = new System.Drawing.Point(220, 25);
+            this.btnChooseRoom.Name = "btnChooseRoom";
+            this.btnChooseRoom.Size = new System.Drawing.Size(85, 47);
+            this.btnChooseRoom.TabIndex = 14;
+            this.btnChooseRoom.Text = "Choose Room From List";
+            this.btnChooseRoom.UseVisualStyleBackColor = true;
+            this.btnChooseRoom.Click += new System.EventHandler(this.btnChooseRoom_Click);
+            // 
+            // cbRoomType
+            // 
+            this.cbRoomType.FormattingEnabled = true;
+            this.cbRoomType.Items.AddRange(new object[] {
+            "VIP",
+            "NOT VIP"});
+            this.cbRoomType.Location = new System.Drawing.Point(8, 49);
+            this.cbRoomType.Name = "cbRoomType";
+            this.cbRoomType.Size = new System.Drawing.Size(82, 21);
+            this.cbRoomType.TabIndex = 9;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(135, 92);
+            this.label11.Location = new System.Drawing.Point(6, 25);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 13);
+            this.label11.Size = new System.Drawing.Size(74, 13);
             this.label11.TabIndex = 8;
-            this.label11.Text = "Type of Room:";
+            this.label11.Text = "Type of Room";
             // 
             // label4
             // 
@@ -207,191 +295,158 @@
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 7;
             // 
-            // button3
+            // dgvRoomList
             // 
-            this.button3.Location = new System.Drawing.Point(435, 377);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 47);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Close";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.dgvRoomList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoomList.Location = new System.Drawing.Point(3, 90);
+            this.dgvRoomList.Name = "dgvRoomList";
+            this.dgvRoomList.Size = new System.Drawing.Size(577, 134);
+            this.dgvRoomList.TabIndex = 8;
+            this.dgvRoomList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoomList_CellContentClick);
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(510, 293);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 47);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(733, 461);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(107, 47);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button1
+            // btnBooking
             // 
-            this.button1.Location = new System.Drawing.Point(358, 293);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 47);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Booking";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBooking.Location = new System.Drawing.Point(733, 352);
+            this.btnBooking.Name = "btnBooking";
+            this.btnBooking.Size = new System.Drawing.Size(107, 47);
+            this.btnBooking.TabIndex = 10;
+            this.btnBooking.Text = "Booking";
+            this.btnBooking.UseVisualStyleBackColor = true;
+            this.btnBooking.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Controls.Add(this.cbCustomerGender);
+            this.groupBox3.Controls.Add(this.tbCustomerPhoneNumber);
+            this.groupBox3.Controls.Add(this.tbCustomerEmail);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.emailValue);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.phoneValue);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.nameValue);
+            this.groupBox3.Controls.Add(this.tbCustomerName);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.passportValue);
+            this.groupBox3.Controls.Add(this.tbCustomerPassport);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.idValue);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(332, 12);
+            this.groupBox3.Location = new System.Drawing.Point(607, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(308, 275);
+            this.groupBox3.Size = new System.Drawing.Size(309, 275);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Information";
             // 
-            // checkBox2
+            // cbCustomerGender
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(73, 134);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(60, 17);
-            this.checkBox2.TabIndex = 24;
-            this.checkBox2.Text = "Female";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.cbCustomerGender.FormattingEnabled = true;
+            this.cbCustomerGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbCustomerGender.Location = new System.Drawing.Point(18, 130);
+            this.cbCustomerGender.Name = "cbCustomerGender";
+            this.cbCustomerGender.Size = new System.Drawing.Size(100, 21);
+            this.cbCustomerGender.TabIndex = 25;
             // 
-            // checkBox1
+            // tbCustomerPhoneNumber
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(18, 134);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(49, 17);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Male";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.tbCustomerPhoneNumber.Location = new System.Drawing.Point(185, 57);
+            this.tbCustomerPhoneNumber.Name = "tbCustomerPhoneNumber";
+            this.tbCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.tbCustomerPhoneNumber.TabIndex = 24;
+            this.tbCustomerPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPhoneNumber_KeyPress);
+            // 
+            // tbCustomerEmail
+            // 
+            this.tbCustomerEmail.Location = new System.Drawing.Point(185, 130);
+            this.tbCustomerEmail.Name = "tbCustomerEmail";
+            this.tbCustomerEmail.Size = new System.Drawing.Size(100, 20);
+            this.tbCustomerEmail.TabIndex = 23;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(185, 176);
+            this.label10.Location = new System.Drawing.Point(182, 99);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 22;
-            this.label10.Text = "Email:";
-            // 
-            // emailValue
-            // 
-            this.emailValue.Location = new System.Drawing.Point(188, 211);
-            this.emailValue.Name = "emailValue";
-            this.emailValue.Size = new System.Drawing.Size(100, 20);
-            this.emailValue.TabIndex = 21;
+            this.label10.Text = "Email";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(15, 99);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.Size = new System.Drawing.Size(42, 13);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Gender:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // phoneValue
-            // 
-            this.phoneValue.Location = new System.Drawing.Point(185, 131);
-            this.phoneValue.Name = "phoneValue";
-            this.phoneValue.Size = new System.Drawing.Size(100, 20);
-            this.phoneValue.TabIndex = 19;
+            this.label9.Text = "Gender";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(182, 99);
+            this.label8.Location = new System.Drawing.Point(182, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 13);
+            this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Phone number:";
+            this.label8.Text = "Phone number";
             // 
-            // nameValue
+            // tbCustomerName
             // 
-            this.nameValue.Location = new System.Drawing.Point(185, 57);
-            this.nameValue.Name = "nameValue";
-            this.nameValue.Size = new System.Drawing.Size(100, 20);
-            this.nameValue.TabIndex = 17;
+            this.tbCustomerName.Location = new System.Drawing.Point(18, 57);
+            this.tbCustomerName.Name = "tbCustomerName";
+            this.tbCustomerName.Size = new System.Drawing.Size(100, 20);
+            this.tbCustomerName.TabIndex = 17;
+            this.tbCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerName_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(182, 32);
+            this.label7.Location = new System.Drawing.Point(15, 32);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Name:";
+            this.label7.Text = "Name";
             // 
-            // passportValue
+            // tbCustomerPassport
             // 
-            this.passportValue.Location = new System.Drawing.Point(19, 211);
-            this.passportValue.Name = "passportValue";
-            this.passportValue.Size = new System.Drawing.Size(100, 20);
-            this.passportValue.TabIndex = 15;
-            this.passportValue.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.tbCustomerPassport.Location = new System.Drawing.Point(19, 211);
+            this.tbCustomerPassport.Name = "tbCustomerPassport";
+            this.tbCustomerPassport.Size = new System.Drawing.Size(100, 20);
+            this.tbCustomerPassport.TabIndex = 15;
+            this.tbCustomerPassport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPassport_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(16, 176);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Passport:";
-            // 
-            // idValue
-            // 
-            this.idValue.Location = new System.Drawing.Point(18, 57);
-            this.idValue.Name = "idValue";
-            this.idValue.Size = new System.Drawing.Size(100, 20);
-            this.idValue.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Id:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 245);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(314, 193);
-            this.dataGridView1.TabIndex = 8;
+            this.label6.Text = "Passport";
             // 
             // frmBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 450);
+            this.ClientSize = new System.Drawing.Size(928, 551);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmBooking";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.frmBooking_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomChoose)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoomList)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,36 +454,40 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox employeeValue;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox tbEmployeeName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox idValue;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox passportValue;
+        private System.Windows.Forms.DataGridView dgvRoomList;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnBooking;
+        private System.Windows.Forms.TextBox tbCustomerPassport;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox phoneValue;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox nameValue;
+        private System.Windows.Forms.TextBox tbCustomerName;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox emailValue;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox idBookingValue;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbRoomType;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnChooseRoom;
+        private System.Windows.Forms.ComboBox cbCustomerGender;
+        private System.Windows.Forms.TextBox tbCustomerPhoneNumber;
+        private System.Windows.Forms.TextBox tbCustomerEmail;
+        private System.Windows.Forms.ComboBox cbMaxPeople;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvRoomChoose;
+        private System.Windows.Forms.DateTimePicker dtExPaidDay;
+        private System.Windows.Forms.DateTimePicker dtBookingDay;
+        private System.Windows.Forms.TextBox tbEmployeePassport;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tbDeleteRoomChoose;
+        private System.Windows.Forms.Button btnDeleteRoomChoose;
+        private System.Windows.Forms.TextBox tbTotalExCost;
+        private System.Windows.Forms.Button btnTotalExCost;
     }
 }

@@ -31,6 +31,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvCustomerList = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbFindName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.cbCustomerGender = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
@@ -48,9 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbFindName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -104,7 +104,37 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Information";
+<<<<<<< HEAD
            
+=======
+            // 
+            // tbFindName
+            // 
+            this.tbFindName.Location = new System.Drawing.Point(498, 192);
+            this.tbFindName.Name = "tbFindName";
+            this.tbFindName.Size = new System.Drawing.Size(185, 20);
+            this.tbFindName.TabIndex = 23;
+            this.tbFindName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFindName_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(495, 165);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Enter Name to Find";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(253, 192);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 21;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+>>>>>>> 600d4559f9000b35bc6d7236103d8553a0325a29
             // 
 
            ////////////////////////////////////////////////////////////////////////
@@ -128,7 +158,10 @@
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
          
+=======
+>>>>>>> 600d4559f9000b35bc6d7236103d8553a0325a29
             // 
             // btnFind
             // 
@@ -166,6 +199,7 @@
             this.tbCustomerPhoneNumber.Name = "tbCustomerPhoneNumber";
             this.tbCustomerPhoneNumber.Size = new System.Drawing.Size(217, 20);
             this.tbCustomerPhoneNumber.TabIndex = 12;
+            this.tbCustomerPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPhoneNumber_KeyPress);
             // 
             // tbCustomerEmail
             // 
@@ -192,7 +226,10 @@
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Passport ";
+<<<<<<< HEAD
    
+=======
+>>>>>>> 600d4559f9000b35bc6d7236103d8553a0325a29
             // 
             // label5
             // 
@@ -209,6 +246,7 @@
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.Size = new System.Drawing.Size(217, 20);
             this.tbCustomerName.TabIndex = 7;
+            this.tbCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerName_KeyPress);
             // 
             // tbCustomerPassport
             // 
@@ -216,6 +254,7 @@
             this.tbCustomerPassport.Name = "tbCustomerPassport";
             this.tbCustomerPassport.Size = new System.Drawing.Size(217, 20);
             this.tbCustomerPassport.TabIndex = 6;
+            this.tbCustomerPassport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPassport_KeyPress);
             // 
             // tbCustomerId
             // 
@@ -259,32 +298,6 @@
             this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id ";
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(253, 192);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 21;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(495, 165);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Enter Name to Find";
-            // 
-            // tbFindName
-            // 
-            this.tbFindName.Location = new System.Drawing.Point(498, 192);
-            this.tbFindName.Name = "tbFindName";
-            this.tbFindName.Size = new System.Drawing.Size(185, 20);
-            this.tbFindName.TabIndex = 23;
             // 
             // frmCustomer
             // 
