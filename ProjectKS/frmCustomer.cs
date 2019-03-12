@@ -124,7 +124,7 @@ namespace ProjectKS
             return output;
         }
 
->>>>>>> 600d4559f9000b35bc6d7236103d8553a0325a29
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -210,8 +210,12 @@ namespace ProjectKS
             dgvCustomerList.DataSource = table;
         }
 
-<<<<<<< HEAD
-=======
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void tbCustomerName_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -249,6 +253,6 @@ namespace ProjectKS
                 // Handled: go duoc
             }
         }
->>>>>>> 600d4559f9000b35bc6d7236103d8553a0325a29
+
     }
 }

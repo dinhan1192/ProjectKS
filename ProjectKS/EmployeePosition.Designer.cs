@@ -65,9 +65,9 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-<<<<<<< HEAD
-            this.ID,
-            this.PositionName});
+         //   this.ID,
+          // this.PositionName
+            });
             this.dataGridView1.Location = new System.Drawing.Point(98, 172);
 =======
             this.IdPosition,

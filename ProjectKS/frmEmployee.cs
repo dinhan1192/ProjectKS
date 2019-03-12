@@ -18,7 +18,7 @@ namespace ProjectKS
         int index;
         List<object> positionL;
         int l;
-        SqlConnection conn = new SqlConnection( @"Data Source = DESKTOP - CL7BVQ5\SEKHARSQL; Initial Catalog = Project_Quanlykhachsan; Integrated Security = True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
 
         public frmEmployee()
         {
@@ -255,8 +255,6 @@ namespace ProjectKS
                 e.Handled = true;
             }
         }
-
-       
 
     }
 }

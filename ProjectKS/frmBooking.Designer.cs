@@ -233,7 +233,6 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Choosing Room:";
-      
             // 
             // cbMaxPeople
             // 
@@ -277,6 +276,7 @@
             this.cbRoomType.Name = "cbRoomType";
             this.cbRoomType.Size = new System.Drawing.Size(82, 21);
             this.cbRoomType.TabIndex = 9;
+            
             // 
             // label11
             // 

@@ -76,7 +76,7 @@
             this.PassportEmployee,
             this.GenderEmployee,
             this.IdPositonEmployee});
-            this.dataGridView1.Location = new System.Drawing.Point(-5, 256);
+            this.dataGridView1.Location = new System.Drawing.Point(-2, 243);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(808, 182);
             this.dataGridView1.TabIndex = 26;
@@ -272,6 +272,7 @@
             this.button5.TabIndex = 31;
             this.button5.Text = "Cancel";
             this.button5.UseVisualStyleBackColor = true;
+        
             // 
             // frmEmployee
             // 
