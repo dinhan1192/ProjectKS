@@ -3,7 +3,6 @@ C:\Users\Admin\source\repos\ProjectKS\ProjectKS\bin\Debug\ProjectKS.exe
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\bin\Debug\ProjectKS.pdb
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csprojAssemblyReference.cache
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Form1.resources
-C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Form2.resources
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Properties.Resources.resources
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csproj.GenerateResource.cache
 C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csproj.CoreCompileInputs.cache
@@ -71,4 +70,16 @@ E:\Hotel1\Hotel12\ProjectKS\obj\Debug\ProjectKS.csproj.GenerateResource.cache
 E:\Hotel1\Hotel12\ProjectKS\obj\Debug\ProjectKS.csproj.CoreCompileInputs.cache
 E:\Hotel1\Hotel12\ProjectKS\obj\Debug\ProjectKS.exe
 E:\Hotel1\Hotel12\ProjectKS\obj\Debug\ProjectKS.pdb
+<<<<<<< HEAD
 C:\HOTEL\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmListService.resources
+=======
+C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmEmployee.resources
+C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.EmployeePosition.resources
+C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmCustomer.resources
+C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmBooking.resources
+C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmBill.resources
+C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmListRoom.resources
+C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmListService.resources
+C:\Users\Admin\source\repos\ProjectKS\ProjectKS\obj\Debug\ProjectKS.TypeRoom.resources
+>>>>>>> 6867b221d5043773178376fc7a696a67c89b2d68
+C:\HOTEL\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmOrderService.resources

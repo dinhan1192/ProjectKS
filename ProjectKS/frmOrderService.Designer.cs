@@ -105,7 +105,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "label2";
             // 
-            // OrderService
+            // frmOrderService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,7 +114,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Name = "OrderService";
+            this.Name = "frmOrderService";
             this.Text = "OrderService";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

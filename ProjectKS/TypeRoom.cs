@@ -25,12 +25,8 @@ namespace ProjectKS
         public bool Validate()
         {
             bool output = true;
-            int id
-            if ()
-            {
-
-            }
-
+            int id;
+            
 
             return output;
         }
