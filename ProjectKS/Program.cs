@@ -16,7 +16,7 @@ namespace ProjectKS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBooking());
+            Application.Run(new frmCustomer());
         }
     }
 }

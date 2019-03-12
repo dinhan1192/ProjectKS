@@ -111,12 +111,14 @@ namespace ProjectKS
 
                     for (int i = 0; i < (dgvRoomChoose.Rows.Count - 1); i++)
                     {
+                        TimeSpan diff = exPaidDay.Subtract(bookingDay);
+                        int valuediff = Convert.ToInt32(diff.TotalDays);
                         string valueRoomName = Convert.ToString(dgvRoomChoose.Rows[i].Cells[0].Value);
                         //tbEmployeeName.Text = @"INSERT INTO ListRoomBOOKING VALUES" + "((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text + "') AND CheckIn = '" + bookingDay + "'), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + row.Cells[0].Value + "'), (SELECT SUM(PriceRoom) FROM ListRoomChoose))";
                         //tbDeleteRoomChoose.Text = @"INSERT INTO ListRoomBOOKING " + "VALUES ((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text + "')), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + valueRoomName1 + "'), (SELECT SUM(PriceRoom) FROM ListRoomChoose))";
                         //return;
                         commandListRoomBooking = conn.CreateCommand();
-                        commandListRoomBooking.CommandText = @"INSERT INTO ListRoomBOOKING(IdBooking, IdRoom, RoomBookingFee) VALUES" + "((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text.ToString() + "') AND CheckIn = '"+BookingDay+"'), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + valueRoomName + "'), (SELECT SUM(PriceRoom) FROM ListRoomChoose))";
+                        commandListRoomBooking.CommandText = @"INSERT INTO ListRoomBOOKING(IdBooking, IdRoom, RoomBookingFee) VALUES" + "((SELECT IdBooking FROM Booking WHERE IdCustomer = (SELECT IdCustomer FROM Customer WHERE PassportCustomer ='" + tbCustomerPassport.Text.ToString() + "') AND CheckIn = '"+BookingDay+"'), (SELECT IdRoom FROM ListRoom WHERE RoomName = '" + valueRoomName + "'), ((SELECT SUM(PriceRoom) FROM ListRoomChoose) * '"+ valuediff +"'))";
                         commandListRoomBooking.ExecuteNonQuery();
                     }
 
@@ -243,6 +245,41 @@ namespace ProjectKS
             {
                 e.Handled = true;
             }
+        }
+
+        
+        private void btnTotalExCost_Click(object sender, EventArgs e)
+        {
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            DateTime bookingDay = DateTime.ParseExact(dtBookingDay.Text, new string[] { "dd/MM/yyyy" }, provider, DateTimeStyles.None);
+            DateTime exPaidDay = DateTime.ParseExact(dtExPaidDay.Text, new string[] { "dd/MM/yyyy" }, provider, DateTimeStyles.None);
+            string BookingDay = bookingDay.ToString("yyyy-MM-dd");
+            string ExPaidDay = exPaidDay.ToString("yyyy-MM-dd");
+
+            System.TimeSpan diff = exPaidDay.Subtract(bookingDay);
+
+            int sum = 0;
+
+            foreach(DataGridViewRow row in dgvRoomChoose.Rows)
+            {
+                int RoomCost = Convert.ToInt32(row.Cells[1].Value);
+                sum += RoomCost;
+            }
+
+            int valuediff = 0;
+            valuediff = Convert.ToInt32(diff.TotalDays);
+
+            int TotalExCost = 0;
+            TotalExCost = valuediff * sum;
+
+            tbTotalExCost.Text = TotalExCost.ToString();
+            
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            Close();
         }
 
         private void tbDeleteRoomChoose_KeyPress(object sender, KeyPressEventArgs e)

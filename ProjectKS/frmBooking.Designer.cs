@@ -32,6 +32,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbEmployeeName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbTotalExCost = new System.Windows.Forms.TextBox();
+            this.btnTotalExCost = new System.Windows.Forms.Button();
             this.btnDeleteRoomChoose = new System.Windows.Forms.Button();
             this.tbDeleteRoomChoose = new System.Windows.Forms.TextBox();
             this.tbEmployeePassport = new System.Windows.Forms.TextBox();
@@ -50,7 +52,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dgvRoomList = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnBooking = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbCustomerGender = new System.Windows.Forms.ComboBox();
@@ -98,6 +99,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.tbTotalExCost);
+            this.groupBox1.Controls.Add(this.btnTotalExCost);
             this.groupBox1.Controls.Add(this.btnDeleteRoomChoose);
             this.groupBox1.Controls.Add(this.tbDeleteRoomChoose);
             this.groupBox1.Controls.Add(this.tbEmployeePassport);
@@ -112,7 +115,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnClose);
-            this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnBooking);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -123,11 +125,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking room";
             // 
+            // tbTotalExCost
+            // 
+            this.tbTotalExCost.Location = new System.Drawing.Point(465, 306);
+            this.tbTotalExCost.Name = "tbTotalExCost";
+            this.tbTotalExCost.Size = new System.Drawing.Size(92, 20);
+            this.tbTotalExCost.TabIndex = 24;
+            // 
+            // btnTotalExCost
+            // 
+            this.btnTotalExCost.Location = new System.Drawing.Point(465, 258);
+            this.btnTotalExCost.Name = "btnTotalExCost";
+            this.btnTotalExCost.Size = new System.Drawing.Size(92, 39);
+            this.btnTotalExCost.TabIndex = 23;
+            this.btnTotalExCost.Text = "Total Expected Cost";
+            this.btnTotalExCost.UseVisualStyleBackColor = true;
+            this.btnTotalExCost.Click += new System.EventHandler(this.btnTotalExCost_Click);
+            // 
             // btnDeleteRoomChoose
             // 
-            this.btnDeleteRoomChoose.Location = new System.Drawing.Point(338, 274);
+            this.btnDeleteRoomChoose.Location = new System.Drawing.Point(338, 258);
             this.btnDeleteRoomChoose.Name = "btnDeleteRoomChoose";
-            this.btnDeleteRoomChoose.Size = new System.Drawing.Size(150, 23);
+            this.btnDeleteRoomChoose.Size = new System.Drawing.Size(103, 39);
             this.btnDeleteRoomChoose.TabIndex = 22;
             this.btnDeleteRoomChoose.Text = "Delete Room Choose";
             this.btnDeleteRoomChoose.UseVisualStyleBackColor = true;
@@ -137,7 +156,7 @@
             // 
             this.tbDeleteRoomChoose.Location = new System.Drawing.Point(338, 307);
             this.tbDeleteRoomChoose.Name = "tbDeleteRoomChoose";
-            this.tbDeleteRoomChoose.Size = new System.Drawing.Size(72, 20);
+            this.tbDeleteRoomChoose.Size = new System.Drawing.Size(103, 20);
             this.tbDeleteRoomChoose.TabIndex = 21;
             this.tbDeleteRoomChoose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDeleteRoomChoose_KeyPress);
             // 
@@ -292,19 +311,11 @@
             this.btnClose.TabIndex = 12;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(809, 335);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(107, 47);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnBooking
             // 
-            this.btnBooking.Location = new System.Drawing.Point(636, 335);
+            this.btnBooking.Location = new System.Drawing.Point(733, 352);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Size = new System.Drawing.Size(107, 47);
             this.btnBooking.TabIndex = 10;
@@ -448,7 +459,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvRoomList;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnBooking;
         private System.Windows.Forms.TextBox tbCustomerPassport;
         private System.Windows.Forms.Label label6;
@@ -476,5 +486,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tbDeleteRoomChoose;
         private System.Windows.Forms.Button btnDeleteRoomChoose;
+        private System.Windows.Forms.TextBox tbTotalExCost;
+        private System.Windows.Forms.Button btnTotalExCost;
     }
 }
