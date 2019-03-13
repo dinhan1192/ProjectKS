@@ -30,11 +30,6 @@
         {
             this.click = new System.Windows.Forms.LinkLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PassportEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenderEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdPositonEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdPosition = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,6 +45,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PassportEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenderEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPositionEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,46 +75,12 @@
             this.NameEmployee,
             this.PassportEmployee,
             this.GenderEmployee,
-            this.IdPositonEmployee});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 240);
+            this.IdPositionEmployee});
+            this.dataGridView1.Location = new System.Drawing.Point(2, 230);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(808, 182);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // IdEmployee
-            // 
-            this.IdEmployee.DataPropertyName = "IdEmployee";
-            this.IdEmployee.HeaderText = "IDEmployee";
-            this.IdEmployee.Name = "IdEmployee";
-            this.IdEmployee.Visible = false;
-            this.IdEmployee.Width = 70;
-            // 
-            // NameEmployee
-            // 
-            this.NameEmployee.DataPropertyName = "NameEmployee";
-            this.NameEmployee.HeaderText = "EmployeeName";
-            this.NameEmployee.Name = "NameEmployee";
-            this.NameEmployee.Width = 400;
-            // 
-            // PassportEmployee
-            // 
-            this.PassportEmployee.DataPropertyName = "PassportEmployee";
-            this.PassportEmployee.HeaderText = "EmployeePassport";
-            this.PassportEmployee.Name = "PassportEmployee";
-            this.PassportEmployee.Width = 200;
-            // 
-            // GenderEmployee
-            // 
-            this.GenderEmployee.DataPropertyName = "GenderEmployee";
-            this.GenderEmployee.HeaderText = "Gender";
-            this.GenderEmployee.Name = "GenderEmployee";
-            // 
-            // IdPositonEmployee
-            // 
-            this.IdPositonEmployee.DataPropertyName = "IdPositonEmployee";
-            this.IdPositonEmployee.HeaderText = "IdPosition";
-            this.IdPositonEmployee.Name = "IdPositonEmployee";
             // 
             // IdPosition
             // 
@@ -273,6 +239,40 @@
             this.button5.Text = "Cancel";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // IdEmployee
+            // 
+            this.IdEmployee.DataPropertyName = "IdEmployee";
+            this.IdEmployee.HeaderText = "IDEmployee";
+            this.IdEmployee.Name = "IdEmployee";
+            this.IdEmployee.Visible = false;
+            this.IdEmployee.Width = 70;
+            // 
+            // NameEmployee
+            // 
+            this.NameEmployee.DataPropertyName = "NameEmployee";
+            this.NameEmployee.HeaderText = "EmployeeName";
+            this.NameEmployee.Name = "NameEmployee";
+            this.NameEmployee.Width = 400;
+            // 
+            // PassportEmployee
+            // 
+            this.PassportEmployee.DataPropertyName = "PassportEmployee";
+            this.PassportEmployee.HeaderText = "EmployeePassport";
+            this.PassportEmployee.Name = "PassportEmployee";
+            this.PassportEmployee.Width = 200;
+            // 
+            // GenderEmployee
+            // 
+            this.GenderEmployee.DataPropertyName = "GenderEmployee";
+            this.GenderEmployee.HeaderText = "Gender";
+            this.GenderEmployee.Name = "GenderEmployee";
+            // 
+            // IdPositionEmployee
+            // 
+            this.IdPositionEmployee.DataPropertyName = "IdPositionEmployee";
+            this.IdPositionEmployee.HeaderText = "IdPosition";
+            this.IdPositionEmployee.Name = "IdPositionEmployee";
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,11 +323,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ComboBox IdPosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn PassportEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn GenderEmployee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPositonEmployee;
-        private System.Windows.Forms.ComboBox IdPosition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPositionEmployee;
     }
 }
