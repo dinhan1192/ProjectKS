@@ -45,7 +45,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(219, 86);
+            this.label1.Location = new System.Drawing.Point(295, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 10;
@@ -63,25 +63,14 @@
             // 
             // dataGridView1
             // 
- /**           this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-         //   this.ID,
-          // this.PositionName
-            });
-            this.dataGridView1.Location = new System.Drawing.Point(98, 172);
-=======
-            this.IdPosition,
-            this.NamePosition});
-            this.dataGridView1.Location = new System.Drawing.Point(-5, 190);
->>>>>>> 600d4559f9000b35bc6d7236103d8553a0325a29
+            this.dataGridView1.Location = new System.Drawing.Point(38, 50);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(701, 190);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-    */        // 
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 15;
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(298, 86);
+            this.textBox1.Location = new System.Drawing.Point(396, 86);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(179, 20);
             this.textBox1.TabIndex = 7;
