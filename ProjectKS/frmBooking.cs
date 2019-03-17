@@ -282,7 +282,6 @@ namespace ProjectKS
             Close();
         }
 
-    
 
         private void tbDeleteRoomChoose_KeyPress(object sender, KeyPressEventArgs e)
         {

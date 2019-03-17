@@ -30,6 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbIdBooking = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCustomer = new System.Windows.Forms.TextBox();
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -40,28 +43,27 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.billIdValue = new System.Windows.Forms.TextBox();
-            this.bookingIdValue = new System.Windows.Forms.TextBox();
+            this.txtIdBill = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
-            this.txtDienThoai = new System.Windows.Forms.TextBox();
-            this.txtCMT = new System.Windows.Forms.TextBox();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.txtIdCustomer = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LbidCustomer = new System.Windows.Forms.Label();
+            this.lbFullName = new System.Windows.Forms.Label();
+            this.lbPassport = new System.Windows.Forms.Label();
+            this.lbTelephone = new System.Windows.Forms.Label();
+            this.lbGender = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,25 +86,52 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbIdBooking);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.txtCustomer);
             this.groupBox1.Controls.Add(this.btnInHoaDon);
             this.groupBox1.Controls.Add(this.btnThanhToan);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.billIdValue);
-            this.groupBox1.Controls.Add(this.bookingIdValue);
+            this.groupBox1.Controls.Add(this.txtIdBill);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(101, 33);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(643, 407);
+            this.groupBox1.Size = new System.Drawing.Size(687, 481);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // cbIdBooking
+            // 
+            this.cbIdBooking.FormattingEnabled = true;
+            this.cbIdBooking.Location = new System.Drawing.Point(92, 86);
+            this.cbIdBooking.Name = "cbIdBooking";
+            this.cbIdBooking.Size = new System.Drawing.Size(100, 21);
+            this.cbIdBooking.TabIndex = 11;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(11, 56);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(60, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "IdCustomer";
+            // 
+            // txtCustomer
+            // 
+            this.txtCustomer.Location = new System.Drawing.Point(92, 53);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomer.TabIndex = 9;
+            this.txtCustomer.TextChanged += new System.EventHandler(this.txtCustomer_TextChanged);
             // 
             // btnInHoaDon
             // 
             this.btnInHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInHoaDon.Location = new System.Drawing.Point(146, 251);
+            this.btnInHoaDon.Location = new System.Drawing.Point(130, 356);
             this.btnInHoaDon.Name = "btnInHoaDon";
             this.btnInHoaDon.Size = new System.Drawing.Size(91, 23);
             this.btnInHoaDon.TabIndex = 8;
@@ -113,7 +142,7 @@
             // btnThanhToan
             // 
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhToan.Location = new System.Drawing.Point(27, 251);
+            this.btnThanhToan.Location = new System.Drawing.Point(14, 356);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(99, 23);
             this.btnThanhToan.TabIndex = 7;
@@ -129,7 +158,7 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Location = new System.Drawing.Point(27, 117);
+            this.groupBox4.Location = new System.Drawing.Point(11, 173);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(210, 114);
             this.groupBox4.TabIndex = 6;
@@ -187,37 +216,38 @@
             // button1
             // 
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(105, 83);
+            this.button1.Location = new System.Drawing.Point(105, 135);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 22);
             this.button1.TabIndex = 5;
             this.button1.Text = "Search";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // billIdValue
+            // txtIdBill
             // 
-            this.billIdValue.Location = new System.Drawing.Point(105, 57);
-            this.billIdValue.Name = "billIdValue";
-            this.billIdValue.Size = new System.Drawing.Size(100, 20);
-            this.billIdValue.TabIndex = 4;
-            // 
-            // bookingIdValue
-            // 
-            this.bookingIdValue.Location = new System.Drawing.Point(105, 26);
-            this.bookingIdValue.Name = "bookingIdValue";
-            this.bookingIdValue.Size = new System.Drawing.Size(100, 20);
-            this.bookingIdValue.TabIndex = 3;
+            this.txtIdBill.Location = new System.Drawing.Point(92, 13);
+            this.txtIdBill.Name = "txtIdBill";
+            this.txtIdBill.Size = new System.Drawing.Size(100, 20);
+            this.txtIdBill.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 57);
+            this.label3.Location = new System.Drawing.Point(24, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Bill ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Booking ID";
             // 
             // groupBox2
             // 
@@ -226,7 +256,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(254, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(383, 367);
+            this.groupBox2.Size = new System.Drawing.Size(383, 449);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bill Detail";
@@ -234,9 +264,9 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.dataGridView2);
-            this.groupBox6.Location = new System.Drawing.Point(7, 259);
+            this.groupBox6.Location = new System.Drawing.Point(7, 275);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(370, 120);
+            this.groupBox6.Size = new System.Drawing.Size(370, 152);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Service Fee Detail";
@@ -244,9 +274,10 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 19);
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(355, 111);
+            this.dataGridView2.Size = new System.Drawing.Size(364, 133);
             this.dataGridView2.TabIndex = 0;
             // 
             // groupBox5
@@ -254,7 +285,7 @@
             this.groupBox5.Controls.Add(this.dataGridView1);
             this.groupBox5.Location = new System.Drawing.Point(7, 151);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(370, 100);
+            this.groupBox5.Size = new System.Drawing.Size(370, 124);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Room Fee Detail ";
@@ -262,73 +293,32 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 20);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(355, 75);
+            this.dataGridView1.Size = new System.Drawing.Size(364, 105);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtEmail);
-            this.groupBox3.Controls.Add(this.txtGioiTinh);
-            this.groupBox3.Controls.Add(this.txtDienThoai);
-            this.groupBox3.Controls.Add(this.txtCMT);
-            this.groupBox3.Controls.Add(this.txtHoTen);
-            this.groupBox3.Controls.Add(this.txtIdCustomer);
+            this.groupBox3.Controls.Add(this.lbEmail);
+            this.groupBox3.Controls.Add(this.lbGender);
+            this.groupBox3.Controls.Add(this.lbTelephone);
+            this.groupBox3.Controls.Add(this.lbPassport);
+            this.groupBox3.Controls.Add(this.lbFullName);
+            this.groupBox3.Controls.Add(this.LbidCustomer);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(6, 35);
+            this.groupBox3.Location = new System.Drawing.Point(7, 26);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(371, 110);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Information";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(258, 73);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 11;
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(257, 44);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(100, 20);
-            this.txtGioiTinh.TabIndex = 10;
-            // 
-            // txtDienThoai
-            // 
-            this.txtDienThoai.Location = new System.Drawing.Point(258, 16);
-            this.txtDienThoai.Name = "txtDienThoai";
-            this.txtDienThoai.Size = new System.Drawing.Size(100, 20);
-            this.txtDienThoai.TabIndex = 9;
-            // 
-            // txtCMT
-            // 
-            this.txtCMT.Location = new System.Drawing.Point(72, 72);
-            this.txtCMT.Name = "txtCMT";
-            this.txtCMT.Size = new System.Drawing.Size(100, 20);
-            this.txtCMT.TabIndex = 8;
-            // 
-            // txtHoTen
-            // 
-            this.txtHoTen.Location = new System.Drawing.Point(72, 45);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(100, 20);
-            this.txtHoTen.TabIndex = 7;
-            // 
-            // txtIdCustomer
-            // 
-            this.txtIdCustomer.Location = new System.Drawing.Point(73, 17);
-            this.txtIdCustomer.Name = "txtIdCustomer";
-            this.txtIdCustomer.Size = new System.Drawing.Size(100, 20);
-            this.txtIdCustomer.TabIndex = 6;
             // 
             // label12
             // 
@@ -353,9 +343,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(191, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 3;
-            this.label10.Text = "Phone Number";
+            this.label10.Text = "Telephone";
             // 
             // label9
             // 
@@ -384,24 +374,70 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "IdCustomer";
             // 
-            // label2
+            // LbidCustomer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Booking ID";
+            this.LbidCustomer.AutoSize = true;
+            this.LbidCustomer.Location = new System.Drawing.Point(89, 22);
+            this.LbidCustomer.Name = "LbidCustomer";
+            this.LbidCustomer.Size = new System.Drawing.Size(16, 13);
+            this.LbidCustomer.TabIndex = 6;
+            this.LbidCustomer.Text = "---";
+            // 
+            // lbFullName
+            // 
+            this.lbFullName.AutoSize = true;
+            this.lbFullName.Location = new System.Drawing.Point(92, 44);
+            this.lbFullName.Name = "lbFullName";
+            this.lbFullName.Size = new System.Drawing.Size(16, 13);
+            this.lbFullName.TabIndex = 7;
+            this.lbFullName.Text = "---";
+            // 
+            // lbPassport
+            // 
+            this.lbPassport.AutoSize = true;
+            this.lbPassport.Location = new System.Drawing.Point(92, 75);
+            this.lbPassport.Name = "lbPassport";
+            this.lbPassport.Size = new System.Drawing.Size(16, 13);
+            this.lbPassport.TabIndex = 8;
+            this.lbPassport.Text = "---";
+            // 
+            // lbTelephone
+            // 
+            this.lbTelephone.AutoSize = true;
+            this.lbTelephone.Location = new System.Drawing.Point(266, 22);
+            this.lbTelephone.Name = "lbTelephone";
+            this.lbTelephone.Size = new System.Drawing.Size(16, 13);
+            this.lbTelephone.TabIndex = 9;
+            this.lbTelephone.Text = "---";
+            // 
+            // lbGender
+            // 
+            this.lbGender.AutoSize = true;
+            this.lbGender.Location = new System.Drawing.Point(269, 45);
+            this.lbGender.Name = "lbGender";
+            this.lbGender.Size = new System.Drawing.Size(16, 13);
+            this.lbGender.TabIndex = 10;
+            this.lbGender.Text = "---";
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(272, 75);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(16, 13);
+            this.lbEmail.TabIndex = 11;
+            this.lbEmail.Text = "---";
             // 
             // frmBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 452);
+            this.ClientSize = new System.Drawing.Size(800, 535);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmBill";
             this.Text = "Hóa Đơn";
+            this.Load += new System.EventHandler(this.frmBill_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -432,8 +468,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox billIdValue;
-        private System.Windows.Forms.TextBox bookingIdValue;
+        private System.Windows.Forms.TextBox txtIdBill;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -441,12 +476,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtGioiTinh;
-        private System.Windows.Forms.TextBox txtDienThoai;
-        private System.Windows.Forms.TextBox txtCMT;
-        private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.TextBox txtIdCustomer;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -454,5 +483,14 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtCustomer;
+        private System.Windows.Forms.ComboBox cbIdBooking;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbGender;
+        private System.Windows.Forms.Label lbTelephone;
+        private System.Windows.Forms.Label lbPassport;
+        private System.Windows.Forms.Label lbFullName;
+        private System.Windows.Forms.Label LbidCustomer;
     }
 }

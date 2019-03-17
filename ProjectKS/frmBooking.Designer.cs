@@ -124,6 +124,7 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking room";
+   
             // 
             // tbTotalExCost
             // 
@@ -276,7 +277,6 @@
             this.cbRoomType.Name = "cbRoomType";
             this.cbRoomType.Size = new System.Drawing.Size(82, 21);
             this.cbRoomType.TabIndex = 9;
-            
             // 
             // label11
             // 
