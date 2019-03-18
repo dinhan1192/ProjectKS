@@ -17,7 +17,7 @@ namespace ProjectKS
     {
         SqlConnection conn;
         SqlCommand commandBooking, commandCustomer, commandRoom, commandRoomChoose, commandListRoomBooking;
-        string str = @"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True";
+        string str = @"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True";
         // co / thi phai co @
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable tableRoomList = new DataTable();
