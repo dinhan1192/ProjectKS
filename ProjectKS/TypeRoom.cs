@@ -13,6 +13,7 @@ namespace ProjectKS
 {
     public partial class TypeRoom : Form
     {
+        string str = @"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True";
         public TypeRoom()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace ProjectKS
                 try
                 {
                     // ham ket noi
-                    SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+                    SqlConnection connect = new SqlConnection(str);
                     connect.Open(); // mo ket noi
                     string sql = "SELECT * FROM TypeRoom"; // lay hiet du lieu trong bang ListService
                     SqlCommand cmd = new SqlCommand(sql, connect);// thuc hien cau lenh truy van
@@ -48,7 +49,7 @@ namespace ProjectKS
                 }
                 finally
                 {
-                    SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+                    SqlConnection connect = new SqlConnection(str);
                     connect.Close();
                 }
             }
@@ -83,7 +84,7 @@ namespace ProjectKS
 
         private void insertButton_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+            SqlConnection connect = new SqlConnection(str);
             connect.Open();
             string query = "INSERT INTO TypeRoom VALUES('" + idTypeValue.Text + "','" + typeValue.Text + "','" + priceValue.Text + "')";
             SqlCommand cmdthem = new SqlCommand(query, connect);
@@ -101,9 +102,9 @@ namespace ProjectKS
 
             try
             {
-                SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+                SqlConnection connect = new SqlConnection(str);
                 connect.Open();
-                string sua = "UPDATE TypeRoom SET IdTypeRoom='" + idTypeValue.Text + "', TypeNameRoom='" + typeValue.Text + "',PrizeRoom='" + priceValue.Text + "' WHERE IdTypeRoom='" + idTypeValue.Text + "'";
+                string sua = "UPDATE TypeRoom SET IdTypeRoom='" + idTypeValue.Text + "', TypeNameRoom='" + typeValue.Text + "',PriceRoom='" + priceValue.Text + "' WHERE IdTypeRoom='" + idTypeValue.Text + "'";
                 SqlCommand cmdsua = new SqlCommand(sua, connect);
                 cmdsua.ExecuteNonQuery();
 
@@ -122,7 +123,7 @@ namespace ProjectKS
             insertButton.Enabled = true;
             clearButton.Enabled = true;
 
-            SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+            SqlConnection connect = new SqlConnection(str);
             connect.Open();
             string xoa = "DELETE TypeRoom WHERE IdTypeRoom='" + idTypeValue.Text + "'";
             SqlCommand cmdxoa = new SqlCommand(xoa, connect);

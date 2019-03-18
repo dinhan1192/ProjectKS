@@ -686,23 +686,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tuan\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Hotel1\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
+      "projectUniqueName": "D:\\Backup\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
       "projectName": "HotelLibrary",
-      "projectPath": "E:\\Hotel1\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
-      "packagesPath": "C:\\Users\\Tuan\\.nuget\\packages\\",
-      "outputPath": "E:\\Hotel1\\ProjectKS\\HotelLibrary\\obj\\",
+      "projectPath": "D:\\Backup\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\Backup\\ProjectKS\\HotelLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Tuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

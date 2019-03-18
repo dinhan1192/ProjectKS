@@ -13,6 +13,7 @@ namespace ProjectKS
 {
     public partial class frmListRoom : Form
     {
+        string str = @"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True";
         DataTable table;
         int index;
         public frmListRoom()
@@ -25,9 +26,10 @@ namespace ProjectKS
             try
             {
                 // ham ket noi
-                SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+                SqlConnection connect = new SqlConnection(str);
+
                 connect.Open(); // mo ket noi
-                string sql = "SELECT * FROM Room"; // lay hiet du lieu trong bang ListService
+                string sql = "SELECT * FROM ListRoom"; // lay hiet du lieu trong bang ListService
                 SqlCommand cmd = new SqlCommand(sql, connect);// thuc hien cau lenh truy van
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter con = new SqlDataAdapter(cmd); // van chuyen du lieu ve
@@ -43,7 +45,7 @@ namespace ProjectKS
             }
             finally
             {
-                SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+                SqlConnection connect = new SqlConnection(str);
                 connect.Close();
             }
         }
@@ -121,7 +123,7 @@ namespace ProjectKS
         }
         private void LoadComboBox()
         {
-            SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+            SqlConnection connect = new SqlConnection(str);
             connect.Open(); // mo ket noi
             string sql = "SELECT * FROM TypeRoom"; // lay hiet du lieu trong bang ListService
             SqlCommand cmd = new SqlCommand(sql, connect);
@@ -139,9 +141,9 @@ namespace ProjectKS
         {
             if (ValidateRoom())
             {
-                SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+                SqlConnection connect = new SqlConnection(str);
                 connect.Open();
-                string query = "INSERT INTO Room VALUES('" + nameRoomValue.Text + "','" + roomTypeValue.SelectedValue + "','" + roomTypeValue.Text + "','" + floorValue.Text + "','" + statusValue.Text + "','" + maxValue.Text + "')";
+                string query = "INSERT INTO ListRoom VALUES('" + roomTypeValue.SelectedValue + "','" + nameRoomValue.Text + "','" + roomTypeValue.Text + "','" + floorValue.Text + "','" + statusValue.Text + "','" + maxValue.Text + "')";
                 SqlCommand cmdthem = new SqlCommand(query, connect);
                 cmdthem.ExecuteNonQuery();
 
@@ -171,7 +173,7 @@ namespace ProjectKS
         {
             int index = dataGridView1.CurrentRow.Index;
             //IdRoomValue.Text = dataGridView1.Rows[index].Cells[0].Value.ToString();
-            nameRoomValue.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
+            nameRoomValue.Text = dataGridView1.Rows[index].Cells[2].Value.ToString();
             //idTypeRoom.Text = dataGridView1.Rows[index].Cells[2].Value.ToString();
             roomTypeValue.Text = dataGridView1.Rows[index].Cells[3].Value.ToString();
             floorValue.Text = dataGridView1.Rows[index].Cells[4].Value.ToString();
@@ -190,9 +192,9 @@ namespace ProjectKS
             insertButton.Enabled = true;
             clearButton.Enabled = true;
 
-            SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+            SqlConnection connect = new SqlConnection(str);
             connect.Open();
-            string xoa = "DELETE Room WHERE RoomName = '" + nameRoomValue.Text + "'";
+            string xoa = "DELETE ListRoom WHERE RoomName = '" + nameRoomValue.Text + "'";
             SqlCommand cmdxoa = new SqlCommand(xoa, connect);
             cmdxoa.ExecuteNonQuery();
 
@@ -211,9 +213,11 @@ namespace ProjectKS
 
             try
             {
-                SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-TB9VOSG;Initial Catalog=Hotel;Integrated Security=True");
+                SqlConnection connect = new SqlConnection(str);
                 connect.Open();
-                string sua = "UPDATE Room SET RoomName = '" + nameRoomValue.Text + "', TypeRoom = '" + roomTypeValue.Text + "', Floor = '" + floorValue.Text + "', Status = '" + statusValue.Text + "', MaxPeople = '" + maxValue.Text + "' WHERE IdRoom = '" + table.Rows[index][0] + "'";
+                int currentIndex = dataGridView1.CurrentRow.Index;
+                int userIdService = Convert.ToInt32(dataGridView1.Rows[currentIndex].Cells[0].Value.ToString());
+                string sua = "UPDATE ListRoom SET RoomName = '" + nameRoomValue.Text + "', TypeRoom = '" + roomTypeValue.Text + "', Floor = '" + floorValue.Text + "', Status = '" + statusValue.Text + "', MaxPeople = '" + maxValue.Text + "' WHERE IdRoom = '" + userIdService + "'";
                 SqlCommand cmdsua = new SqlCommand(sua, connect);
                 cmdsua.ExecuteNonQuery();
 
