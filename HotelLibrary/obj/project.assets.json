@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Hotel1\\Hotel12\\HotelLibrary\\HotelLibrary.csproj",
+      "projectUniqueName": "E:\\Hotel\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
       "projectName": "HotelLibrary",
-      "projectPath": "E:\\Hotel1\\Hotel12\\HotelLibrary\\HotelLibrary.csproj",
+      "projectPath": "E:\\Hotel\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
       "packagesPath": "C:\\Users\\Tuan\\.nuget\\packages\\",
-      "outputPath": "E:\\Hotel1\\Hotel12\\HotelLibrary\\obj\\",
+      "outputPath": "E:\\Hotel\\ProjectKS\\HotelLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

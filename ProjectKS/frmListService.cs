@@ -29,38 +29,38 @@ namespace ProjectKS
             }
         }
 
-        private bool Validate()
-        {
-            bool output = true;
-            if (idServiceValue.Text.Length == 0 || nameServiceValue.Text.Length == 0 || priceValue.Text.Length == 0)
-            {
-                output = false;
-            }
+        //private bool Validate()
+        //{
+        //    bool output = true;
+        //    if (idServiceValue.Text.Length == 0 || nameServiceValue.Text.Length == 0 || priceValue.Text.Length == 0)
+        //    {
+        //        output = false;
+        //    }
 
-            int idService = 0;
-            bool idServiceValid = int.TryParse(idServiceValue.Text , out idService);
-            if (!idServiceValid)
-            {
-                output = false;
-            }
+        //    int idService = 0;
+        //    bool idServiceValid = int.TryParse(idServiceValue.Text , out idService);
+        //    if (!idServiceValid)
+        //    {
+        //        output = false;
+        //    }
 
-            decimal priceService = 0;
-            bool priceServiceValid = decimal.TryParse(priceValue.Text, out priceService);
-            if (!priceServiceValid)
-            {
-                output = false;
-            }
-            if (idService < 0)
-            {
-                output = false;
-            }
-            if (priceService < 0)
-            {
-                output = false;
-            }
+        //    decimal priceService = 0;
+        //    bool priceServiceValid = decimal.TryParse(priceValue.Text, out priceService);
+        //    if (!priceServiceValid)
+        //    {
+        //        output = false;
+        //    }
+        //    if (idService < 0)
+        //    {
+        //        output = false;
+        //    }
+        //    if (priceService < 0)
+        //    {
+        //        output = false;
+        //    }
 
 
-            return output;
-        }
+        //    return output;
+        //}
     }
 }
