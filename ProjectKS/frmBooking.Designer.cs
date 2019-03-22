@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbEmployeeName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbEmployeeName = new System.Windows.Forms.ComboBox();
             this.tbTotalExCost = new System.Windows.Forms.TextBox();
             this.btnTotalExCost = new System.Windows.Forms.Button();
             this.btnDeleteRoomChoose = new System.Windows.Forms.Button();
@@ -89,16 +89,10 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Booking day";
             // 
-            // tbEmployeeName
-            // 
-            this.tbEmployeeName.Location = new System.Drawing.Point(338, 388);
-            this.tbEmployeeName.Name = "tbEmployeeName";
-            this.tbEmployeeName.Size = new System.Drawing.Size(103, 20);
-            this.tbEmployeeName.TabIndex = 3;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.tbEmployeeName);
             this.groupBox1.Controls.Add(this.tbTotalExCost);
             this.groupBox1.Controls.Add(this.btnTotalExCost);
             this.groupBox1.Controls.Add(this.btnDeleteRoomChoose);
@@ -111,7 +105,6 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.tbEmployeeName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnClose);
@@ -124,7 +117,15 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking room";
-   
+            // 
+            // tbEmployeeName
+            // 
+            this.tbEmployeeName.FormattingEnabled = true;
+            this.tbEmployeeName.Location = new System.Drawing.Point(338, 383);
+            this.tbEmployeeName.Name = "tbEmployeeName";
+            this.tbEmployeeName.Size = new System.Drawing.Size(103, 21);
+            this.tbEmployeeName.TabIndex = 25;
+            this.tbEmployeeName.SelectedIndexChanged += new System.EventHandler(this.tbEmployeeName_SelectedIndexChanged);
             // 
             // tbTotalExCost
             // 
@@ -455,7 +456,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbEmployeeName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvRoomList;
@@ -489,5 +489,6 @@
         private System.Windows.Forms.Button btnDeleteRoomChoose;
         private System.Windows.Forms.TextBox tbTotalExCost;
         private System.Windows.Forms.Button btnTotalExCost;
+        private System.Windows.Forms.ComboBox tbEmployeeName;
     }
 }

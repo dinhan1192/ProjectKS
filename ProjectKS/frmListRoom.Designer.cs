@@ -132,9 +132,8 @@
             // 
             this.statusValue.FormattingEnabled = true;
             this.statusValue.Items.AddRange(new object[] {
-            "Used",
-            "Booked",
-            "Empty"});
+            "booked",
+            "not booked"});
             this.statusValue.Location = new System.Drawing.Point(185, 201);
             this.statusValue.Name = "statusValue";
             this.statusValue.Size = new System.Drawing.Size(141, 33);
