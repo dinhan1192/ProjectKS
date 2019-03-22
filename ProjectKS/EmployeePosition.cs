@@ -134,7 +134,7 @@ namespace ProjectKS
                 try
                 {
                     conn.Open();
-                    string sql = "Delete from PositionEmployees Where IdPosition =" + dt.Rows[index].ItemArray[0];
+                    string sql = "Delete from PositionEmployees Where IdPosition = '"+ dt.Rows[index].ItemArray[0] + "'";
                     SqlCommand da = new SqlCommand(sql, conn);
                     da.ExecuteNonQuery();
                     conn.Close();

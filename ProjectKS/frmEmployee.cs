@@ -33,7 +33,7 @@ namespace ProjectKS
             vt.Columns.Add("NameEmployee");
             vt.Columns.Add("PassportEmployee");
             vt.Columns.Add("GenderEmployee");
-            vt.Columns.Add("IdPositonEmployee");
+            vt.Columns.Add("IdPositionEmployee");
             return vt;
         }
         
@@ -83,7 +83,7 @@ namespace ProjectKS
             {
                 conn.Open();
                 string sql = "Update Employees Set NameEmployee='"+Name_text.Text.ToString()+"',PassportEmployee='" 
-                    +Passport_text.Text.ToString()+"',GenderEmployee='"+ gender.SelectedItem.ToString() + "',IdPositonEmployee='"
+                    +Passport_text.Text.ToString()+"',GenderEmployee='"+ gender.SelectedItem.ToString() + "',IdPositionEmployee='"
                     + IdPosition.SelectedItem.ToString() + "'Where IdEmployee='"+dt.Rows[index][0]+"'";
 
                 SqlCommand da = new SqlCommand(sql, conn);
@@ -159,7 +159,7 @@ namespace ProjectKS
                 try
                 {
                     conn.Open();
-                        string sql = "INSERT INTO Employees(NameEmployee,PassportEmployee,GenderEmployee,IdPositonEmployee)VALUES('"+Name_text.Text.ToString() +
+                        string sql = "INSERT INTO Employees(NameEmployee,PassportEmployee,GenderEmployee,IdPositionEmployee)VALUES('"+Name_text.Text.ToString() +
                             "','" + Passport_text.Text.ToString() + "','" + gender.SelectedItem.ToString() + "','" + IdPosition.SelectedItem.ToString() + "')";
                         SqlCommand da = new SqlCommand(sql, conn);
                         da.ExecuteNonQuery();
