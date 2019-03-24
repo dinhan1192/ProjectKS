@@ -156,5 +156,45 @@ namespace ProjectKS
                 frmListService.Show();
             }
         }
+
+        private void MenuListBill_Click(object sender, EventArgs e)
+        {
+            bool isExist = false;
+
+            foreach (Form frmChildForm in this.MdiChildren)
+            {
+                if (frmChildForm.Name == "ListBill")
+                {
+                    frmChildForm.Activate();
+                    isExist = true;
+                }
+            }
+            if (!isExist)
+            {
+                ListBill ListBill = new ListBill();
+                ListBill.MdiParent = this;
+                ListBill.Show();
+            }
+        }
+
+        private void menuDoanhThu_Click(object sender, EventArgs e)
+        {
+            bool isExist = false;
+
+            foreach (Form frmChildForm in this.MdiChildren)
+            {
+                if (frmChildForm.Name == "ListBill")
+                {
+                    frmChildForm.Activate();
+                    isExist = true;
+                }
+            }
+            if (!isExist)
+            {
+                DoanhThu DoanhThu = new DoanhThu();
+                DoanhThu.MdiParent = this;
+                DoanhThu.Show();
+            }
+        }
     }
 }
