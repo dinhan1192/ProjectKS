@@ -435,7 +435,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 551);
+            this.ClientSize = new System.Drawing.Size(1001, 551);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmBooking";
             this.Text = "Form2";

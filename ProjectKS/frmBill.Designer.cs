@@ -52,18 +52,18 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbGender = new System.Windows.Forms.Label();
+            this.lbTelephone = new System.Windows.Forms.Label();
+            this.lbPassport = new System.Windows.Forms.Label();
+            this.lbFullName = new System.Windows.Forms.Label();
+            this.LbidCustomer = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.LbidCustomer = new System.Windows.Forms.Label();
-            this.lbFullName = new System.Windows.Forms.Label();
-            this.lbPassport = new System.Windows.Forms.Label();
-            this.lbTelephone = new System.Windows.Forms.Label();
-            this.lbGender = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -226,7 +226,7 @@
             // 
             // txtIdBill
             // 
-            this.txtIdBill.Location = new System.Drawing.Point(92, 13);
+            this.txtIdBill.Location = new System.Drawing.Point(92, 16);
             this.txtIdBill.Name = "txtIdBill";
             this.txtIdBill.Size = new System.Drawing.Size(100, 20);
             this.txtIdBill.TabIndex = 4;
@@ -320,6 +320,60 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Information";
             // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(272, 75);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(16, 13);
+            this.lbEmail.TabIndex = 11;
+            this.lbEmail.Text = "---";
+            // 
+            // lbGender
+            // 
+            this.lbGender.AutoSize = true;
+            this.lbGender.Location = new System.Drawing.Point(269, 45);
+            this.lbGender.Name = "lbGender";
+            this.lbGender.Size = new System.Drawing.Size(16, 13);
+            this.lbGender.TabIndex = 10;
+            this.lbGender.Text = "---";
+            // 
+            // lbTelephone
+            // 
+            this.lbTelephone.AutoSize = true;
+            this.lbTelephone.Location = new System.Drawing.Point(266, 22);
+            this.lbTelephone.Name = "lbTelephone";
+            this.lbTelephone.Size = new System.Drawing.Size(16, 13);
+            this.lbTelephone.TabIndex = 9;
+            this.lbTelephone.Text = "---";
+            // 
+            // lbPassport
+            // 
+            this.lbPassport.AutoSize = true;
+            this.lbPassport.Location = new System.Drawing.Point(92, 75);
+            this.lbPassport.Name = "lbPassport";
+            this.lbPassport.Size = new System.Drawing.Size(16, 13);
+            this.lbPassport.TabIndex = 8;
+            this.lbPassport.Text = "---";
+            // 
+            // lbFullName
+            // 
+            this.lbFullName.AutoSize = true;
+            this.lbFullName.Location = new System.Drawing.Point(92, 44);
+            this.lbFullName.Name = "lbFullName";
+            this.lbFullName.Size = new System.Drawing.Size(16, 13);
+            this.lbFullName.TabIndex = 7;
+            this.lbFullName.Text = "---";
+            // 
+            // LbidCustomer
+            // 
+            this.LbidCustomer.AutoSize = true;
+            this.LbidCustomer.Location = new System.Drawing.Point(89, 22);
+            this.LbidCustomer.Name = "LbidCustomer";
+            this.LbidCustomer.Size = new System.Drawing.Size(16, 13);
+            this.LbidCustomer.TabIndex = 6;
+            this.LbidCustomer.Text = "---";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -373,60 +427,6 @@
             this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "IdCustomer";
-            // 
-            // LbidCustomer
-            // 
-            this.LbidCustomer.AutoSize = true;
-            this.LbidCustomer.Location = new System.Drawing.Point(89, 22);
-            this.LbidCustomer.Name = "LbidCustomer";
-            this.LbidCustomer.Size = new System.Drawing.Size(16, 13);
-            this.LbidCustomer.TabIndex = 6;
-            this.LbidCustomer.Text = "---";
-            // 
-            // lbFullName
-            // 
-            this.lbFullName.AutoSize = true;
-            this.lbFullName.Location = new System.Drawing.Point(92, 44);
-            this.lbFullName.Name = "lbFullName";
-            this.lbFullName.Size = new System.Drawing.Size(16, 13);
-            this.lbFullName.TabIndex = 7;
-            this.lbFullName.Text = "---";
-            // 
-            // lbPassport
-            // 
-            this.lbPassport.AutoSize = true;
-            this.lbPassport.Location = new System.Drawing.Point(92, 75);
-            this.lbPassport.Name = "lbPassport";
-            this.lbPassport.Size = new System.Drawing.Size(16, 13);
-            this.lbPassport.TabIndex = 8;
-            this.lbPassport.Text = "---";
-            // 
-            // lbTelephone
-            // 
-            this.lbTelephone.AutoSize = true;
-            this.lbTelephone.Location = new System.Drawing.Point(266, 22);
-            this.lbTelephone.Name = "lbTelephone";
-            this.lbTelephone.Size = new System.Drawing.Size(16, 13);
-            this.lbTelephone.TabIndex = 9;
-            this.lbTelephone.Text = "---";
-            // 
-            // lbGender
-            // 
-            this.lbGender.AutoSize = true;
-            this.lbGender.Location = new System.Drawing.Point(269, 45);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(16, 13);
-            this.lbGender.TabIndex = 10;
-            this.lbGender.Text = "---";
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(272, 75);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(16, 13);
-            this.lbEmail.TabIndex = 11;
-            this.lbEmail.Text = "---";
             // 
             // frmBill
             // 

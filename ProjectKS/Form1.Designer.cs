@@ -40,7 +40,8 @@
             this.menuListRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListService = new System.Windows.Forms.ToolStripMenuItem();
             this.càiĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.doanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuListBill = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,44 +109,53 @@
             // menuCustomer
             // 
             this.menuCustomer.Name = "menuCustomer";
-            this.menuCustomer.Size = new System.Drawing.Size(180, 22);
+            this.menuCustomer.Size = new System.Drawing.Size(137, 22);
             this.menuCustomer.Text = "Khách hàng";
             this.menuCustomer.Click += new System.EventHandler(this.menuCustomer_Click);
             // 
             // menuEmployee
             // 
             this.menuEmployee.Name = "menuEmployee";
-            this.menuEmployee.Size = new System.Drawing.Size(180, 22);
+            this.menuEmployee.Size = new System.Drawing.Size(137, 22);
             this.menuEmployee.Text = "Nhân viên";
             this.menuEmployee.Click += new System.EventHandler(this.menuEmployee_Click);
             // 
             // menuListRoom
             // 
             this.menuListRoom.Name = "menuListRoom";
-            this.menuListRoom.Size = new System.Drawing.Size(180, 22);
+            this.menuListRoom.Size = new System.Drawing.Size(137, 22);
             this.menuListRoom.Text = "Phòng";
             this.menuListRoom.Click += new System.EventHandler(this.menuListRoom_Click);
             // 
             // menuListService
             // 
             this.menuListService.Name = "menuListService";
-            this.menuListService.Size = new System.Drawing.Size(180, 22);
+            this.menuListService.Size = new System.Drawing.Size(137, 22);
             this.menuListService.Text = "Dịch vụ";
             this.menuListService.Click += new System.EventHandler(this.menuListService_Click);
             // 
             // càiĐặtToolStripMenuItem
             // 
             this.càiĐặtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.doanhThuToolStripMenuItem});
+            this.MenuListBill,
+            this.menuDoanhThu});
             this.càiĐặtToolStripMenuItem.Name = "càiĐặtToolStripMenuItem";
             this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.càiĐặtToolStripMenuItem.Text = "Report";
             // 
-            // doanhThuToolStripMenuItem
+            // MenuListBill
             // 
-            this.doanhThuToolStripMenuItem.Name = "doanhThuToolStripMenuItem";
-            this.doanhThuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.doanhThuToolStripMenuItem.Text = "Doanh thu";
+            this.MenuListBill.Name = "MenuListBill";
+            this.MenuListBill.Size = new System.Drawing.Size(180, 22);
+            this.MenuListBill.Text = "List Bill";
+            this.MenuListBill.Click += new System.EventHandler(this.MenuListBill_Click);
+            // 
+            // menuDoanhThu
+            // 
+            this.menuDoanhThu.Name = "menuDoanhThu";
+            this.menuDoanhThu.Size = new System.Drawing.Size(180, 22);
+            this.menuDoanhThu.Text = "Doanh thu";
+            this.menuDoanhThu.Click += new System.EventHandler(this.menuDoanhThu_Click);
             // 
             // Form1
             // 
@@ -178,7 +188,8 @@
         private System.Windows.Forms.ToolStripMenuItem menuListRoom;
         private System.Windows.Forms.ToolStripMenuItem menuListService;
         private System.Windows.Forms.ToolStripMenuItem càiĐặtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem doanhThuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuListBill;
+        private System.Windows.Forms.ToolStripMenuItem menuDoanhThu;
     }
 }
 

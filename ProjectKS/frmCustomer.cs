@@ -15,7 +15,7 @@ namespace ProjectKS
     {
         SqlConnection conn;
         SqlCommand command;
-        string str = @"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True";
+        string str = @"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True";
         // có dấu \ thì phải thêm @
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
@@ -253,6 +253,7 @@ namespace ProjectKS
                 // Handled: go duoc
             }
         }
+
 
     }
 }
