@@ -34,7 +34,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtCustomer = new System.Windows.Forms.TextBox();
             this.btnInHoaDon = new System.Windows.Forms.Button();
-            this.btnThanhToan = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.totalFeeValue = new System.Windows.Forms.TextBox();
             this.serviceFeeValue = new System.Windows.Forms.TextBox();
@@ -52,12 +51,12 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.lbGender = new System.Windows.Forms.Label();
-            this.lbTelephone = new System.Windows.Forms.Label();
-            this.lbPassport = new System.Windows.Forms.Label();
-            this.lbFullName = new System.Windows.Forms.Label();
-            this.LbidCustomer = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.Gender = new System.Windows.Forms.TextBox();
+            this.Phone = new System.Windows.Forms.TextBox();
+            this.Passport = new System.Windows.Forms.TextBox();
+            this.FullName = new System.Windows.Forms.TextBox();
+            this.IdCustomer = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -90,7 +89,6 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtCustomer);
             this.groupBox1.Controls.Add(this.btnInHoaDon);
-            this.groupBox1.Controls.Add(this.btnThanhToan);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtIdBill);
@@ -102,6 +100,7 @@
             this.groupBox1.Size = new System.Drawing.Size(687, 481);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cbIdBooking
             // 
@@ -131,24 +130,14 @@
             // btnInHoaDon
             // 
             this.btnInHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInHoaDon.Location = new System.Drawing.Point(130, 356);
+            this.btnInHoaDon.Location = new System.Drawing.Point(57, 320);
             this.btnInHoaDon.Name = "btnInHoaDon";
             this.btnInHoaDon.Size = new System.Drawing.Size(91, 23);
             this.btnInHoaDon.TabIndex = 8;
             this.btnInHoaDon.Text = "Print Bill";
             this.btnInHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhToan.Location = new System.Drawing.Point(14, 356);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(99, 23);
-            this.btnThanhToan.TabIndex = 7;
-            this.btnThanhToan.Text = "Pay";
-            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // groupBox4
             // 
@@ -223,10 +212,12 @@
             this.button1.Text = "Search";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtIdBill
             // 
-            this.txtIdBill.Location = new System.Drawing.Point(92, 16);
+            this.txtIdBill.Enabled = false;
+            this.txtIdBill.Location = new System.Drawing.Point(92, 13);
             this.txtIdBill.Name = "txtIdBill";
             this.txtIdBill.Size = new System.Drawing.Size(100, 20);
             this.txtIdBill.TabIndex = 4;
@@ -256,7 +247,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(254, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(383, 449);
+            this.groupBox2.Size = new System.Drawing.Size(410, 449);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bill Detail";
@@ -301,12 +292,12 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.lbEmail);
-            this.groupBox3.Controls.Add(this.lbGender);
-            this.groupBox3.Controls.Add(this.lbTelephone);
-            this.groupBox3.Controls.Add(this.lbPassport);
-            this.groupBox3.Controls.Add(this.lbFullName);
-            this.groupBox3.Controls.Add(this.LbidCustomer);
+            this.groupBox3.Controls.Add(this.Email);
+            this.groupBox3.Controls.Add(this.Gender);
+            this.groupBox3.Controls.Add(this.Phone);
+            this.groupBox3.Controls.Add(this.Passport);
+            this.groupBox3.Controls.Add(this.FullName);
+            this.groupBox3.Controls.Add(this.IdCustomer);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
@@ -315,69 +306,57 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Location = new System.Drawing.Point(7, 26);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(371, 110);
+            this.groupBox3.Size = new System.Drawing.Size(397, 110);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Information";
             // 
-            // lbEmail
+            // Email
             // 
-            this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(272, 75);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(16, 13);
-            this.lbEmail.TabIndex = 11;
-            this.lbEmail.Text = "---";
+            this.Email.Location = new System.Drawing.Point(289, 70);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(102, 20);
+            this.Email.TabIndex = 11;
             // 
-            // lbGender
+            // Gender
             // 
-            this.lbGender.AutoSize = true;
-            this.lbGender.Location = new System.Drawing.Point(269, 45);
-            this.lbGender.Name = "lbGender";
-            this.lbGender.Size = new System.Drawing.Size(16, 13);
-            this.lbGender.TabIndex = 10;
-            this.lbGender.Text = "---";
+            this.Gender.Location = new System.Drawing.Point(289, 44);
+            this.Gender.Name = "Gender";
+            this.Gender.Size = new System.Drawing.Size(72, 20);
+            this.Gender.TabIndex = 10;
             // 
-            // lbTelephone
+            // Phone
             // 
-            this.lbTelephone.AutoSize = true;
-            this.lbTelephone.Location = new System.Drawing.Point(266, 22);
-            this.lbTelephone.Name = "lbTelephone";
-            this.lbTelephone.Size = new System.Drawing.Size(16, 13);
-            this.lbTelephone.TabIndex = 9;
-            this.lbTelephone.Text = "---";
+            this.Phone.Location = new System.Drawing.Point(289, 18);
+            this.Phone.Name = "Phone";
+            this.Phone.Size = new System.Drawing.Size(102, 20);
+            this.Phone.TabIndex = 9;
             // 
-            // lbPassport
+            // Passport
             // 
-            this.lbPassport.AutoSize = true;
-            this.lbPassport.Location = new System.Drawing.Point(92, 75);
-            this.lbPassport.Name = "lbPassport";
-            this.lbPassport.Size = new System.Drawing.Size(16, 13);
-            this.lbPassport.TabIndex = 8;
-            this.lbPassport.Text = "---";
+            this.Passport.Location = new System.Drawing.Point(73, 66);
+            this.Passport.Name = "Passport";
+            this.Passport.Size = new System.Drawing.Size(123, 20);
+            this.Passport.TabIndex = 8;
             // 
-            // lbFullName
+            // FullName
             // 
-            this.lbFullName.AutoSize = true;
-            this.lbFullName.Location = new System.Drawing.Point(92, 44);
-            this.lbFullName.Name = "lbFullName";
-            this.lbFullName.Size = new System.Drawing.Size(16, 13);
-            this.lbFullName.TabIndex = 7;
-            this.lbFullName.Text = "---";
+            this.FullName.Location = new System.Drawing.Point(73, 41);
+            this.FullName.Name = "FullName";
+            this.FullName.Size = new System.Drawing.Size(123, 20);
+            this.FullName.TabIndex = 7;
             // 
-            // LbidCustomer
+            // IdCustomer
             // 
-            this.LbidCustomer.AutoSize = true;
-            this.LbidCustomer.Location = new System.Drawing.Point(89, 22);
-            this.LbidCustomer.Name = "LbidCustomer";
-            this.LbidCustomer.Size = new System.Drawing.Size(16, 13);
-            this.LbidCustomer.TabIndex = 6;
-            this.LbidCustomer.Text = "---";
+            this.IdCustomer.Location = new System.Drawing.Point(73, 15);
+            this.IdCustomer.Name = "IdCustomer";
+            this.IdCustomer.Size = new System.Drawing.Size(72, 20);
+            this.IdCustomer.TabIndex = 6;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(196, 75);
+            this.label12.Location = new System.Drawing.Point(225, 73);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(32, 13);
             this.label12.TabIndex = 5;
@@ -386,7 +365,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(194, 45);
+            this.label11.Location = new System.Drawing.Point(225, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 13);
             this.label11.TabIndex = 4;
@@ -395,7 +374,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(191, 20);
+            this.label10.Location = new System.Drawing.Point(225, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 3;
@@ -459,7 +438,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnInHoaDon;
-        private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox totalFeeValue;
         private System.Windows.Forms.TextBox serviceFeeValue;
@@ -486,11 +464,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.ComboBox cbIdBooking;
-        private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.Label lbGender;
-        private System.Windows.Forms.Label lbTelephone;
-        private System.Windows.Forms.Label lbPassport;
-        private System.Windows.Forms.Label lbFullName;
-        private System.Windows.Forms.Label LbidCustomer;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox Gender;
+        private System.Windows.Forms.TextBox Phone;
+        private System.Windows.Forms.TextBox Passport;
+        private System.Windows.Forms.TextBox FullName;
+        private System.Windows.Forms.TextBox IdCustomer;
     }
 }
