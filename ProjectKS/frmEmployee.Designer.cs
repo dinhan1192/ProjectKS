@@ -30,11 +30,6 @@
         {
             this.click = new System.Windows.Forms.LinkLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PassportEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenderEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdPositionEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdPosition = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,6 +45,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PassportEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenderEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PositionEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +68,6 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -76,43 +75,12 @@
             this.NameEmployee,
             this.PassportEmployee,
             this.GenderEmployee,
-            this.IdPositionEmployee});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 229);
+            this.PositionEmployee});
+            this.dataGridView1.Location = new System.Drawing.Point(-5, 214);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(808, 182);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // IdEmployee
-            // 
-            this.IdEmployee.DataPropertyName = "IdEmployee";
-            this.IdEmployee.HeaderText = "IDEmployee";
-            this.IdEmployee.Name = "IdEmployee";
-            this.IdEmployee.Visible = false;
-            // 
-            // NameEmployee
-            // 
-            this.NameEmployee.DataPropertyName = "NameEmployee";
-            this.NameEmployee.HeaderText = "EmployeeName";
-            this.NameEmployee.Name = "NameEmployee";
-            // 
-            // PassportEmployee
-            // 
-            this.PassportEmployee.DataPropertyName = "PassportEmployee";
-            this.PassportEmployee.HeaderText = "EmployeePassport";
-            this.PassportEmployee.Name = "PassportEmployee";
-            // 
-            // GenderEmployee
-            // 
-            this.GenderEmployee.DataPropertyName = "GenderEmployee";
-            this.GenderEmployee.HeaderText = "Gender";
-            this.GenderEmployee.Name = "GenderEmployee";
-            // 
-            // IdPositionEmployee
-            // 
-            this.IdPositionEmployee.DataPropertyName = "IdPositionEmployee";
-            this.IdPositionEmployee.HeaderText = "IdPosition";
-            this.IdPositionEmployee.Name = "IdPositionEmployee";
             // 
             // IdPosition
             // 
@@ -163,6 +131,7 @@
             this.Passport_text.Name = "Passport_text";
             this.Passport_text.Size = new System.Drawing.Size(252, 20);
             this.Passport_text.TabIndex = 21;
+            this.Passport_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Passport_text_KeyPress_1);
             // 
             // Name_text
             // 
@@ -170,6 +139,7 @@
             this.Name_text.Name = "Name_text";
             this.Name_text.Size = new System.Drawing.Size(252, 20);
             this.Name_text.TabIndex = 20;
+            this.Name_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Name_text_KeyPress_1);
             // 
             // gender
             // 
@@ -193,9 +163,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(403, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 16);
+            this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 18;
-            this.label5.Text = "IdPosition";
+            this.label5.Text = "Position";
             // 
             // label3
             // 
@@ -270,13 +240,48 @@
             this.button5.TabIndex = 31;
             this.button5.Text = "Cancel";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // IdEmployee
+            // 
+            this.IdEmployee.DataPropertyName = "IdEmployee";
+            this.IdEmployee.HeaderText = "IDEmployee";
+            this.IdEmployee.Name = "IdEmployee";
+            this.IdEmployee.Visible = false;
+            this.IdEmployee.Width = 70;
+            // 
+            // NameEmployee
+            // 
+            this.NameEmployee.DataPropertyName = "NameEmployee";
+            this.NameEmployee.HeaderText = "EmployeeName";
+            this.NameEmployee.Name = "NameEmployee";
+            this.NameEmployee.Width = 400;
+            // 
+            // PassportEmployee
+            // 
+            this.PassportEmployee.DataPropertyName = "PassportEmployee";
+            this.PassportEmployee.HeaderText = "EmployeePassport";
+            this.PassportEmployee.Name = "PassportEmployee";
+            this.PassportEmployee.Width = 200;
+            // 
+            // GenderEmployee
+            // 
+            this.GenderEmployee.DataPropertyName = "GenderEmployee";
+            this.GenderEmployee.HeaderText = "Gender";
+            this.GenderEmployee.Name = "GenderEmployee";
+            // 
+            // PositionEmployee
+            // 
+            this.PositionEmployee.DataPropertyName = "PositionEmployee";
+            this.PositionEmployee.HeaderText = "Position";
+            this.PositionEmployee.Name = "PositionEmployee";
             // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1017, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
@@ -326,6 +331,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn PassportEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn GenderEmployee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPositionEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PositionEmployee;
     }
 }
