@@ -20,11 +20,12 @@ namespace ProjectKS
         
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
       
-        public void createTable()
+        public DataTable createTable()
         {
             dt = new DataTable();
             dt.Columns.Add("IdPosition");
             dt.Columns.Add("NamePosition");
+            return dt;
         }
 
         public EmployeePosition()
@@ -58,8 +59,7 @@ namespace ProjectKS
                 }
                 testL = new List<object>();
                 for (int i = 0; i < dl.Count(); i++)
-                {
-                    
+                {                 
                     for (int j = 0; j < testL.Count; j++)
                     {
                         if (dl[i].ItemArray[0].Equals(testL[j]))
@@ -76,11 +76,9 @@ namespace ProjectKS
                 }
                 textBox1.Text = "";
             }
-
         }
         public bool checkData()
         {
-
             DataRow[] dl = dt.Select();
             if (string.IsNullOrEmpty(textBox1.Text))
             {
@@ -96,13 +94,13 @@ namespace ProjectKS
                     return false;
                 }
             }
-
             return true;
         }
 
+
         private void EmployeePosition_Load(object sender, EventArgs e)
         {
-                createTable();
+               dt= createTable();
                 SqlDataAdapter dap = new SqlDataAdapter("Select*from PositionEmployees", conn);
                 conn.Open();
                 dap.Fill(dt);
@@ -120,9 +118,8 @@ namespace ProjectKS
         {
             index = dataGridView1.CurrentCell.RowIndex;
             DataTable dt = (DataTable)dataGridView1.DataSource;
-            if(dt.Rows.Count>0 || dt.Rows != null)
+            if (dt.Rows.Count > 0 || dt.Rows != null)
             {
-                
                 textBox1.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
             }
         }
@@ -146,8 +143,7 @@ namespace ProjectKS
                     MessageBox.Show("Error is" + exp.ToString());
                     conn.Close();
                 }
-            }
-            
+            }          
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -170,6 +166,8 @@ namespace ProjectKS
                 conn.Close();
             }
         }
+
     }
-    }
+}
+    
 

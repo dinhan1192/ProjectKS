@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IdPosition1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamePosition1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -45,7 +47,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(295, 86);
+            this.label1.Location = new System.Drawing.Point(51, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 10;
@@ -53,7 +55,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(298, 126);
+            this.button1.Location = new System.Drawing.Point(96, 126);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -63,21 +65,38 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Location = new System.Drawing.Point(38, 50);
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdPosition1,
+            this.NamePosition1});
+            this.dataGridView1.Location = new System.Drawing.Point(54, 185);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(472, 150);
             this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // IdPosition1
+            // 
+            this.IdPosition1.DataPropertyName = "IdPosition";
+            this.IdPosition1.HeaderText = "IdPosition";
+            this.IdPosition1.Name = "IdPosition1";
+            // 
+            // NamePosition1
+            // 
+            this.NamePosition1.DataPropertyName = "NamePosition";
+            this.NamePosition1.HeaderText = "NamePosition";
+            this.NamePosition1.Name = "NamePosition1";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(396, 86);
+            this.textBox1.Location = new System.Drawing.Point(139, 86);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(179, 20);
             this.textBox1.TabIndex = 7;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(402, 126);
+            this.button2.Location = new System.Drawing.Point(177, 126);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 13;
@@ -87,7 +106,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(500, 126);
+            this.button3.Location = new System.Drawing.Point(258, 126);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 14;
@@ -140,5 +159,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn NamePosition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPosition1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamePosition1;
     }
 }

@@ -26,7 +26,7 @@ namespace ProjectKS
         {
             SqlConnection connect = new SqlConnection(str);
             connect.Open();
-            string str1 = "Select OrderService.IdOrder,OrderService.TimeUse,OrderServiceDetail.NameService,OrderServiceDetail.Amount,OrderServiceDetail.UnitPrice" +
+            string str1 = "Select OrderService.IdOrder,OrderService.TimeUse,OrderServiceDetail.NameService,OrderServiceDetail.Amount,OrderServiceDetail.UnitPrice,OrderServiceDetail.Total" +
                 " FROM OrderService" +
                 " JOIN Booking On OrderService.IdBooking = Booking.IdBooking" +
                 " JOIN OrderServiceDetail On OrderService.IdOrder = OrderServiceDetail.IdOrder" +

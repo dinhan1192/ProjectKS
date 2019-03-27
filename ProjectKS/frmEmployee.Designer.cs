@@ -68,6 +68,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -76,7 +77,7 @@
             this.PassportEmployee,
             this.GenderEmployee,
             this.IdPositionEmployee});
-            this.dataGridView1.Location = new System.Drawing.Point(-5, 214);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 229);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(808, 182);
             this.dataGridView1.TabIndex = 26;
@@ -88,21 +89,18 @@
             this.IdEmployee.HeaderText = "IDEmployee";
             this.IdEmployee.Name = "IdEmployee";
             this.IdEmployee.Visible = false;
-            this.IdEmployee.Width = 70;
             // 
             // NameEmployee
             // 
             this.NameEmployee.DataPropertyName = "NameEmployee";
             this.NameEmployee.HeaderText = "EmployeeName";
             this.NameEmployee.Name = "NameEmployee";
-            this.NameEmployee.Width = 400;
             // 
             // PassportEmployee
             // 
             this.PassportEmployee.DataPropertyName = "PassportEmployee";
             this.PassportEmployee.HeaderText = "EmployeePassport";
             this.PassportEmployee.Name = "PassportEmployee";
-            this.PassportEmployee.Width = 200;
             // 
             // GenderEmployee
             // 
@@ -278,7 +276,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1017, 450);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);

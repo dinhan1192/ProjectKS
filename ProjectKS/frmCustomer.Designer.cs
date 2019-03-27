@@ -60,7 +60,7 @@
             // 
             this.groupBox1.Controls.Add(this.dgvCustomerList);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox1.Location = new System.Drawing.Point(1, 250);
+            this.groupBox1.Location = new System.Drawing.Point(1, 242);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(799, 200);
             this.groupBox1.TabIndex = 0;
@@ -69,10 +69,12 @@
             // 
             // dgvCustomerList
             // 
+            this.dgvCustomerList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomerList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomerList.Location = new System.Drawing.Point(0, 31);
+            this.dgvCustomerList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCustomerList.Location = new System.Drawing.Point(3, 16);
             this.dgvCustomerList.Name = "dgvCustomerList";
-            this.dgvCustomerList.Size = new System.Drawing.Size(799, 217);
+            this.dgvCustomerList.Size = new System.Drawing.Size(793, 181);
             this.dgvCustomerList.TabIndex = 0;
             this.dgvCustomerList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerList_CellContentClick);
             // 
@@ -104,7 +106,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Information";
-          
             // 
             // tbFindName
             // 
