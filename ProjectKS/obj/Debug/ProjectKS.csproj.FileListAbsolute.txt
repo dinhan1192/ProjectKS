@@ -56,3 +56,4 @@ C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.exe
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.pdb
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Display_Service_Room_Bill.resources
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.ListBill.resources
+C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.DoanhThu.resources

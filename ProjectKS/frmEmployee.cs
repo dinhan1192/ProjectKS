@@ -204,7 +204,7 @@ namespace ProjectKS
             DataTable vt = (DataTable)dataGridView1.DataSource;
 
             if (vt.Rows.Count > 0 || vt.Rows != null)
-            {
+            {              
                 Name_text.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
                 Passport_text.Text = dataGridView1.Rows[index].Cells[2].Value.ToString();
                 gender.SelectedItem = dataGridView1.Rows[index].Cells[3].Value.ToString();

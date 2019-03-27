@@ -16,7 +16,7 @@ namespace ProjectKS
         DataTable table;
         int index;
         DataTable dt;
-        string str = "Data Source=ADMINPC;Initial Catalog=QuanlyKS;Integrated Security=true";
+        string str = @"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True";
         public frmBill()
         {
             InitializeComponent();
@@ -160,9 +160,6 @@ namespace ProjectKS
             connect.Close();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
-        }
     }
 }

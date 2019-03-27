@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v2.2": []
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\xuanvinh\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
+      "projectUniqueName": "C:\\HOTEL1\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
       "projectName": "HotelLibrary",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\ProjectKS\\HotelLibrary\\obj\\",
+      "projectPath": "C:\\HOTEL1\\ProjectKS\\HotelLibrary\\HotelLibrary.csproj",
+      "packagesPath": "C:\\Users\\xuanvinh\\.nuget\\packages\\",
+      "outputPath": "C:\\HOTEL1\\ProjectKS\\HotelLibrary\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\xuanvinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -34,10 +38,21 @@
         "netcoreapp2.2": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       }
     },
     "frameworks": {
-      "netcoreapp2.2": {}
+      "netcoreapp2.2": {
+        "imports": [
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
+      }
     }
   }
 }

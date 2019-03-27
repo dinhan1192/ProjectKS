@@ -29,11 +29,11 @@ namespace ProjectKS
             btnDelete.Enabled = false;
             Matutang();
         }
+//tim kiem IdBooking qua IdCustomer
         public void SearchBookingByID()
         {
             SqlConnection connect = new SqlConnection(str);
-            connect.Open(); // mo ket noi
-
+            connect.Open(); 
             SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM Booking where IdCustomer ='" + txtIdCustomer.Text + "'  Order by CheckIn desc", connect);
             var dr = cmd.ExecuteReader();
             var dt = new DataTable();
@@ -45,9 +45,7 @@ namespace ProjectKS
         private void txtIdCustomer_TextChanged(object sender, EventArgs e)
         {
             SearchBookingByID();
-        }
-
-        
+        }       
         public void Matutang()
         {
             SqlDataAdapter da = new SqlDataAdapter("SELECT isnull(max(cast(IdOrder as int)),0)+1 From OrderService ", str);
@@ -76,7 +74,7 @@ namespace ProjectKS
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtTotal.Text))
+            if (string.IsNullOrEmpty(txtTotal.Text)||Int32.Parse(txtTotal.Text)==0)
             {
                 MessageBox.Show("Vui long nhap hang hoa vao hoa don");
                 return;
@@ -98,12 +96,18 @@ namespace ProjectKS
                     SqlCommand cmddbINSERT = new SqlCommand(dbINSERT, connect);
                     cmddbINSERT.ExecuteNonQuery();
                 }
-                listView.Items.Clear();
-                lbIdOrder.Text = "";
-                Matutang();
-                txtIdCustomer.Clear();
-                cbNameService.Text = "";
+                Clear();
             }
+        }
+        void Clear()
+        {
+            listView.Items.Clear();
+            lbIdOrder.Text = "";
+            Matutang();
+            txtIdCustomer.Clear();
+            cbNameService.Text = "";
+            txtAmount.Clear();
+            txtUnitPrice.Clear();
         }
 //auto load priceService
         private void cbNameService_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,11 +152,36 @@ namespace ProjectKS
             }
             txtTotal.Text = total.ToString();
         }
-
+//kiem tra xem IdBooking con hieu luc khong
+        private bool CheckExistBookinginBill()
+        {
+            SqlConnection connect = new SqlConnection(str);
+            connect.Open();
+            string sql = "SELECT *FROM Bill";
+            SqlCommand cn = new SqlCommand(sql, connect);
+            SqlDataReader reader = cn.ExecuteReader();
+            while (reader.Read())
+            {
+                if (cbIdBooking.Text == ((int)reader["IdBooking"]).ToString())
+                {
+                    MessageBox.Show("IdBooking da het hieu luc", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
+        }
+//Add Service len bang ao listview
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //du lieu ao hien len man hinh
-            ADD();
+            if (CheckExistBookinginBill())
+            {
+                Clear();
+                return;
+            }
+            else
+            {
+                ADD();
+            }   
         }
         private float thanhtien(string amount, string unitprice)
         {
@@ -162,13 +191,12 @@ namespace ProjectKS
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //  MessageBox.Show(listView.SelectedItems[0].SubItems[3].Text,txtTotal.Text);
-
-
-            /*     if (listView.Items.Count > 0)
-                 {              
-                     listView.Items.Remove(listView.SelectedItems[0]);
-                 }      */
+                if (listView.Items.Count > 0)
+                {
+                    int hieu = int.Parse(txtTotal.Text) - int.Parse(listView.SelectedItems[0].SubItems[3].Text);
+                    txtTotal.Text = hieu.ToString();
+                    listView.Items.Remove(listView.SelectedItems[0]);
+                }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -183,6 +211,7 @@ namespace ProjectKS
             {
                 e.Handled = true;
             }
-        }
+        } 
+        
     }
 }
