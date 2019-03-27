@@ -18,7 +18,7 @@ namespace ProjectKS
         int index;
         List<object> positionL;
         int l;
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source = ADMINPC; Initial Catalog = QuanlyKS; Integrated Security = True");
 
         public frmEmployee()
         {
@@ -33,7 +33,7 @@ namespace ProjectKS
             vt.Columns.Add("NameEmployee");
             vt.Columns.Add("PassportEmployee");
             vt.Columns.Add("GenderEmployee");
-            vt.Columns.Add("IdPositionEmployee");
+            vt.Columns.Add("PositionEmployee");
             return vt;
         }
         
@@ -56,7 +56,7 @@ namespace ProjectKS
                 }
                 if (m == 0)
                 {
-                    form2.testL.Add(form2.dt.Rows[i][0].ToString());
+                    form2.testL.Add(form2.dt.Rows[i][1].ToString());
                 }
                 m = 0;
             }
@@ -159,7 +159,7 @@ namespace ProjectKS
                 try
                 {
                     conn.Open();
-                        string sql = "INSERT INTO Employees(NameEmployee,PassportEmployee,GenderEmployee,IdPositionEmployee)VALUES('"+Name_text.Text.ToString() +
+                        string sql = "INSERT INTO Employees(NameEmployee,PassportEmployee,GenderEmployee,PositionEmployee)VALUES('"+Name_text.Text.ToString() +
                             "','" + Passport_text.Text.ToString() + "','" + gender.SelectedItem.ToString() + "','" + IdPosition.SelectedItem.ToString() + "')";
                         SqlCommand da = new SqlCommand(sql, conn);
                         da.ExecuteNonQuery();
@@ -204,7 +204,7 @@ namespace ProjectKS
             DataTable vt = (DataTable)dataGridView1.DataSource;
 
             if (vt.Rows.Count > 0 || vt.Rows != null)
-            {              
+            {
                 Name_text.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
                 Passport_text.Text = dataGridView1.Rows[index].Cells[2].Value.ToString();
                 gender.SelectedItem = dataGridView1.Rows[index].Cells[3].Value.ToString();
@@ -228,31 +228,30 @@ namespace ProjectKS
             l = 0;
         }
 
+        private void Name_text_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsLetter(ch) && ch != 8 && ch != 46 && ch != 32)
+            {
+                e.Handled = true;
+            }
+        }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Passport_text_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
         {
             if (l == 0)
             {
                 dataGridView1.DataSource = dt;
                 dataGridView1.RefreshEdit();
-            }
-        }
-
-        private void Passport_text_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            if (!Char.IsDigit(ch) && ch!=8 && ch!=46)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void Name_text_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            if (!Char.IsLetter(ch) && ch != 8 && ch != 46&&ch!=32)
-            {
-                e.Handled = true;
             }
         }
     }

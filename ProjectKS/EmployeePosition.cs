@@ -15,17 +15,16 @@ namespace ProjectKS
     {
         public DataTable dt;
         public DataRow[] rt;
-       public int index;
+        public int index;
         public List<object> testL;
         
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
+        SqlConnection conn = new SqlConnection("Data Source=ADMINPC;Initial Catalog=QuanlyKS;Integrated Security=True");
       
-        public DataTable createTable()
+        public void createTable()
         {
             dt = new DataTable();
             dt.Columns.Add("IdPosition");
             dt.Columns.Add("NamePosition");
-            return dt;
         }
 
         public EmployeePosition()
@@ -49,36 +48,20 @@ namespace ProjectKS
                     da.ExecuteNonQuery();
                     conn.Close();
                     EmployeePosition_Load(sender, e);
-                    dataGridView1.DataSource = dt;
-                    dataGridView1.RefreshEdit();
                 }
                 catch (System.Exception exp)
                 {
                     MessageBox.Show("Error is" + exp.ToString());
                     conn.Close();
                 }
-                testL = new List<object>();
-                for (int i = 0; i < dl.Count(); i++)
-                {                 
-                    for (int j = 0; j < testL.Count; j++)
-                    {
-                        if (dl[i].ItemArray[0].Equals(testL[j]))
-                        {
-                            m++;
-                            break;
-                        }
-                    }
-                    if (m == 0)
-                    {
-                        testL.Add(dt.Rows[i][0].ToString());
-                    }
-                    m = 0;
-                }
+               
                 textBox1.Text = "";
             }
+
         }
         public bool checkData()
         {
+
             DataRow[] dl = dt.Select();
             if (string.IsNullOrEmpty(textBox1.Text))
             {
@@ -94,13 +77,13 @@ namespace ProjectKS
                     return false;
                 }
             }
+
             return true;
         }
 
-
         private void EmployeePosition_Load(object sender, EventArgs e)
         {
-               dt= createTable();
+            createTable();
                 SqlDataAdapter dap = new SqlDataAdapter("Select*from PositionEmployees", conn);
                 conn.Open();
                 dap.Fill(dt);
@@ -110,17 +93,7 @@ namespace ProjectKS
             testL = new List<object>();
             for(int i = 0; i < dt.Rows.Count; i++)
             {
-                testL.Add(dt.Rows[i][0]);
-            }
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            index = dataGridView1.CurrentCell.RowIndex;
-            DataTable dt = (DataTable)dataGridView1.DataSource;
-            if (dt.Rows.Count > 0 || dt.Rows != null)
-            {
-                textBox1.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                testL.Add(dt.Rows[i][1].ToString());
             }
         }
 
@@ -131,19 +104,21 @@ namespace ProjectKS
                 try
                 {
                     conn.Open();
-                    string sql = "Delete from PositionEmployees Where IdPosition = '"+ dt.Rows[index].ItemArray[0] + "'";
+                    string sql = "Delete from PositionEmployees Where IdPosition = '"+ dt.Rows[index][0] + "'";
                     SqlCommand da = new SqlCommand(sql, conn);
                     da.ExecuteNonQuery();
                     conn.Close();
                     EmployeePosition_Load(sender, e);
-
+                    dataGridView1.DataSource = dt;
+                    dataGridView1.RefreshEdit();
                 }
                 catch (System.Exception exp)
                 {
                     MessageBox.Show("Error is" + exp.ToString());
                     conn.Close();
                 }
-            }          
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -167,7 +142,16 @@ namespace ProjectKS
             }
         }
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            index = dataGridView1.CurrentCell.RowIndex;
+            DataTable vt = (DataTable)dataGridView1.DataSource;
+
+            if (vt.Rows.Count > 0 || vt.Rows != null)
+            {
+                textBox1.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
+            }
+        }
     }
-}
-    
+    }
 
