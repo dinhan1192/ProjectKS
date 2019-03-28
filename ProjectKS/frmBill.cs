@@ -16,7 +16,8 @@ namespace ProjectKS
         DataTable table;
         int index;
         DataTable dt;
-        string str = "Data Source=ADMINPC;Initial Catalog=QuanlyKS;Integrated Security=true";
+        string str = @"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True";
+
         public frmBill()
         {
             InitializeComponent();
@@ -27,7 +28,6 @@ namespace ProjectKS
             Matutang();
             lockControl();
         }
-       
         public void SearchBookingByID()
         {
             SqlConnection connect = new SqlConnection(str);
@@ -48,14 +48,8 @@ namespace ProjectKS
             da.Fill(dt);
             txtIdBill.Text = dt.Rows[0][0].ToString();
         }
-
-        private void txtCustomer_TextChanged(object sender, EventArgs e)
+        public void lockControl()
         {
-            SearchBookingByID();
-        }
-
-
-        public void lockControl() {
             IdCustomer.Enabled = false;
             FullName.Enabled = false;
             Passport.Enabled = false;
@@ -67,9 +61,9 @@ namespace ProjectKS
             totalFeeValue.Enabled = false;
         }
 
-        private void txtIdBill_TextChanged(object sender, EventArgs e)
+        private void txtCustomer_TextChanged(object sender, EventArgs e)
         {
-
+            SearchBookingByID();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,7 +78,7 @@ namespace ProjectKS
             Passport.Text = dt.Rows[0][1].ToString();
             Phone.Text = dt.Rows[0][3].ToString();
             Gender.Text = dt.Rows[0][4].ToString();
-            Email.Text= dt.Rows[0][5].ToString();
+            Email.Text = dt.Rows[0][5].ToString();
             connect.Close();
             connect.Open();
             SqlDataAdapter dap = new SqlDataAdapter("Select* from OrderService Where IdBooking='" + cbIdBooking.Text + "'", connect);
@@ -108,13 +102,13 @@ namespace ProjectKS
             }
             roomFeeValue.Text = m.ToString();
             connect.Close();
-            totalFeeValue.Text = (Convert.ToInt32(roomFeeValue.Text)+Convert.ToInt32(serviceFeeValue.Text)).ToString();
+            totalFeeValue.Text = (Convert.ToInt32(roomFeeValue.Text) + Convert.ToInt32(serviceFeeValue.Text)).ToString();
             connect.Open();
             dt = new DataTable();
-                SqlDataAdapter ad = new SqlDataAdapter("Select lr.RoomName,lr.TypeRoom,lb.RoomBookingFee from ListRoom as lr,ListRoomBooking as lb where lr.IdRoom=lb.IdRoom AND lb.IdBooking ='"+cbIdBooking.Text.ToString()+"'", connect);
-                ad.Fill(dt);
-                connect.Close();
-                dataGridView1.DataSource = dt;
+            SqlDataAdapter ad = new SqlDataAdapter("Select lr.RoomName,lr.TypeRoom,lb.RoomBookingFee from ListRoom as lr,ListRoomBooking as lb where lr.IdRoom=lb.IdRoom AND lb.IdBooking ='" + cbIdBooking.Text.ToString() + "'", connect);
+            ad.Fill(dt);
+            connect.Close();
+            dataGridView1.DataSource = dt;
 
             connect.Open();
             dt = new DataTable();
@@ -122,59 +116,48 @@ namespace ProjectKS
             adap.Fill(dt);
             connect.Close();
             dataGridView2.DataSource = dt;
-
         }
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
             DateTime iDate = DateTime.Now;
             SqlConnection connect = new SqlConnection(str);
-                connect.Open();
-                dt = new DataTable();
-                table = new DataTable();
-                SqlDataAdapter ad = new SqlDataAdapter("Select*from Bill", connect);
-                ad.Fill(dt);
-                int m = dt.Rows.Count;
-                string sql = "Insert into Bill Values('" + txtIdBill.Text.ToString() + "','" + IdCustomer.Text.ToString() + "','" + cbIdBooking.Text.ToString() + "','" + iDate.ToString("yyy/M/d HH:mm:ss") + "','" + roomFeeValue.Text.ToString() + "','" + serviceFeeValue.Text.ToString() + "','" + totalFeeValue.Text.ToString() + "')";
-                SqlCommand command = connect.CreateCommand();
-                command.CommandText = "If '" + iDate.ToString("yyy/M/d HH:mm:ss") + "'>=(Select top 1 TimeUse from OrderService where IdBooking='" + cbIdBooking.Text.ToString() + "'Order by TimeUse desc)And not exists(Select * from Bill where IdBooking='" + cbIdBooking.Text.ToString() + "') BEGIN " + sql + " END";
-                command.ExecuteNonQuery();
-                SqlDataAdapter adap = new SqlDataAdapter("Select*from Bill", connect);
-                adap.Fill(table);
-                int n = table.Rows.Count;
-                if (n - m == 0)
-                {
-                    MessageBox.Show("Bill has been settled");
-                }
+            connect.Open();
+            dt = new DataTable();
+            table = new DataTable();
+            SqlDataAdapter ad = new SqlDataAdapter("Select*from Bill", connect);
+            ad.Fill(dt);
+            int m = dt.Rows.Count;
+            string sql = "Insert into Bill Values('" + txtIdBill.Text.ToString() + "','" + IdCustomer.Text.ToString() + "','" + cbIdBooking.Text.ToString() + "','" + iDate.ToString("yyy/M/d HH:mm:ss") + "','" + roomFeeValue.Text.ToString() + "','" + serviceFeeValue.Text.ToString() + "','" + totalFeeValue.Text.ToString() + "')";
+            SqlCommand command = connect.CreateCommand();
+            command.CommandText = "If '" + iDate.ToString("yyy/M/d HH:mm:ss") + "'>=(Select top 1 TimeUse from OrderService where IdBooking='" + cbIdBooking.Text.ToString() + "'Order by TimeUse desc)And not exists(Select * from Bill where IdBooking='" + cbIdBooking.Text.ToString() + "') BEGIN " + sql + " END";
+            command.ExecuteNonQuery();
+            SqlDataAdapter adap = new SqlDataAdapter("Select*from Bill", connect);
+            adap.Fill(table);
+            int n = table.Rows.Count;
+            if (n - m == 0)
+            {
+                MessageBox.Show("Bill has been settled");
+            }
             connect.Close();
             frmBill_Load(sender, e);
-                dataGridView1.DataSource = null;
-                dataGridView2.DataSource = null;
-                cbIdBooking.Text = null;
-                IdCustomer.Text = null;
-                txtCustomer.Text = null;
-                FullName.Text = null;
-                Passport.Text = null;
-                Phone.Text = null;
-                Gender.Text = null;
-                Email.Text = null;
-                roomFeeValue.Text = null;
-                serviceFeeValue.Text = null;
-                totalFeeValue.Text = null;
-                connect.Open();
-                SqlCommand cmd = new SqlCommand("Update ListRoom set Status='not booked' from ListRoom,ListRoomBooking where IdBooking='" + cbIdBooking.Text.ToString() + "'", connect);
-                cmd.ExecuteNonQuery();
-                connect.Close();  
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Phone_TextChanged(object sender, EventArgs e)
-        {
-
+            dataGridView1.DataSource = null;
+            dataGridView2.DataSource = null;
+            cbIdBooking.Text = null;
+            IdCustomer.Text = null;
+            txtCustomer.Text = null;
+            FullName.Text = null;
+            Passport.Text = null;
+            Phone.Text = null;
+            Gender.Text = null;
+            Email.Text = null;
+            roomFeeValue.Text = null;
+            serviceFeeValue.Text = null;
+            totalFeeValue.Text = null;
+            connect.Open();
+            SqlCommand cmd = new SqlCommand("Update ListRoom set Status='not booked' from ListRoom,ListRoomBooking where IdBooking='" + cbIdBooking.Text.ToString() + "'", connect);
+            cmd.ExecuteNonQuery();
+            connect.Close();
         }
     }
 }

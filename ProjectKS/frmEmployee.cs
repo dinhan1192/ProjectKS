@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjectKS
 {
@@ -18,8 +18,7 @@ namespace ProjectKS
         int index;
         List<object> positionL;
         int l;
-        SqlConnection conn = new SqlConnection("Data Source = ADMINPC; Initial Catalog = QuanlyKS; Integrated Security = True");
-
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
         public frmEmployee()
         {
             InitializeComponent();
@@ -33,35 +32,37 @@ namespace ProjectKS
             vt.Columns.Add("NameEmployee");
             vt.Columns.Add("PassportEmployee");
             vt.Columns.Add("GenderEmployee");
-            vt.Columns.Add("PositionEmployee");
+            vt.Columns.Add("IdPositionEmployee");
             return vt;
         }
-        
+
         private void frmEmployee_Load(object sender, EventArgs e)
         {
             dt = createTable();
             FillData();
-            dataGridView1.DataSource = dt;
+           dataGridView1.DataSource = dt;
             dataGridView1.RefreshEdit();
-            int m = 0;
-            form2.createTable();
             FillDataform2();
-            for (int i = 0; i < form2.dt.Rows.Count; i++)
-            {
-                for (int j = 0; j < form2.testL.Count; j++)
-                {
-                    if (form2.dt.Rows[i][0].Equals(form2.testL[j]))
-                        m++;
-                        break;
-                }
-                if (m == 0)
-                {
-                    form2.testL.Add(form2.dt.Rows[i][1].ToString());
-                }
-                m = 0;
-            }
-            IdPosition.DataSource = form2.testL;
+            /*        int m = 0;
+                    form2.createTable();
+                    FillDataform2();
+                    for (int i = 0; i < form2.dt.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < form2.testL.Count; j++)
+                        {
+                            if (form2.dt.Rows[i][0].Equals(form2.testL[j]))
+                                m++;
+                            break;
+                        }
+                        if (m == 0)
+                        {
+                            form2.testL.Add(form2.dt.Rows[i][0].ToString());
+                        }
+                        m = 0;
+                    }
+                    IdPosition.DataSource = form2.testL;*/
         }
+
         public void FillData()
         {
             SqlDataAdapter dap = new SqlDataAdapter("Select*from Employees", conn);
@@ -71,10 +72,49 @@ namespace ProjectKS
         }
         public void FillDataform2()
         {
-            SqlDataAdapter dat = new SqlDataAdapter("Select*from PositionEmployees", conn);
+       /*     SqlDataAdapter dat = new SqlDataAdapter("Select*from PositionEmployees", conn);
             conn.Open();
             dat.Fill(form2.dt);
+            conn.Close();*/
+
+    
+            conn.Open(); // mo ket noi
+            SqlCommand cmd2 = new SqlCommand("SELECT* FROM PositionEmployees", conn);
+            var dr2 = cmd2.ExecuteReader();
+            var dt2 = new DataTable();
+            dt2.Load(dr2);
+            dr2.Dispose();
+            IdPosition.DisplayMember = "NamePosition"; //hien thi list chon la NameService
+            IdPosition.ValueMember = "IdPosition";    //co the lay id nay bang cach cbNameService.SelectValue
+            IdPosition.DataSource = dt2;
+
             conn.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (checkData())
+            {
+                try
+                {
+                    conn.Open();
+                    
+                    string sql = "INSERT INTO Employees(NameEmployee,PassportEmployee,GenderEmployee,IdPositionEmployee)VALUES('" + Name_text.Text.ToString() +
+                        "','" + Passport_text.Text.ToString() + "','" + gender.Text.ToString() + "','" + IdPosition.SelectedValue + "')";
+                    SqlCommand da = new SqlCommand(sql, conn);
+                    da.ExecuteNonQuery();
+                    conn.Close();
+                    frmEmployee_Load(sender, e);
+                    dataGridView1.DataSource = dt;
+                    dataGridView1.RefreshEdit();
+                }
+                catch (System.Exception)
+                {
+                    conn.Close();
+                }
+                Name_text.Text = "";
+                Passport_text.Text = "";
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -82,9 +122,9 @@ namespace ProjectKS
             try
             {
                 conn.Open();
-                string sql = "Update Employees Set NameEmployee='"+Name_text.Text.ToString()+"',PassportEmployee='" 
-                    +Passport_text.Text.ToString()+"',GenderEmployee='"+ gender.SelectedItem.ToString() + "',IdPositionEmployee='"
-                    + IdPosition.SelectedItem.ToString() + "'Where IdEmployee='"+dt.Rows[index][0]+"'";
+                string sql = "Update Employees Set NameEmployee='" + Name_text.Text.ToString() + "',PassportEmployee='"
+                    + Passport_text.Text.ToString() + "',GenderEmployee='" + gender.SelectedItem.ToString() + "',IdPositionEmployee='"
+                    + IdPosition.SelectedValue + "'Where IdEmployee='" + IdPosition.SelectedValue + "'";
 
                 SqlCommand da = new SqlCommand(sql, conn);
                 da.ExecuteNonQuery();
@@ -115,7 +155,7 @@ namespace ProjectKS
                 Passport_text.Focus();
                 return false;
             }
-            for(int i = 0; i < dl.Count(); i++)
+            for (int i = 0; i < dl.Count(); i++)
             {
                 if (dl[i].ItemArray[0].Equals(dl.Count()) || dl[i].ItemArray[2].Equals(Passport_text.Text))
                 {
@@ -144,42 +184,9 @@ namespace ProjectKS
             return true;
         }
 
-        private void click_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            form2.ShowDialog();
-            IdPosition.DataSource = form2.dt;
-            IdPosition.DataSource = form2.testL;
-        }
-
-      
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (checkData())
-            {
-                try
-                {
-                    conn.Open();
-                        string sql = "INSERT INTO Employees(NameEmployee,PassportEmployee,GenderEmployee,PositionEmployee)VALUES('"+Name_text.Text.ToString() +
-                            "','" + Passport_text.Text.ToString() + "','" + gender.SelectedItem.ToString() + "','" + IdPosition.SelectedItem.ToString() + "')";
-                        SqlCommand da = new SqlCommand(sql, conn);
-                        da.ExecuteNonQuery();
-                        conn.Close();
-                        frmEmployee_Load(sender, e);
-                        dataGridView1.DataSource = dt;
-                        dataGridView1.RefreshEdit();        
-                }
-                catch(System.Exception)
-                {
-                    conn.Close();
-                }
-                Name_text.Text = "";
-                Passport_text.Text = "";
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Do you want to remove Employee", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show("Do you want to remove Employee", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
@@ -195,20 +202,6 @@ namespace ProjectKS
                     MessageBox.Show("Error is" + exp.ToString());
                     conn.Close();
                 }
-            }
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            index = dataGridView1.CurrentCell.RowIndex;
-            DataTable vt = (DataTable)dataGridView1.DataSource;
-
-            if (vt.Rows.Count > 0 || vt.Rows != null)
-            {
-                Name_text.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
-                Passport_text.Text = dataGridView1.Rows[index].Cells[2].Value.ToString();
-                gender.SelectedItem = dataGridView1.Rows[index].Cells[3].Value.ToString();
-                IdPosition.SelectedItem = dataGridView1.Rows[index].Cells[4].Value.ToString();
             }
         }
 
@@ -228,7 +221,23 @@ namespace ProjectKS
             l = 0;
         }
 
-        private void Name_text_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (l == 0)
+            {
+                dataGridView1.DataSource = dt;
+                dataGridView1.RefreshEdit();
+            }
+        }
+
+        private void click_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            form2.ShowDialog();
+            IdPosition.DataSource = form2.dt;
+            IdPosition.DataSource = form2.testL;
+        }
+
+        private void Name_text_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
             if (!Char.IsLetter(ch) && ch != 8 && ch != 46 && ch != 32)
@@ -237,7 +246,7 @@ namespace ProjectKS
             }
         }
 
-        private void Passport_text_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void Passport_text_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
             if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
@@ -246,12 +255,17 @@ namespace ProjectKS
             }
         }
 
-        private void button5_Click_1(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (l == 0)
+            index = dataGridView1.CurrentCell.RowIndex;
+            DataTable vt = (DataTable)dataGridView1.DataSource;
+
+            if (vt.Rows.Count > 0 || vt.Rows != null)
             {
-                dataGridView1.DataSource = dt;
-                dataGridView1.RefreshEdit();
+                Name_text.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                Passport_text.Text = dataGridView1.Rows[index].Cells[2].Value.ToString();
+                gender.SelectedItem = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                IdPosition.SelectedItem = dataGridView1.Rows[index].Cells[4].Value.ToString();
             }
         }
     }

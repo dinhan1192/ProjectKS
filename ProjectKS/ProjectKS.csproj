@@ -58,10 +58,12 @@
     <Compile Include="DoanhThu.Designer.cs">
       <DependentUpon>DoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeePosition.cs" />
-    <Compile Include="EmployeePosition.Designer.cs" />
-    <Compile Include="frmBill.cs" />
-    <Compile Include="frmBill.Designer.cs" />
+    <Compile Include="frmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBill.Designer.cs">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,8 +82,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployee.cs" />
-    <Compile Include="frmEmployee.Designer.cs" />
+    <Compile Include="frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="ListBill.Designer.cs">
       <DependentUpon>ListBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeePosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeePosition.Designer.cs">
+      <DependentUpon>EmployeePosition.cs</DependentUpon>
+    </Compile>
     <Compile Include="TypeRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,8 +132,9 @@
     <EmbeddedResource Include="DoanhThu.resx">
       <DependentUpon>DoanhThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeePosition.resx" />
-    <EmbeddedResource Include="frmBill.resx" />
+    <EmbeddedResource Include="frmBill.resx">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,7 +144,9 @@
     <EmbeddedResource Include="frmBooking.resx">
       <DependentUpon>frmBooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployee.resx" />
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListRoom.resx">
       <DependentUpon>frmListRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListBill.resx">
       <DependentUpon>ListBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeePosition.resx">
+      <DependentUpon>EmployeePosition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TypeRoom.resx">
       <DependentUpon>TypeRoom.cs</DependentUpon>

@@ -40,7 +40,6 @@ C:\HOTEL1\ProjectKS\ProjectKS\bin\Debug\ProjectKS.exe
 C:\HOTEL1\ProjectKS\ProjectKS\bin\Debug\ProjectKS.pdb
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.csprojAssemblyReference.cache
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmEmployee.resources
-C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.EmployeePosition.resources
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmCustomer.resources
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Form1.resources
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.frmBooking.resources
@@ -57,3 +56,26 @@ C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.pdb
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.Display_Service_Room_Bill.resources
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.ListBill.resources
 C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.DoanhThu.resources
+C:\HOTEL1\ProjectKS\ProjectKS\obj\Debug\ProjectKS.EmployeePosition.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\bin\Debug\ProjectKS.exe.config
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\bin\Debug\ProjectKS.exe
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\bin\Debug\ProjectKS.pdb
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.csprojAssemblyReference.cache
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.Display_Service_Room_Bill.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.DoanhThu.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.frmBill.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.frmCustomer.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.Form1.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.frmBooking.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.frmEmployee.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.frmListRoom.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.frmListService.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.frmOrderService.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.ListBill.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.EmployeePosition.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.TypeRoom.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.Properties.Resources.resources
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.csproj.GenerateResource.cache
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.csproj.CoreCompileInputs.cache
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.exe
+C:\HOTEL1\ProjectKS - Copy\ProjectKS\obj\Debug\ProjectKS.pdb

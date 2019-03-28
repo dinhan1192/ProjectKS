@@ -33,10 +33,10 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
+            this.IdService = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NameService = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Amount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.Total1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -107,10 +108,11 @@
             // listView
             // 
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IdService,
             this.NameService,
             this.Amount,
             this.UnitPrice,
-            this.Total});
+            this.Total1});
             this.listView.FullRowSelect = true;
             this.listView.Location = new System.Drawing.Point(305, 29);
             this.listView.Name = "listView";
@@ -119,28 +121,28 @@
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
             // 
+            // IdService
+            // 
+            this.IdService.Text = "IdService";
+            this.IdService.Width = 65;
+            // 
             // NameService
             // 
             this.NameService.Text = "NameService";
-            this.NameService.Width = 150;
+            this.NameService.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NameService.Width = 85;
             // 
             // Amount
             // 
             this.Amount.Text = "Amount";
             this.Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Amount.Width = 69;
+            this.Amount.Width = 77;
             // 
             // UnitPrice
             // 
             this.UnitPrice.Text = "UnitPrice";
             this.UnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.UnitPrice.Width = 77;
-            // 
-            // Total
-            // 
-            this.Total.Text = "Total";
-            this.Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Total.Width = 70;
+            this.UnitPrice.Width = 70;
             // 
             // button3
             // 
@@ -318,6 +320,10 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // Total1
+            // 
+            this.Total1.Text = "Total";
+            // 
             // frmOrderService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,13 +365,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtIdCustomer;
         private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.ColumnHeader IdService;
         private System.Windows.Forms.ColumnHeader NameService;
         private System.Windows.Forms.ColumnHeader Amount;
         private System.Windows.Forms.ColumnHeader UnitPrice;
-        private System.Windows.Forms.ColumnHeader Total;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lbIdOrder;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ColumnHeader Total1;
     }
 }
