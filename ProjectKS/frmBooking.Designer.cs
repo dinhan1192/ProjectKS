@@ -196,6 +196,7 @@
             // 
             // dgvRoomChoose
             // 
+            this.dgvRoomChoose.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRoomChoose.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoomChoose.Location = new System.Drawing.Point(18, 307);
             this.dgvRoomChoose.Name = "dgvRoomChoose";
@@ -298,6 +299,7 @@
             // 
             // dgvRoomList
             // 
+            this.dgvRoomList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRoomList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoomList.Location = new System.Drawing.Point(3, 90);
             this.dgvRoomList.Name = "dgvRoomList";

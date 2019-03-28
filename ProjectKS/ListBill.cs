@@ -17,7 +17,7 @@ namespace ProjectKS
         {
             InitializeComponent();
         }
-        string str = @"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True";
+        string str = @"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True";
 //hien thi all cac bill
         private void Bill()
         {

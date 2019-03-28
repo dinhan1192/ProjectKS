@@ -16,7 +16,7 @@ namespace ProjectKS
         DataTable table;
         int index;
         DataTable dt;
-        string str = "Data Source=ADMINPC;Initial Catalog=QuanlyKS;Integrated Security=true";
+        string str = @"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True";
         public frmBill()
         {
             InitializeComponent();

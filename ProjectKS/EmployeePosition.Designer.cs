@@ -36,6 +36,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.IdPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NamePosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +65,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Position});
             this.dataGridView1.Location = new System.Drawing.Point(38, 50);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
@@ -110,6 +115,18 @@
             this.NamePosition.ReadOnly = true;
             this.NamePosition.Width = 500;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "IdPosition";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // Position
+            // 
+            this.Position.DataPropertyName = "NamePosition";
+            this.Position.HeaderText = "Position";
+            this.Position.Name = "Position";
+            // 
             // EmployeePosition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,5 +157,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPosition;
         private System.Windows.Forms.DataGridViewTextBoxColumn NamePosition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
     }
 }

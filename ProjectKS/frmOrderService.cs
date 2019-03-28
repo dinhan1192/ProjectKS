@@ -15,7 +15,7 @@ namespace ProjectKS
     {
         DataTable table;
         int index;
-        string str = @"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True";
+        string str = @"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True";
         public frmOrderService()
         {
             InitializeComponent();
@@ -90,7 +90,7 @@ namespace ProjectKS
                 SqlCommand cmdthem = new SqlCommand(them, connect);
                 cmdthem.ExecuteNonQuery();
 
-                MessageBox.Show("Lưu hóa đơn thành công");
+                
 
                 for (int i = 0; i < listView.Items.Count; i++)
                 {
@@ -103,7 +103,9 @@ namespace ProjectKS
                 Matutang();
                 txtIdCustomer.Clear();
                 cbNameService.Text = "";
+                txtTotal.Clear();
             }
+            MessageBox.Show("Lưu hóa đơn thành công");
         }
 //auto load priceService
         private void cbNameService_SelectedIndexChanged(object sender, EventArgs e)

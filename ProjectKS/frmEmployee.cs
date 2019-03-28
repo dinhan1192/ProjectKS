@@ -18,7 +18,7 @@ namespace ProjectKS
         int index;
         List<object> positionL;
         int l;
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True");
 
         public frmEmployee()
         {
@@ -39,6 +39,7 @@ namespace ProjectKS
         
         private void frmEmployee_Load(object sender, EventArgs e)
         {
+            button2.Enabled = false;
             dt = createTable();
             FillData();
             dataGridView1.DataSource = dt;

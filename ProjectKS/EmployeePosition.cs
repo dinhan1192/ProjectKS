@@ -15,11 +15,11 @@ namespace ProjectKS
     {
         public DataTable dt;
         public DataRow[] rt;
-       public int index;
+        public int index;
         public List<object> testL;
-        
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
-      
+
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True");
+
         public void createTable()
         {
             dt = new DataTable();
@@ -38,12 +38,12 @@ namespace ProjectKS
             int m = 0;
             if (checkData())
             {
-                       
+
                 DataRow[] dl = dt.Select();
                 try
                 {
                     conn.Open();
-                    string sql = "INSERT INTO PositionEmployees(NamePosition)VALUES('"+textBox1.Text.ToString()+"')";
+                    string sql = "INSERT INTO PositionEmployees(NamePosition)VALUES('" + textBox1.Text.ToString() + "')";
                     SqlCommand da = new SqlCommand(sql, conn);
                     da.ExecuteNonQuery();
                     conn.Close();
@@ -59,7 +59,7 @@ namespace ProjectKS
                 testL = new List<object>();
                 for (int i = 0; i < dl.Count(); i++)
                 {
-                    
+
                     for (int j = 0; j < testL.Count; j++)
                     {
                         if (dl[i].ItemArray[0].Equals(testL[j]))
@@ -88,7 +88,7 @@ namespace ProjectKS
                 textBox1.Focus();
                 return false;
             }
-            for(int i = 0; i < dl.Count(); i++)
+            for (int i = 0; i < dl.Count(); i++)
             {
                 if (dl[i].ItemArray[1].Equals(textBox1.Text))
                 {
@@ -102,15 +102,16 @@ namespace ProjectKS
 
         private void EmployeePosition_Load(object sender, EventArgs e)
         {
-                createTable();
-                SqlDataAdapter dap = new SqlDataAdapter("Select*from PositionEmployees", conn);
-                conn.Open();
-                dap.Fill(dt);
-                conn.Close();
-                dataGridView1.DataSource = dt;
-                dataGridView1.RefreshEdit();
+            button2.Enabled = false;
+            createTable();
+            SqlDataAdapter dap = new SqlDataAdapter("Select*from PositionEmployees", conn);
+            conn.Open();
+            dap.Fill(dt);
+            conn.Close();
+            dataGridView1.DataSource = dt;
+            dataGridView1.RefreshEdit();
             testL = new List<object>();
-            for(int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
                 testL.Add(dt.Rows[i][0]);
             }
@@ -120,9 +121,9 @@ namespace ProjectKS
         {
             index = dataGridView1.CurrentCell.RowIndex;
             DataTable dt = (DataTable)dataGridView1.DataSource;
-            if(dt.Rows.Count>0 || dt.Rows != null)
+            if (dt.Rows.Count > 0 || dt.Rows != null)
             {
-                
+
                 textBox1.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
             }
         }
@@ -134,7 +135,7 @@ namespace ProjectKS
                 try
                 {
                     conn.Open();
-                    string sql = "Delete from PositionEmployees Where IdPosition = '"+ dt.Rows[index].ItemArray[0] + "'";
+                    string sql = "Delete from PositionEmployees Where IdPosition = '" + dt.Rows[index].ItemArray[0] + "'";
                     SqlCommand da = new SqlCommand(sql, conn);
                     da.ExecuteNonQuery();
                     conn.Close();
@@ -147,16 +148,16 @@ namespace ProjectKS
                     conn.Close();
                 }
             }
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {    
+        {
             try
             {
                 conn.Open();
                 string sql = "Update PositionEmployees Set NamePosition='" + textBox1.Text.ToString() +
-                    "'Where IdPosition='"+dt.Rows[index][0]+"'";
+                    "'Where IdPosition='" + dt.Rows[index][0] + "'";
                 SqlCommand da = new SqlCommand(sql, conn);
                 da.ExecuteNonQuery();
                 conn.Close();
@@ -171,5 +172,5 @@ namespace ProjectKS
             }
         }
     }
-    }
+}
 

@@ -129,6 +129,9 @@
     <EmbeddedResource Include="Display_Service_Room_Bill.resx">
       <DependentUpon>Display_Service_Room_Bill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoanhThu.resx">
+      <DependentUpon>DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>

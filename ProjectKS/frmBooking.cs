@@ -19,7 +19,7 @@ namespace ProjectKS
         SqlConnection conn;
         SqlCommand command, commandUpdate, commandBooking, commandCustomer, commandRoom,
             commandRoomChoose, commandListRoomBooking, commandValidateDay, commandValidateCustomer, commandValidateEmail;
-        string str = @"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True;" + " MultipleActiveResultSets=True;";
+        string str = @"Data Source=DESKTOP-I7NUESG\SEKHARSQL;Initial Catalog=ProjectKS;Integrated Security=True;" + " MultipleActiveResultSets=True;";
         // co / thi phai co @
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable tableRoomList = new DataTable();
@@ -48,12 +48,16 @@ namespace ProjectKS
 
         void loadComboBoxEmployee()
         {
-           command = conn.CreateCommand();
-            command.CommandText = "SELECT * FROM Employees Where IdPositionEmployee = (SELECT IdPosition From PositionEmployees Where NamePosition = 'Nhan vien Giao Dich')";
+            command = conn.CreateCommand();
+            command.CommandText = "SELECT * FROM Employees Where IdPositionEmployee = (SELECT IdPosition From PositionEmployees Where NamePosition = 'Trading')";
             var dr = command.ExecuteReader();
             var dt = new DataTable();
             dt.Load(dr);
             dr.Dispose();
+            /* tbEmployeeName.DisplayMember = "NameEmployee";
+             tbEmployeeName.ValueMember = "IdEmployee";
+             tbEmployeeName.DataSource = dt;*/
+
             tbEmployeeName.DisplayMember = "NameEmployee";
             tbEmployeeName.ValueMember = "IdEmployee";
             tbEmployeeName.DataSource = dt;
