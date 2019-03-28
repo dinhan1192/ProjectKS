@@ -92,7 +92,7 @@ namespace ProjectKS
 
                 for (int i = 0; i < listView.Items.Count; i++)
                 {
-                    string dbINSERT = "INSERT INTO OrderServiceDetail VALUES('" + lbIdOrder.Text + "','" + listView.Items[i].SubItems[0].Text + "','" + listView.Items[i].SubItems[1].Text + "','" + listView.Items[i].SubItems[2].Text + "','" + listView.Items[i].SubItems[3].Text + "')";
+                    string dbINSERT = "INSERT INTO OrderServiceDetail VALUES('" + lbIdOrder.Text + "','" + listView.Items[i].SubItems[0].Text + "','" + listView.Items[i].SubItems[1].Text + "','" + listView.Items[i].SubItems[2].Text + "','" + listView.Items[i].SubItems[3].Text + "','" + listView.Items[i].SubItems[4].Text + "')";
                     SqlCommand cmddbINSERT = new SqlCommand(dbINSERT, connect);
                     cmddbINSERT.ExecuteNonQuery();
                 }
@@ -139,8 +139,8 @@ namespace ProjectKS
             else
             {
                 btnDelete.Enabled = true;
-                ListViewItem item = new ListViewItem(cbNameService.Text);
-
+                ListViewItem item = new ListViewItem(cbNameService.SelectedValue.ToString());
+                item.SubItems.Add(cbNameService.Text);
                 item.SubItems.Add(txtAmount.Text);
                 item.SubItems.Add(txtUnitPrice.Text);
                 item.SubItems.Add(thanhtien(txtUnitPrice.Text, txtAmount.Text).ToString());
@@ -193,7 +193,7 @@ namespace ProjectKS
         {
                 if (listView.Items.Count > 0)
                 {
-                    int hieu = int.Parse(txtTotal.Text) - int.Parse(listView.SelectedItems[0].SubItems[3].Text);
+                    int hieu = int.Parse(txtTotal.Text) - int.Parse(listView.SelectedItems[0].SubItems[4].Text);
                     txtTotal.Text = hieu.ToString();
                     listView.Items.Remove(listView.SelectedItems[0]);
                 }

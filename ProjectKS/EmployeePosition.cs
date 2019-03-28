@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace ProjectKS
 {
     public partial class EmployeePosition : Form
@@ -17,9 +16,9 @@ namespace ProjectKS
         public DataRow[] rt;
         public int index;
         public List<object> testL;
-        
-        SqlConnection conn = new SqlConnection("Data Source=ADMINPC;Initial Catalog=QuanlyKS;Integrated Security=True");
-      
+
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True");
+
         public void createTable()
         {
             dt = new DataTable();
@@ -33,28 +32,45 @@ namespace ProjectKS
             testL = new List<object>();
         }
 
+       
+
+        private void test_Load(object sender, EventArgs e)
+        {
+            createTable();
+            SqlDataAdapter dap = new SqlDataAdapter("Select*from PositionEmployees", conn);
+            conn.Open();
+            dap.Fill(dt);
+            conn.Close();
+            dataGridView1.DataSource = dt;
+            dataGridView1.RefreshEdit();
+            testL = new List<object>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                testL.Add(dt.Rows[i][1].ToString());
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             int m = 0;
             if (checkData())
             {
-                       
+
                 DataRow[] dl = dt.Select();
                 try
                 {
                     conn.Open();
-                    string sql = "INSERT INTO PositionEmployees(NamePosition)VALUES('"+textBox1.Text.ToString()+"')";
+                    string sql = "INSERT INTO PositionEmployees(NamePosition)VALUES('" + textBox1.Text.ToString() + "')";
                     SqlCommand da = new SqlCommand(sql, conn);
                     da.ExecuteNonQuery();
                     conn.Close();
-                    EmployeePosition_Load(sender, e);
+                    test_Load(sender, e);
                 }
                 catch (System.Exception exp)
                 {
                     MessageBox.Show("Error is" + exp.ToString());
                     conn.Close();
                 }
-               
+
                 textBox1.Text = "";
             }
 
@@ -69,7 +85,7 @@ namespace ProjectKS
                 textBox1.Focus();
                 return false;
             }
-            for(int i = 0; i < dl.Count(); i++)
+            for (int i = 0; i < dl.Count(); i++)
             {
                 if (dl[i].ItemArray[1].Equals(textBox1.Text))
                 {
@@ -81,22 +97,6 @@ namespace ProjectKS
             return true;
         }
 
-        private void EmployeePosition_Load(object sender, EventArgs e)
-        {
-            createTable();
-                SqlDataAdapter dap = new SqlDataAdapter("Select*from PositionEmployees", conn);
-                conn.Open();
-                dap.Fill(dt);
-                conn.Close();
-                dataGridView1.DataSource = dt;
-                dataGridView1.RefreshEdit();
-            testL = new List<object>();
-            for(int i = 0; i < dt.Rows.Count; i++)
-            {
-                testL.Add(dt.Rows[i][1].ToString());
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you want to remove Position", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -104,11 +104,11 @@ namespace ProjectKS
                 try
                 {
                     conn.Open();
-                    string sql = "Delete from PositionEmployees Where IdPosition = '"+ dt.Rows[index][0] + "'";
+                    string sql = "Delete from PositionEmployees Where IdPosition = '" + dt.Rows[index][0] + "'";
                     SqlCommand da = new SqlCommand(sql, conn);
                     da.ExecuteNonQuery();
                     conn.Close();
-                    EmployeePosition_Load(sender, e);
+                    test_Load(sender, e);
                     dataGridView1.DataSource = dt;
                     dataGridView1.RefreshEdit();
                 }
@@ -118,20 +118,19 @@ namespace ProjectKS
                     conn.Close();
                 }
             }
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {    
+        {
             try
             {
                 conn.Open();
                 string sql = "Update PositionEmployees Set NamePosition='" + textBox1.Text.ToString() +
-                    "'Where IdPosition='"+dt.Rows[index][0]+"'";
+                    "'Where IdPosition='" + dt.Rows[index][0] + "'";
                 SqlCommand da = new SqlCommand(sql, conn);
                 da.ExecuteNonQuery();
                 conn.Close();
-                EmployeePosition_Load(sender, e);
+                test_Load(sender, e);
                 dataGridView1.DataSource = dt;
                 dataGridView1.RefreshEdit();
             }
@@ -153,5 +152,4 @@ namespace ProjectKS
             }
         }
     }
-    }
-
+}
