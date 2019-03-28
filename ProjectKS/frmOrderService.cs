@@ -13,8 +13,7 @@ namespace ProjectKS
 {
     public partial class frmOrderService : Form
     {
-        DataTable table;
-        int index;
+ 
         string str = @"Data Source=DESKTOP-CL7BVQ5\SEKHARSQL;Initial Catalog=Project_Quanlykhachsan;Integrated Security=True";
         public frmOrderService()
         {
@@ -138,12 +137,14 @@ namespace ProjectKS
             }
             else
             {
+
                 btnDelete.Enabled = true;
                 ListViewItem item = new ListViewItem(cbNameService.SelectedValue.ToString());
                 item.SubItems.Add(cbNameService.Text);
                 item.SubItems.Add(txtAmount.Text);
                 item.SubItems.Add(txtUnitPrice.Text);
                 item.SubItems.Add(thanhtien(txtUnitPrice.Text, txtAmount.Text).ToString());
+
                 total = total + float.Parse(thanhtien(txtUnitPrice.Text, txtAmount.Text).ToString());
                 listView.Items.Add(item);
 
@@ -188,15 +189,17 @@ namespace ProjectKS
             float thanhtien = Int32.Parse(amount) * float.Parse(unitprice);
             return thanhtien;
         }
-
+        int hieu;
         private void btnDelete_Click(object sender, EventArgs e)
         {
                 if (listView.Items.Count > 0)
                 {
-                    int hieu = int.Parse(txtTotal.Text) - int.Parse(listView.SelectedItems[0].SubItems[4].Text);
-                    txtTotal.Text = hieu.ToString();
+                   hieu = int.Parse(txtTotal.Text) - int.Parse(listView.SelectedItems[0].SubItems[4].Text);                  
                     listView.Items.Remove(listView.SelectedItems[0]);
+                    txtTotal.Text = hieu.ToString();
                 }
+            total = hieu;
+           
         }
 
         private void button3_Click(object sender, EventArgs e)

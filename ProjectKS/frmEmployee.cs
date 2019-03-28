@@ -84,8 +84,8 @@ namespace ProjectKS
             var dt2 = new DataTable();
             dt2.Load(dr2);
             dr2.Dispose();
-            IdPosition.DisplayMember = "NamePosition"; //hien thi list chon la NameService
-            IdPosition.ValueMember = "IdPosition";    //co the lay id nay bang cach cbNameService.SelectValue
+            IdPosition.DisplayMember = "NamePosition";
+            IdPosition.ValueMember = "IdPosition";   
             IdPosition.DataSource = dt2;
 
             conn.Close();
@@ -124,7 +124,7 @@ namespace ProjectKS
                 conn.Open();
                 string sql = "Update Employees Set NameEmployee='" + Name_text.Text.ToString() + "',PassportEmployee='"
                     + Passport_text.Text.ToString() + "',GenderEmployee='" + gender.SelectedItem.ToString() + "',IdPositionEmployee='"
-                    + IdPosition.SelectedValue + "'Where IdEmployee='" + IdPosition.SelectedValue + "'";
+                    + IdPosition.SelectedValue + "'Where IdEmployee='" + dt.Rows[index][0]+ "'";
 
                 SqlCommand da = new SqlCommand(sql, conn);
                 da.ExecuteNonQuery();
