@@ -36,7 +36,7 @@ namespace ProjectKS
         {
             SqlConnection connect = new SqlConnection(str);
             connect.Open();
-            SqlCommand cm = new SqlCommand("SELECT *FROM Bill WHERE Day(TimeBill)='" + dateTimePicker1.Value.Day + "' and MONTH(TimeBill)='" + dateTimePicker1.Value.Month + "' AND Year(TimeBill) ='" + dateTimePicker1.Value.Year + "'", connect);
+            SqlCommand cm = new SqlCommand("SELECT  Bill.IdBill, Bill.IdCustomer,Customer.FullNameCustomer, Bill.IdBooking, Bill.TimeBill, Bill.TotalRoomFee,Bill.TotalServiceFee,Bill.TotalFee From Customer, Bill  Where Customer.IdCustomer = Bill.IdCustomer AND Day(TimeBill)='" + dateTimePicker1.Value.Day + "' and MONTH(TimeBill)='" + dateTimePicker1.Value.Month + "' AND Year(TimeBill) ='" + dateTimePicker1.Value.Year + "'", connect);
             SqlDataAdapter da = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -73,12 +73,13 @@ namespace ProjectKS
         private void btnView_Click(object sender, EventArgs e)
         {
             Bill();
+           
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
-            SearchBillByDate();
-            SearchBillByPassport();
+        {      
+                SearchBillByDate();
+                SearchBillByPassport();             
         }
 
         private void txtPassport_Enter(object sender, EventArgs e)

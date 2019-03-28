@@ -68,6 +68,8 @@ namespace ProjectKS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(txtCustomer.Text=="")
+                return;
             SqlConnection connect = new SqlConnection(str);
             SqlDataAdapter dat = new SqlDataAdapter("Select* from Customer Where IdCustomer='" + txtCustomer.Text + "'", connect);
             connect.Open();
@@ -120,44 +122,58 @@ namespace ProjectKS
 
         private void btnInHoaDon_Click(object sender, EventArgs e)
         {
-            DateTime iDate = DateTime.Now;
-            SqlConnection connect = new SqlConnection(str);
-            connect.Open();
-            dt = new DataTable();
-            table = new DataTable();
-            SqlDataAdapter ad = new SqlDataAdapter("Select*from Bill", connect);
-            ad.Fill(dt);
-            int m = dt.Rows.Count;
-            string sql = "Insert into Bill Values('" + txtIdBill.Text.ToString() + "','" + IdCustomer.Text.ToString() + "','" + cbIdBooking.Text.ToString() + "','" + iDate.ToString("yyy/M/d HH:mm:ss") + "','" + roomFeeValue.Text.ToString() + "','" + serviceFeeValue.Text.ToString() + "','" + totalFeeValue.Text.ToString() + "')";
-            SqlCommand command = connect.CreateCommand();
-            command.CommandText = "If '" + iDate.ToString("yyy/M/d HH:mm:ss") + "'>=(Select top 1 TimeUse from OrderService where IdBooking='" + cbIdBooking.Text.ToString() + "'Order by TimeUse desc)And not exists(Select * from Bill where IdBooking='" + cbIdBooking.Text.ToString() + "') BEGIN " + sql + " END";
-            command.ExecuteNonQuery();
-            SqlDataAdapter adap = new SqlDataAdapter("Select*from Bill", connect);
-            adap.Fill(table);
-            int n = table.Rows.Count;
-            if (n - m == 0)
+            if (txtCustomer.Text == "")
             {
-                MessageBox.Show("Bill has been settled");
+                return;
             }
-            connect.Close();
-            frmBill_Load(sender, e);
-            dataGridView1.DataSource = null;
-            dataGridView2.DataSource = null;
-            cbIdBooking.Text = null;
-            IdCustomer.Text = null;
-            txtCustomer.Text = null;
-            FullName.Text = null;
-            Passport.Text = null;
-            Phone.Text = null;
-            Gender.Text = null;
-            Email.Text = null;
-            roomFeeValue.Text = null;
-            serviceFeeValue.Text = null;
-            totalFeeValue.Text = null;
-            connect.Open();
-            SqlCommand cmd = new SqlCommand("Update ListRoom set Status='not booked' from ListRoom,ListRoomBooking where IdBooking='" + cbIdBooking.Text.ToString() + "'", connect);
-            cmd.ExecuteNonQuery();
-            connect.Close();
+            else
+            {
+                DateTime iDate = DateTime.Now;
+                SqlConnection connect = new SqlConnection(str);
+                connect.Open();
+                dt = new DataTable();
+                table = new DataTable();
+                SqlDataAdapter ad = new SqlDataAdapter("Select*from Bill", connect);
+                ad.Fill(dt);
+
+                int m = dt.Rows.Count;
+                string sql = "Insert into Bill Values('" + txtIdBill.Text.ToString() + "','" + IdCustomer.Text.ToString() + "','" + cbIdBooking.Text.ToString() + "','" + iDate.ToString("yyy/M/d HH:mm:ss") + "','" + roomFeeValue.Text.ToString() + "','" + serviceFeeValue.Text.ToString() + "','" + totalFeeValue.Text.ToString() + "')";
+                SqlCommand command = connect.CreateCommand();
+                command.CommandText = "If '" + iDate.ToString("yyy/M/d HH:mm:ss") + "'>=(Select top 1 TimeUse from OrderService where IdBooking='" + cbIdBooking.Text.ToString() + "'Order by TimeUse desc)And not exists(Select * from Bill where IdBooking='" + cbIdBooking.Text.ToString() + "') BEGIN " + sql + " END";
+                command.ExecuteNonQuery();
+                SqlDataAdapter adap = new SqlDataAdapter("Select*from Bill", connect);
+                adap.Fill(table);
+
+                string update = "Update ListRoom set Status = 'not booked' from ListRoom, ListRoomBooking where ListRoom.IdRoom = ListRoomBooking.IdRoom AND ListRoomBooking.IdBooking = '" + cbIdBooking.Text + "'";
+                SqlCommand cmd = new SqlCommand(update, connect);
+                cmd.ExecuteNonQuery();
+                
+
+                int n = table.Rows.Count;
+                if (n - m == 0)
+                {
+                    MessageBox.Show("Bill has been settled");
+                }
+                connect.Close();
+                frmBill_Load(sender, e);
+                dataGridView1.DataSource = null;
+                dataGridView2.DataSource = null;
+                cbIdBooking.Text = null;
+                IdCustomer.Text = null;
+                txtCustomer.Text = null;
+                FullName.Text = null;
+                Passport.Text = null;
+                Phone.Text = null;
+                Gender.Text = null;
+                Email.Text = null;
+                roomFeeValue.Text = null;
+                serviceFeeValue.Text = null;
+                totalFeeValue.Text = null;
+            }
+                
+            
+
+            
         }
     }
 }
