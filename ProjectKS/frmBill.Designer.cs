@@ -123,7 +123,7 @@
             this.btnInHoaDon.Name = "btnInHoaDon";
             this.btnInHoaDon.Size = new System.Drawing.Size(91, 23);
             this.btnInHoaDon.TabIndex = 8;
-            this.btnInHoaDon.Text = "Print Bill";
+            this.btnInHoaDon.Text = "Thanh toán";
             this.btnInHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInHoaDon.UseVisualStyleBackColor = true;
             this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);

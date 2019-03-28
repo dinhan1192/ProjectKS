@@ -34,6 +34,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.click = new System.Windows.Forms.LinkLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PassportEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenderEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPositionEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdPosition = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,11 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PassportEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenderEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdPositionEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,9 +118,40 @@
             this.IdPositionEmployee});
             this.dataGridView1.Location = new System.Drawing.Point(44, 246);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(608, 182);
+            this.dataGridView1.Size = new System.Drawing.Size(718, 182);
             this.dataGridView1.TabIndex = 43;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // IdEmployee
+            // 
+            this.IdEmployee.DataPropertyName = "IdEmployee";
+            this.IdEmployee.HeaderText = "IDEmployee";
+            this.IdEmployee.Name = "IdEmployee";
+            this.IdEmployee.Visible = false;
+            // 
+            // NameEmployee
+            // 
+            this.NameEmployee.DataPropertyName = "NameEmployee";
+            this.NameEmployee.HeaderText = "EmployeeName";
+            this.NameEmployee.Name = "NameEmployee";
+            // 
+            // PassportEmployee
+            // 
+            this.PassportEmployee.DataPropertyName = "PassportEmployee";
+            this.PassportEmployee.HeaderText = "EmployeePassport";
+            this.PassportEmployee.Name = "PassportEmployee";
+            // 
+            // GenderEmployee
+            // 
+            this.GenderEmployee.DataPropertyName = "GenderEmployee";
+            this.GenderEmployee.HeaderText = "Gender";
+            this.GenderEmployee.Name = "GenderEmployee";
+            // 
+            // IdPositionEmployee
+            // 
+            this.IdPositionEmployee.DataPropertyName = "IdPositionEmployee";
+            this.IdPositionEmployee.HeaderText = "IdPositionEmployee";
+            this.IdPositionEmployee.Name = "IdPositionEmployee";
             // 
             // IdPosition
             // 
@@ -242,37 +273,6 @@
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 32;
             this.label1.Text = "Name";
-            // 
-            // IdEmployee
-            // 
-            this.IdEmployee.DataPropertyName = "IdEmployee";
-            this.IdEmployee.HeaderText = "IDEmployee";
-            this.IdEmployee.Name = "IdEmployee";
-            this.IdEmployee.Visible = false;
-            // 
-            // NameEmployee
-            // 
-            this.NameEmployee.DataPropertyName = "NameEmployee";
-            this.NameEmployee.HeaderText = "EmployeeName";
-            this.NameEmployee.Name = "NameEmployee";
-            // 
-            // PassportEmployee
-            // 
-            this.PassportEmployee.DataPropertyName = "PassportEmployee";
-            this.PassportEmployee.HeaderText = "EmployeePassport";
-            this.PassportEmployee.Name = "PassportEmployee";
-            // 
-            // GenderEmployee
-            // 
-            this.GenderEmployee.DataPropertyName = "GenderEmployee";
-            this.GenderEmployee.HeaderText = "Gender";
-            this.GenderEmployee.Name = "GenderEmployee";
-            // 
-            // IdPositionEmployee
-            // 
-            this.IdPositionEmployee.DataPropertyName = "IdPositionEmployee";
-            this.IdPositionEmployee.HeaderText = "IdPositionEmployee";
-            this.IdPositionEmployee.Name = "IdPositionEmployee";
             // 
             // frmEmployee
             // 
